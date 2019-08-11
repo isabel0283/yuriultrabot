@@ -528,11 +528,12 @@ public class KitchenSinkController {
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
             default:
-                log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(
-                        replyToken,
-                        text
-                );
+                /*log.info("Returns echo message {}: {}", replyToken, text);
+                *this.replyText(
+                *        replyToken,
+                *        text
+                *);
+				*/
                 break;
         }
     }
