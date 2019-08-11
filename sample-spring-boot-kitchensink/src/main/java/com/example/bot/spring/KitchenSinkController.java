@@ -528,6 +528,10 @@ public class KitchenSinkController {
             case "quickreply":
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
+/*********************************MI CODIGO**************************************/
+            case "yuri say hi":
+                this.reply(replyToken, "Hello everybody :)");
+                break;
             default:
                 break;
         }
