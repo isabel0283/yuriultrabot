@@ -295,7 +295,8 @@ public class KitchenSinkController {
 
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
-        String text = content.getText();
+        String textOriginal = content.getText();
+		String text = textOriginal.toLowerCase();
 
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
@@ -528,12 +529,6 @@ public class KitchenSinkController {
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
             default:
-                /*log.info("Returns echo message {}: {}", replyToken, text);
-                *this.replyText(
-                *        replyToken,
-                *        text
-                *);
-				*/
                 break;
         }
     }
