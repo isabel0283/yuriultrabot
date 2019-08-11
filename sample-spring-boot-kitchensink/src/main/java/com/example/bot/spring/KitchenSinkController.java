@@ -296,7 +296,7 @@ public class KitchenSinkController {
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
         String textOriginal = content.getText();
-		String text = textOriginal.toLowerCase();
+        String text = textOriginal.toLowerCase();
 
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
