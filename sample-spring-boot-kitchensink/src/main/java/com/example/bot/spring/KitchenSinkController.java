@@ -528,13 +528,9 @@ public class KitchenSinkController {
             case "quickreply":
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
-/*********************************MI CODIGO**************************************/
             case "yuri say hi":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(
-                        replyToken,
-                        "Hello everybody! :)"
-                );
+                this.replyText(replyToken, "Hello everybody! :)");
             default:
                 break;
         }
