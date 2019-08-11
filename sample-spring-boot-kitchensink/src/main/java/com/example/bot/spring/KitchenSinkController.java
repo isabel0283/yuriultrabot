@@ -56,7 +56,6 @@ import com.linecorp.bot.model.event.UnfollowEvent;
 import com.linecorp.bot.model.event.message.AudioMessageContent;
 import com.linecorp.bot.model.event.message.ContentProvider;
 import com.linecorp.bot.model.event.message.FileMessageContent;
-//import com.linecorp.bot.model.event.message.ImageMessageContent;
 import com.linecorp.bot.model.event.message.LocationMessageContent;
 import com.linecorp.bot.model.event.message.StickerMessageContent;
 import com.linecorp.bot.model.event.message.TextMessageContent;
@@ -185,7 +184,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleJoinEvent(JoinEvent event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "Joined " + event.getSource());
+        this.replyText(replyToken, "Thanks for adding me to your group! :)");
     }
 
     @EventMapping
