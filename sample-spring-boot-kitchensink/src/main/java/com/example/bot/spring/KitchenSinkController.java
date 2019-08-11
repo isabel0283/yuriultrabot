@@ -530,8 +530,11 @@ public class KitchenSinkController {
                 break;
 /*********************************MI CODIGO**************************************/
             case "yuri say hi":
-                this.reply(replyToken, "Hello everybody :)");
-                break;
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(
+                        replyToken,
+                        "Hello everybody! :)"
+                );
             default:
                 break;
         }
