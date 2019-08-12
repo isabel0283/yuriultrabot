@@ -262,29 +262,29 @@ public class KitchenSinkController {
 
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
+        log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         String textOriginal = content.getText();
         String textClear = textOriginal.trim();
         String text = textClear.toLowerCase();
         String strOrig = text;
         int intIndex = strOrig.indexOf("food");
         if (intIndex == -1) {
-                intIndex = null;
+                intIndex = 0;
          } else {
                 text = "food";
          }
         intIndex = strOrig.indexOf("sex");
         if (intIndex == -1) {
-                intIndex = null;
+                intIndex = 0;
          } else {
                 text = "sex";
          }
         intIndex = strOrig.indexOf("love");
         if (intIndex == -1) {
-                intIndex = null;
+                intIndex = 0;
          } else {
                 text = "love";
          }
-        log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
