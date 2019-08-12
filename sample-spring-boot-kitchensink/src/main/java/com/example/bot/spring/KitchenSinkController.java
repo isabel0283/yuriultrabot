@@ -265,20 +265,14 @@ public class KitchenSinkController {
         String textOriginal = content.getText();
         String textClear = textOriginal.trim();
         String text = textClear.toLowerCase();
-        
-    public class SearchStringEmp{
-        public static void main(String[] args) {
-            String strOrig = text;
-            int intIndex = strOrig.indexOf("food");
-      
-            if(intIndex == - 1) {
+        String strOrig = text;
+        int intIndex = strOrig.indexOf("food");
+        if(intIndex == - 1) {
                 stringOrig ="";
-            } else {
+         } else {
                 text = "food";
-            }
-        }
-    }
-
+         }
+        
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
             case "yuri show me something pretty": {
