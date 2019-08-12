@@ -263,7 +263,8 @@ public class KitchenSinkController {
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
         String textOriginal = content.getText();
-        String text = textOriginal.toLowerCase();
+        String textClear = textOriginal.trim();
+        String text = textClear.toLowerCase();
 
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
@@ -283,8 +284,7 @@ public class KitchenSinkController {
 
                                     this.reply(
                                             replyToken,
-                                            Arrays.asList(new TextMessage("(from group)"),
-                                                          new TextMessage("Like this? :)"),
+                                            Arrays.asList(new TextMessage("Like this? :)"),
                                                           new ImageMessage(profile.getPictureUrl(),
                                                                            profile.getPictureUrl()))
                                     );
