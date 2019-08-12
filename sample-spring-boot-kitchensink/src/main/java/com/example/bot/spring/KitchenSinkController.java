@@ -262,7 +262,6 @@ public class KitchenSinkController {
 
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
-        log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         String textOriginal = content.getText();
         String textClear = textOriginal.trim();
         String text = textClear.toLowerCase();
@@ -285,6 +284,7 @@ public class KitchenSinkController {
          } else {
                 text = "love";
          }
+        log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
