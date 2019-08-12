@@ -267,11 +267,11 @@ public class KitchenSinkController {
         String text = textClear.toLowerCase();
         String strOrig = text;
         int intIndex = strOrig.indexOf("food");
-        if(intIndex == - 1) {
-                strOrig ="";
+        if (intIndex == -1) {
+                strOrig = "";
          } else {
                 text = "food";
-                strOrig ="";
+                strOrig = "";
          }
         
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
