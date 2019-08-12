@@ -272,6 +272,14 @@ public class KitchenSinkController {
 
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
+            case "members"; {
+                Source source = event.getSource();
+				String membersId = event.getSource.joined.members;
+                if (source instanceof GroupSource) {
+                    this.replyText(replyToken, membersId);
+                }
+            }
+			break;
             case "profile": {
                 log.info("Invoking 'profile' command: source:{}",
                          event.getSource());
@@ -290,7 +298,7 @@ public class KitchenSinkController {
                                             replyToken,
                                             Arrays.asList(new TextMessage("(from group)"),
                                                           new TextMessage(
-                                                                  "Display name: " + profile.getDisplayName()),
+                                                                  "Display name: @" + profile.getDisplayName()),
                                                           new ImageMessage(profile.getPictureUrl(),
                                                                            profile.getPictureUrl()))
                                     );
