@@ -272,14 +272,6 @@ public class KitchenSinkController {
 
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
-            case "members": {
-                Source source = event.getSource();
-				String membersId = event.getSource().memberJoined.members;
-                if (source instanceof GroupSource) {
-                    this.replyText(replyToken, membersId);
-                }
-            }
-			break;
             case "profile": {
                 log.info("Invoking 'profile' command: source:{}",
                          event.getSource());
