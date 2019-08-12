@@ -268,19 +268,19 @@ public class KitchenSinkController {
         String strOrig = text;
         int intIndex = strOrig.indexOf("food");
         if (intIndex == -1) {
-                intIndex = "";
+                intIndex = null;
          } else {
                 text = "food";
          }
         intIndex = strOrig.indexOf("sex");
         if (intIndex == -1) {
-                intIndex = "";
+                intIndex = null;
          } else {
                 text = "sex";
          }
         intIndex = strOrig.indexOf("love");
         if (intIndex == -1) {
-                intIndex = "";
+                intIndex = null;
          } else {
                 text = "love";
          }
