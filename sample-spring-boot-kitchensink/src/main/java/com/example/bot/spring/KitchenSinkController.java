@@ -273,7 +273,6 @@ public class KitchenSinkController {
                 text = "food";
                 strOrig = "";
          }
-        
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
             case "yuri show me something pretty": {
