@@ -268,9 +268,10 @@ public class KitchenSinkController {
         String strOrig = text;
         int intIndex = strOrig.indexOf("food");
         if(intIndex == - 1) {
-                stringOrig ="";
+                strOrig ="";
          } else {
                 text = "food";
+                strOrig ="";
          }
         
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
