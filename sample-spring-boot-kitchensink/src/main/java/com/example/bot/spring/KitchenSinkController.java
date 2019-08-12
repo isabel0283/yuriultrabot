@@ -265,6 +265,19 @@ public class KitchenSinkController {
         String textOriginal = content.getText();
         String textClear = textOriginal.trim();
         String text = textClear.toLowerCase();
+        
+    public class SearchStringEmp{
+        public static void main(String[] args) {
+            String strOrig = text;
+            int intIndex = strOrig.indexOf("food");
+      
+            if(intIndex == - 1) {
+                stringOrig ="";
+            } else {
+                text = "food";
+            }
+        }
+    }
 
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
@@ -497,6 +510,10 @@ public class KitchenSinkController {
             case "yuri say hi":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Hello everybody! :)");
+                break;
+            case "food":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "I'm hungry :(");
                 break;
             default:
                 break;
