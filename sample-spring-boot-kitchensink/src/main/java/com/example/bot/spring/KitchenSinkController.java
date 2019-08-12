@@ -268,10 +268,21 @@ public class KitchenSinkController {
         String strOrig = text;
         int intIndex = strOrig.indexOf("food");
         if (intIndex == -1) {
-                strOrig = "";
+                intIndex = "";
          } else {
                 text = "food";
-                strOrig = "";
+         }
+        intIndex = strOrig.indexOf("sex");
+        if (intIndex == -1) {
+                intIndex = "";
+         } else {
+                text = "sex";
+         }
+        intIndex = strOrig.indexOf("love");
+        if (intIndex == -1) {
+                intIndex = "";
+         } else {
+                text = "love";
          }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
@@ -316,7 +327,7 @@ public class KitchenSinkController {
                                 });
                     }
                 } else {
-                    this.replyText(replyToken, "Bot can't use profile API without user ID");
+                    this.replyText(replyToken, "I  don't think so...");
                 }
                 break;
             }
@@ -508,6 +519,14 @@ public class KitchenSinkController {
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "I'm hungry :(");
+                break;
+            case "sex":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "There is a pervert here talking about sex...");
+                break;
+            case "love":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "Love is an ambiguos word...");
                 break;
             default:
                 break;
