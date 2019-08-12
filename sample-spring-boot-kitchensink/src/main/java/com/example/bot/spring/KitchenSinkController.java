@@ -267,7 +267,7 @@ public class KitchenSinkController {
 
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
-            case "profile": {
+            case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
                          event.getSource());
                 String userId = event.getSource().getUserId();
@@ -284,8 +284,7 @@ public class KitchenSinkController {
                                     this.reply(
                                             replyToken,
                                             Arrays.asList(new TextMessage("(from group)"),
-                                                          new TextMessage(
-                                                                  "Display name: @" + profile.getDisplayName()),
+                                                          new TextMessage("Like this? :)"),
                                                           new ImageMessage(profile.getPictureUrl(),
                                                                            profile.getPictureUrl()))
                                     );
