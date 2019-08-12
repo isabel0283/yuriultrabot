@@ -272,7 +272,7 @@ public class KitchenSinkController {
 
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
-            case "members"; {
+            case "members": {
                 Source source = event.getSource();
 				String membersId = event.getSource.joined.members;
                 if (source instanceof GroupSource) {
