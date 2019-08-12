@@ -274,7 +274,7 @@ public class KitchenSinkController {
         switch (text) {
             case "members": {
                 Source source = event.getSource();
-				String membersId = event.getSource().joined.members;
+				String membersId = event.getSource().memberJoined.members;
                 if (source instanceof GroupSource) {
                     this.replyText(replyToken, membersId);
                 }
