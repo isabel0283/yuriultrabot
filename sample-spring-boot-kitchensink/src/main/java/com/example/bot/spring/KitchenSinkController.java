@@ -199,9 +199,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleMemberJoined(MemberJoinedEvent event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "Got memberJoined message " + event.getJoined().getMembers()
-                .stream().map(Source::getUserId)
-                .collect(Collectors.joining(",")));
+        this.replyText(replyToken, "Welcome and thanks for joining this group! :)");
     }
 
     @EventMapping
