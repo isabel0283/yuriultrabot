@@ -514,7 +514,7 @@ public class KitchenSinkController {
             case "kkk":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 String userProfile = event.getSource().getDisplayName();
-                this.replyText(replyToken, "Are you laughing" + userProfile.);
+                this.replyText(replyToken, "Are you laughing" + userProfile);
                 break;
             default:
                 break;
