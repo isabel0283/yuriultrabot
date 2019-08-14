@@ -282,6 +282,12 @@ public class KitchenSinkController {
          } else {
                 text = "love";
          }
+         intIndex = strOrig.indexOf("kkk");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "kkk";
+         }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
             case "yuri show me something pretty": {
@@ -349,27 +355,6 @@ public class KitchenSinkController {
                         new MessageAction("No", "No!")
                 );
                 TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
-                this.reply(replyToken, templateMessage);
-                break;
-            }
-            case "buttons": {
-                String imageUrl = createUri("/static/buttons/1040.jpg");
-                ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
-                        imageUrl,
-                        "My button sample",
-                        "Hello, my button",
-                        Arrays.asList(
-                                new URIAction("Go to line.me",
-                                              "https://line.me", null),
-                                new PostbackAction("Say hello1",
-                                                   "hello こんにちは"),
-                                new PostbackAction("言 hello2",
-                                                   "hello こんにちは",
-                                                   "hello こんにちは"),
-                                new MessageAction("Say message",
-                                                  "Rice=米")
-                        ));
-                TemplateMessage templateMessage = new TemplateMessage("Button alt text", buttonsTemplate);
                 this.reply(replyToken, templateMessage);
                 break;
             }
@@ -525,6 +510,10 @@ public class KitchenSinkController {
             case "love":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Love is an ambiguos word...");
+                break;
+            case "kkk":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "Are you laughing" + profile.getDisplayName());
                 break;
             default:
                 break;
