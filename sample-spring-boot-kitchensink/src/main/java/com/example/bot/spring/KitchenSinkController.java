@@ -337,10 +337,10 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            case "bye": {
+            case "bye Yuri": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
-                    this.replyText(replyToken, "Leaving group");
+                    this.replyText(replyToken, "I hate you!!!");
                     lineMessagingClient.leaveGroup(((GroupSource) source).getGroupId()).get();
                 } else if (source instanceof RoomSource) {
                     this.replyText(replyToken, "Leaving room");
