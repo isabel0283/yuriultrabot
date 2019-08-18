@@ -115,7 +115,7 @@ subprojects {
 
     dependencies {
         // https://mvnrepository.com/artifact/org.json/json
-        compile group: 'org.json', name: 'json', version: '20131018'
+        compile group: 'org.json', name: 'json', version: '20150729'
 		// jsoup HTML parser library @ https://jsoup.org/
         compile 'org.jsoup:jsoup:1.12.1'
         compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
