@@ -123,9 +123,6 @@ subprojects {
         testCompile 'org.hibernate:hibernate-validator'
         testCompile 'org.springframework.boot:spring-boot-starter-test' // MockHttpServletRequest
         testCompile 'org.springframework.boot:spring-boot-starter-logging'
-		// https://mvnrepository.com/artifact/org.json/json
-        compile group: 'org.json', name: 'json', version: '20131018'
-
     }
 
     compileJava.dependsOn(processResources)

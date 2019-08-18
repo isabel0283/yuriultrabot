@@ -18,4 +18,6 @@ apply plugin: 'org.springframework.boot'
 
 dependencies {
     compile project(':line-bot-spring-boot')
+	// https://mvnrepository.com/artifact/org.json/json
+    compile group: 'org.json', name: 'json', version: '20131018'
 }
