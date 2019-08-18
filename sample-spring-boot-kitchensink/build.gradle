@@ -16,8 +16,14 @@
 
 apply plugin: 'org.springframework.boot'
 
+//Define the 
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
 dependencies {
-    compile project(':line-bot-spring-boot')
-	// https://mvnrepository.com/artifact/org.json/json
+    // https://mvnrepository.com/artifact/org.json/json
     compile group: 'org.json', name: 'json', version: '20131018'
+    compile project(':line-bot-spring-boot')
 }
