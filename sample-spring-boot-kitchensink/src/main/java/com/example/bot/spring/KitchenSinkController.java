@@ -91,9 +91,9 @@ import lombok.NonNull;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 
-import org.jsoup.Jsoup;
 import org.json.JSONTokener;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
 import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
@@ -530,7 +530,7 @@ public class KitchenSinkController {
                 String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=rating&q=" + keyword + "AIzaSyCIky_AwVV1XNvChlx5Dlq517RjJFs_yIA";
                 Document doc = Jsoup.connect(url).timeout(10 * 1000).get();
                 String getJson = doc.text();
-                JSONObject jsonObject = (JSONObject) new JSONTokener(getJson ).nextValue();
+                JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
                 this.replyText(replyToken, jsonObject.getString("videoId"));
                 break;
             default:
