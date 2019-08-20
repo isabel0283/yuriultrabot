@@ -511,10 +511,8 @@ public class KitchenSinkController {
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
             case "yuri":
-                log.info("Returns echo message {}: {}", replyToken, text);
-                double max = 5;
-                double min = 1;
                 int randNumber = (int)(Math.random() * 50 + 1);
+                log.info("Returns echo message {}: {}", replyToken, text);               
                 this.replyText(replyToken, "Uh?" + randNumber);
                 break;
             case "food":
