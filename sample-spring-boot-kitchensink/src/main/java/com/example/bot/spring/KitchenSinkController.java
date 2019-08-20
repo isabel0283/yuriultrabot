@@ -534,7 +534,6 @@ public class KitchenSinkController {
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, getJson);
-                //this.replyText(replyToken, jsonObject.getString("videoId"));
                 break;
             default:
                 break;
