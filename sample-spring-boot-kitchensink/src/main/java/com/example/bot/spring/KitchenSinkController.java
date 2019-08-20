@@ -531,7 +531,7 @@ public class KitchenSinkController {
                 //String userProfile = event.getSource().getDisplayName();
                 String keyword = "panama";
                 keyword = keyword.replace(" ", "+");
-                String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=rating&q=" + keyword + "AIzaSyCIky_AwVV1XNvChlx5Dlq517RjJFs_yIA";
+                String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=rating&q=" + keyword + "&key=AIzaSyCIky_AwVV1XNvChlx5Dlq517RjJFs_yIA";
                 Document doc = Jsoup.connect(url).timeout(10 * 1000).get();
                 String getJson = doc.text();
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
