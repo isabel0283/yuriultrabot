@@ -514,7 +514,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 double max = 5;
                 double min = 1;
-                double randNumber = (int)(Math.random() * ((max - min) + 1)) + min;
+                int randNumber = (int)(Math.random() * 50 + 1);
                 this.replyText(replyToken, "Uh?" + randNumber);
                 break;
             case "food":
