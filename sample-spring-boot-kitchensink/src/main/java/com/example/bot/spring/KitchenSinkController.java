@@ -291,6 +291,12 @@ public class KitchenSinkController {
          } else {
                 text = "kkk";
          }
+         intIndex = strOrig.indexOf("youtube");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "youtube";
+         }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
             case "yuri show me something pretty": {
