@@ -527,7 +527,7 @@ public class KitchenSinkController {
                 break;
             case "youtube":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "test");
+                //this.replyText(replyToken, "test");
                 //String userProfile = event.getSource().getDisplayName();
                 String keyword = "panama";
                 keyword = keyword.replace(" ", "+");
