@@ -297,6 +297,12 @@ public class KitchenSinkController {
          } else {
                 text = "youtube";
          }
+         intIndex = strOrig.indexOf("yuri");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "yuri";
+         }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
             case "yuri show me something pretty": {
@@ -508,7 +514,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 double max = 5;
                 double min = 1;
-                double randNumber = (int)(Math.random()  *((max - min) + 1)) + min;
+                double randNumber = (int)(Math.random() * ((max - min) + 1)) + min;
                 this.replyText(replyToken, "Uh?" + randNumber);
                 break;
             case "food":
