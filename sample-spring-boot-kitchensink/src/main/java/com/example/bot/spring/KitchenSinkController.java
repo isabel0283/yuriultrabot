@@ -504,9 +504,12 @@ public class KitchenSinkController {
             case "quickreply":
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
-            case "yuri say hi":
+            case "yuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Hello everybody! :)");
+                double max = 5;
+                double min = 1;
+                double randNumber = (int)(Math.random()*((max-min)+1))+min;
+                this.replyText(replyToken, "Uh?" + randNumber);
                 break;
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
@@ -537,7 +540,6 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "Content of " + url);
                 String getJson = doc.text();
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
-                this.replyText(replyToken, jsonObject.getString("videoId"));
                 break;
             default:
                 break;
