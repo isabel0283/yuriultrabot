@@ -535,6 +535,7 @@ public class KitchenSinkController {
                 Document doc = Jsoup.connect(url).timeout(10 * 1000).get();
                 String getJson = doc.text();
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
+                this.replyText(replyToken, keyword);
                 this.replyText(replyToken, url);
                 this.replyText(replyToken, jsonObject.getString("videoId"));
                 break;
