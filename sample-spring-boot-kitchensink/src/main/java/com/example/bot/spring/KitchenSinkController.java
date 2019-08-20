@@ -527,8 +527,6 @@ public class KitchenSinkController {
                 break;
             case "youtube":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                //this.replyText(replyToken, "test");
-                //String userProfile = event.getSource().getDisplayName();
                 String keyword = "panama";
                 keyword = keyword.replace(" ", "+");
                 String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=rating&q=" + keyword + "&key=AIzaSyCIky_AwVV1XNvChlx5Dlq517RjJFs_yIA";
@@ -536,7 +534,6 @@ public class KitchenSinkController {
                 String getJson = doc.text();
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
                 this.replyText(replyToken, "test");
-                //this.replyText(replyToken, url);
                 //this.replyText(replyToken, jsonObject.getString("videoId"));
                 break;
             default:
