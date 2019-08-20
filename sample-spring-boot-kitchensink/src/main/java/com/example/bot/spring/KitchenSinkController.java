@@ -513,7 +513,7 @@ public class KitchenSinkController {
             case "yuri":
                 int randNumber = (int)(Math.random() * 50 + 1);
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Uh?" + randNumber);
+                this.replyText(replyToken, "Uh?" + Integer.toStr(randNumber));
                 break;
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
