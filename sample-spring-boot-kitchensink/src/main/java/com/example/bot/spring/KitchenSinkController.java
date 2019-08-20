@@ -32,6 +32,10 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.json.JSONObject;
+import org.json.JSONTokener;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -90,14 +94,6 @@ import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
 import lombok.NonNull;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
-
-import org.json.JSONObject;
-import org.json.JSONTokener;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-
-//test
 
 @Slf4j
 @LineMessageHandler
