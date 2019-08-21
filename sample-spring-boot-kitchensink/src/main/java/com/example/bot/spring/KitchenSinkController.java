@@ -518,7 +518,7 @@ public class KitchenSinkController {
                 break;
             case "yuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Uh?");
+                this.replyText(replyToken, "Yes?");
                 break;
             case "bot":
                 log.info("Returns echo message {}: {}", replyToken, text);
@@ -538,7 +538,7 @@ public class KitchenSinkController {
                 break;
             case "kkk":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Hahahahahahaha!");
+                this.replyText(replyToken, "Hahaha!");
                 break;
             case "youtube":
                 String keyword = "panama";
