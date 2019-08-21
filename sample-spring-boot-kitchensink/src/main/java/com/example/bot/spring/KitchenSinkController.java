@@ -548,6 +548,7 @@ public class KitchenSinkController {
                 Document result = Jsoup.connect(url)
                     .userAgent("Mozilla")
                     .timeout(3000)
+                    .ignoreContentType(true)
                     .get();
                 this.replyText(replyToken, "Content of " + url);
                 String getJson = result.text();
