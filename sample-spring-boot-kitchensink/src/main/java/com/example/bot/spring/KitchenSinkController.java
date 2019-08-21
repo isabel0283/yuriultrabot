@@ -550,9 +550,8 @@ public class KitchenSinkController {
                     .ignoreContentType(true)
                     .get();
                 String getJson = result.text();
-                String prueba = getJson;
-                this.replyText(replyToken, prueba);
-                JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
+                //JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
+                JSONObject jsonObject = new JSONObject (getJson);
                 this.replyText(replyToken, jsonObject.getString("videoId"));
                 break;
             default:
