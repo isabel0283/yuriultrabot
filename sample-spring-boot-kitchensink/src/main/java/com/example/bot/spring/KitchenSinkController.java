@@ -33,6 +33,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -550,8 +551,8 @@ public class KitchenSinkController {
                     .get();
                 String getJson = result.text();
                 //this.replyText(replyToken, getJson);
-                //JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
-                JSONObject jsonObject = new JSONObject(getJson);
+                JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
+                //JSONObject jsonObject = new JSONObject(getJson);
                 String video = jsonObject.getJSONObject("id").getString("videoId");
                 this.replyText(replyToken, video);
                 break;
