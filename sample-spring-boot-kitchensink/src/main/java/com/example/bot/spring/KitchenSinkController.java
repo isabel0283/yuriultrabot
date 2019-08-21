@@ -511,6 +511,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
             case "yuri":
+                log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Uh?");
                 break;
             case "food":
@@ -527,7 +528,7 @@ public class KitchenSinkController {
                 break;
             case "kkk":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Are you laughing?");
+                this.replyText(replyToken, "Hahahahahahaha!");
                 break;
             case "youtube":
                 String keyword = "panama";
@@ -537,8 +538,6 @@ public class KitchenSinkController {
                     .userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0")
                     .timeout(12000)
                     .get();
-                log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Content of " + url);
                 String getJson = doc.text();
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
                 break;
