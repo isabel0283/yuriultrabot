@@ -550,11 +550,11 @@ public class KitchenSinkController {
                     .ignoreContentType(true)
                     .get();
                 String getJson = result.text();
-                //this.replyText(replyToken, getJson);
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
-                //JSONObject jsonObject = new JSONObject(getJson);
+                JSONObject object = jsonObject.getJSONObject("items");
+                JSONArray subArray = object.getJSONArray("id");
                 //String video = jsonObject.getString("kind");
-                String video = jsonObject.getJSONObject("items").getJSONObject("id").getString("videoId");
+                String video = subArray.getJSONObject(0).getString("videoId").toString();
                 this.replyText(replyToken, video);
                 break;
             default:
