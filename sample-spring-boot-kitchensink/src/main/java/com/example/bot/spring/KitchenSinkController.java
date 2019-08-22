@@ -542,7 +542,8 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "Hahaha!");
                 break;
             case "youtube":
-                String keyword = "panama";
+                //String keyword = "panama";
+                String keyword = strOrig.replaceAll("youtube", ""); 
                 keyword = keyword.replace(" ", "+");
                 String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=rating&q=" + keyword + "&key=AIzaSyCIky_AwVV1XNvChlx5Dlq517RjJFs_yIA";
                 Document result = Jsoup.connect(url)
@@ -552,12 +553,9 @@ public class KitchenSinkController {
                     .get();
                 String getJson = result.text();
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
-                //JSONObject object = jsonObject.getJSONObject("items");
                 JSONArray mainArray = jsonObject.getJSONArray("items");
                 JSONObject subjsonobj = mainArray.getJSONObject(0);
                 String video = subjsonobj.getJSONObject("id").getString("videoId");
-                //String video = jsonobj.getString("kind");
-                //String video = subArray.getJSONObject(0).getString("videoId").toString();
                 this.replyText(replyToken, "Hope you like this one https://youtu.be/" + video);
                 break;
             default:
