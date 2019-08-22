@@ -558,7 +558,7 @@ public class KitchenSinkController {
                 String video = subjsonobj.getJSONObject("id").getString("videoId");
                 //String video = jsonobj.getString("kind");
                 //String video = subArray.getJSONObject(0).getString("videoId").toString();
-                this.replyText(replyToken, video);
+                this.replyText(replyToken, "Hope you like this one https://youtu.be/" + video);
                 break;
             default:
                 break;
