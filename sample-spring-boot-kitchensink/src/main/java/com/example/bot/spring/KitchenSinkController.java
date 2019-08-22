@@ -32,6 +32,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.jsoup.Jsoup;
@@ -552,8 +553,8 @@ public class KitchenSinkController {
                 String getJson = result.text();
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
                 //JSONObject object = jsonObject.getJSONObject("items");
-                //JSONArray subArray = object.getJSONArray("id");
-                String video = jsonObject.getString("id");
+                JSONArray subArray = jsonObject.getJSONArray("id");
+                String video = subArray.getString("videoId");
                 //String video = subArray.getJSONObject(0).getString("videoId").toString();
                 this.replyText(replyToken, video);
                 break;
