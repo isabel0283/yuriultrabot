@@ -553,7 +553,7 @@ public class KitchenSinkController {
                 String getJson = result.text();
                 JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
                 //JSONObject object = jsonObject.getJSONObject("items");
-                JSONArray subArray = jsonObject.getJSONArray("id");
+                JSONArray subArray = jsonObject.getJSONArray("items");
                 JSONObject jsonobj = subArray.getJSONObject(1);
                 String video = jsonobj.getString("videoId");
                 //String video = subArray.getJSONObject(0).getString("videoId").toString();
