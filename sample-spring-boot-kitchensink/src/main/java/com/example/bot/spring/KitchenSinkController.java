@@ -555,7 +555,7 @@ public class KitchenSinkController {
                 //JSONObject object = jsonObject.getJSONObject("items");
                 JSONArray subArray = jsonObject.getJSONArray("items");
                 JSONObject jsonobj = subArray.getJSONObject(0);
-                String video = jsonobj.getString("etag");
+                String video = jsonobj.getString("kind");
                 //String video = subArray.getJSONObject(0).getString("videoId").toString();
                 this.replyText(replyToken, video);
                 break;
