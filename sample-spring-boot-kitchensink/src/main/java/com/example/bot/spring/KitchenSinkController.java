@@ -310,6 +310,12 @@ public class KitchenSinkController {
          } else {
                 text = "yuri";
          }
+         intIndex = strOrig.indexOf("bye yuri");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "bye yuri";
+         }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
             case "yuri show me something pretty": {
