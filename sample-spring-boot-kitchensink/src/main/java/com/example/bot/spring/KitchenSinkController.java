@@ -542,12 +542,15 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "Hahaha!");
                 break;
             case "youtube":
-                //String keyword = "panama";
-                if text == "youtube" {
+                if (text == "youtube"){
                     break;
                 }
                 String keyword = strOrig.replace("youtube", "");
                 keyword = keyword.replace("yuri", "");
+                if (keyword == ""){
+                    this.replyText(replyToken, "Gomen ne! I need more information...");
+                    break;
+                }
                 keyword = keyword.replace(" ", "+");
                 String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=rating&q=" + keyword + "&key=AIzaSyCIky_AwVV1XNvChlx5Dlq517RjJFs_yIA";
                 Document result = Jsoup.connect(url)
