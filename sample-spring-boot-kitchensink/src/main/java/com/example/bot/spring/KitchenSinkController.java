@@ -542,7 +542,7 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "Hahaha!");
                 break;
             case "youtube":
-                if ("youtube".equals(text)) {
+                if ("youtube".equals(strOrig)) {
                     break;
                 }
                 String keyword = strOrig.replace("youtube", "");
