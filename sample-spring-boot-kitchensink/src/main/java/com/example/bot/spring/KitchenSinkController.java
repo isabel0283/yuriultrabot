@@ -357,7 +357,7 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            case "bye Yuri": {
+            case "bye yuri": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
                     this.replyText(replyToken, "I hate you!!!");
@@ -543,6 +543,9 @@ public class KitchenSinkController {
                 break;
             case "youtube":
                 //String keyword = "panama";
+                if text == "youtube" {
+                    break;
+                }
                 String keyword = strOrig.replace("youtube", "");
                 keyword = keyword.replace("yuri", "");
                 keyword = keyword.replace(" ", "+");
