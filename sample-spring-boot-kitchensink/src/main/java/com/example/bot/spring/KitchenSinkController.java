@@ -425,9 +425,10 @@ public class KitchenSinkController {
                 if ("youtube".equals(strOrig)) {
                     break;
                 }
+                String EMPTY = "";
                 String keyword = strOrig.replace("youtube", "");
                 keyword = keyword.replace("yuri", "");
-                if ("".equals(keyword)) {
+                if (EMPTY.equals(keyword)) {
                     this.replyText(replyToken, "Gomen ne! I need more information...");
                     break;
                 }
