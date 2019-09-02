@@ -273,6 +273,18 @@ public class KitchenSinkController {
          } else {
                 text = "love";
          }
+        intIndex = strOrig.indexOf("thanks yuri");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "thanksYuri";
+         }
+         intIndex = strOrig.indexOf("?");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "questionYuri";
+         }
          intIndex = strOrig.indexOf("kkk");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -283,7 +295,13 @@ public class KitchenSinkController {
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "youtube";
+                text = "youtubeYuri";
+         }
+         intIndex = strOrig.indexOf("video");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "sugestYoutubeYuri";
          }
          intIndex = strOrig.indexOf("crazy");
          if (intIndex == -1) {
@@ -397,9 +415,13 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "No one is crazier than me! hahaha!");
                 break;
+            case "thanksYuri":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "You are welcome!");
+                break;    
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "I'm hungry :(");
+                this.replyText(replyToken, "Suddenly I feel hungry... :(");
                 break;
             case "sex":
                 log.info("Returns echo message {}: {}", replyToken, text);
@@ -407,25 +429,29 @@ public class KitchenSinkController {
                 break;
             case "love":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Love is an ambiguos word...");
+                this.replyText(replyToken, "Love means nothing to me...");
                 break;
             case "hahaha":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Nothing funny about it...");
+                this.replyText(replyToken, "I don't see anything funny about it...");
                 break;
             case "kkk":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Hahaha!");
                 break;
-            case "stickertest":
+            case "questionYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.reply(replyToken, new StickerMessage("11539", "52114129"));
                 break;
-            case "youtube":
+            case "sugestYoutubeYuri":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "I could search a Youtube video for you, just ask me. For example: Yuri Youtube kurt cobain");
+                break;
+            case "youtubeYuri":
                 if ("youtube".equals(strOrig)) {
                     break;
                 }
-                String emptyString = "   ";
+                String emptyString = " ";
                 String keyword = strOrig.replace("youtube", "");
                 keyword = keyword.replace("yuri", "");
                 if (emptyString.equals(keyword)) {
@@ -444,7 +470,7 @@ public class KitchenSinkController {
                 JSONArray mainArray = jsonObject.getJSONArray("items");
                 JSONObject subjsonobj = mainArray.getJSONObject(0);
                 String video = subjsonobj.getJSONObject("id").getString("videoId");
-                this.replyText(replyToken, "Hope you like this one https://youtu.be/" + video);
+                this.replyText(replyToken, "I've found this one https://youtu.be/" + video);
                 break;
             default:
                 break;
