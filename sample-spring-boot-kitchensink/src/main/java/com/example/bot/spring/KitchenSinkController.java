@@ -451,7 +451,8 @@ public class KitchenSinkController {
                 break;
             case "sugestYoutubeYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "You could ask me to search for a video. For example: Yuri Youtube kurt cobain");
+                String sugestMsg = "You could ask me to search for a video. For example: Yuri Youtube kurt cobain";
+                this.replyText(replyToken, sugestMsg);
                 break;
             case "youtubeYuri":
                 if ("youtube".equals(strOrig)) {
