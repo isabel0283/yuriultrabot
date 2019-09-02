@@ -358,7 +358,7 @@ public class KitchenSinkController {
                                 });
                     }
                 } else {
-                    this.replyText(replyToken, "I  don't think so...");
+                    this.replyText(replyToken, "I don't think so...");
                 }
                 break;
             }
@@ -416,6 +416,10 @@ public class KitchenSinkController {
             case "kkk":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Hahaha!");
+                break;
+            case "stickertest":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.reply(replyToken, new StickerMessage(11539, 52114129));
                 break;
             case "youtube":
                 if ("youtube".equals(strOrig)) {
