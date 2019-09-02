@@ -425,7 +425,7 @@ public class KitchenSinkController {
                 if ("youtube".equals(strOrig)) {
                     break;
                 }
-                String emptyString = "";
+                String emptyString = "  ";
                 String keyword = strOrig.replace("youtube", "");
                 keyword = keyword.replace("yuri", "");
                 if (emptyString.equals(keyword)) {
