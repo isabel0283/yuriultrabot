@@ -304,11 +304,23 @@ public class KitchenSinkController {
          } else {
                 text = "youtube";
          }
+         intIndex = strOrig.indexOf("work");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "work";
+         }
          intIndex = strOrig.indexOf("yurichan");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
                 text = "yuri";
+         }
+         intIndex = strOrig.indexOf("hahaha");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "hahaha";
          }
          intIndex = strOrig.indexOf("bye yuri");
          if (intIndex == -1) {
@@ -527,6 +539,10 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Yes?");
                 break;
+            case "yuri":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "Only real people need a work, not me... lol");
+                break;
             case "bot":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "I'm glad I'm not a human!");
@@ -542,6 +558,10 @@ public class KitchenSinkController {
             case "love":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Love is an ambiguos word...");
+                break;
+            case "hahaha":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "Nothing funny about it...");
                 break;
             case "kkk":
                 log.info("Returns echo message {}: {}", replyToken, text);
