@@ -285,6 +285,12 @@ public class KitchenSinkController {
          } else {
                 text = "youtube";
          }
+         intIndex = strOrig.indexOf("crazy");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "crazy";
+         }        
          intIndex = strOrig.indexOf("work");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -386,6 +392,10 @@ public class KitchenSinkController {
             case "bot":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "I'm glad I'm not a human!");
+                break;
+            case "crazy":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "No one is crazier than me! hahaha!");
                 break;
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
