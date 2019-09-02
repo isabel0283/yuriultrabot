@@ -290,7 +290,7 @@ public class KitchenSinkController {
                 intIndex = 0;
          } else {
                 text = "crazy";
-         }        
+         }
          intIndex = strOrig.indexOf("work");
          if (intIndex == -1) {
                 intIndex = 0;
