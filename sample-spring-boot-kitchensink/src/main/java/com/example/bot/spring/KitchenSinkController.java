@@ -419,7 +419,7 @@ public class KitchenSinkController {
                 break;
             case "stickertest":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.reply(replyToken, new StickerMessage(11539, 52114129));
+                this.reply(replyToken, new StickerMessage("11539", "52114129"));
                 break;
             case "youtube":
                 if ("youtube".equals(strOrig)) {
