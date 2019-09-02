@@ -303,6 +303,12 @@ public class KitchenSinkController {
          } else {
                 text = "sugestYoutubeYuri";
          }
+         intIndex = strOrig.indexOf("youtube");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "sugestYoutubeYuri";
+         }
          intIndex = strOrig.indexOf("crazy");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -418,7 +424,7 @@ public class KitchenSinkController {
             case "thanksYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "You are welcome!");
-                break;    
+                break;
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Suddenly I feel hungry... :(");
@@ -445,7 +451,7 @@ public class KitchenSinkController {
                 break;
             case "sugestYoutubeYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "I could search a Youtube video for you, just ask me. For example: Yuri Youtube kurt cobain");
+                this.replyText(replyToken, "You could ask me to search for a video. For example: Yuri Youtube kurt cobain");
                 break;
             case "youtubeYuri":
                 if ("youtube".equals(strOrig)) {
