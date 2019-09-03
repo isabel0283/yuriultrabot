@@ -303,12 +303,6 @@ public class KitchenSinkController {
          } else {
                 text = "sugestYoutubeYuri";
          }
-         intIndex = strOrig.indexOf("youtube");
-         if (intIndex == -1) {
-                intIndex = 0;
-         } else {
-                text = "sugestYoutubeYuri";
-         }
          intIndex = strOrig.indexOf("crazy");
          if (intIndex == -1) {
                 intIndex = 0;
