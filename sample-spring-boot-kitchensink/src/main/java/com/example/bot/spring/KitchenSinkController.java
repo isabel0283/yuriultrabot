@@ -329,6 +329,36 @@ public class KitchenSinkController {
          }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
+            case "sugestYoutubeYuri":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                String message = "You could ask me to search for a video, like this: Yuri Youtube kurt cobain";
+                this.replyText(replyToken, message);
+                break;
+            case "youtubeYuri":
+                if ("youtube".equals(strOrig)) {
+                    break;
+                }
+                String emptyString = " ";
+                String keyword = strOrig.replace("youtube", "");
+                keyword = keyword.replace("yuri", "");
+                if (emptyString.equals(keyword)) {
+                    this.replyText(replyToken, "Gomen ne! I need more information...");
+                    break;
+                }
+                keyword = keyword.replace(" ", "+");
+                String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=rating&q=" + keyword + "&key=AIzaSyCIky_AwVV1XNvChlx5Dlq517RjJFs_yIA";
+                Document result = Jsoup.connect(url)
+                    .userAgent("Mozilla")
+                    .timeout(3000)
+                    .ignoreContentType(true)
+                    .get();
+                String getJson = result.text();
+                JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
+                JSONArray mainArray = jsonObject.getJSONArray("items");
+                JSONObject subjsonobj = mainArray.getJSONObject(0);
+                String video = subjsonobj.getJSONObject("id").getString("videoId");
+                this.replyText(replyToken, "I've found this one https://youtu.be/" + video);
+                break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
                          event.getSource());
@@ -436,36 +466,6 @@ public class KitchenSinkController {
             case "questionYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.reply(replyToken, new StickerMessage("11539", "52114129"));
-                break;
-            case "sugestYoutubeYuri":
-                log.info("Returns echo message {}: {}", replyToken, text);
-                String message = "You could ask me to search for a video, like this: Yuri Youtube kurt cobain";
-                this.replyText(replyToken, message);
-                break;
-            case "youtubeYuri":
-                if ("youtube".equals(strOrig)) {
-                    break;
-                }
-                String emptyString = " ";
-                String keyword = strOrig.replace("youtube", "");
-                keyword = keyword.replace("yuri", "");
-                if (emptyString.equals(keyword)) {
-                    this.replyText(replyToken, "Gomen ne! I need more information...");
-                    break;
-                }
-                keyword = keyword.replace(" ", "+");
-                String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=rating&q=" + keyword + "&key=AIzaSyCIky_AwVV1XNvChlx5Dlq517RjJFs_yIA";
-                Document result = Jsoup.connect(url)
-                    .userAgent("Mozilla")
-                    .timeout(3000)
-                    .ignoreContentType(true)
-                    .get();
-                String getJson = result.text();
-                JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
-                JSONArray mainArray = jsonObject.getJSONArray("items");
-                JSONObject subjsonobj = mainArray.getJSONObject(0);
-                String video = subjsonobj.getJSONObject("id").getString("videoId");
-                this.replyText(replyToken, "I've found this one https://youtu.be/" + video);
                 break;
             default:
                 break;
