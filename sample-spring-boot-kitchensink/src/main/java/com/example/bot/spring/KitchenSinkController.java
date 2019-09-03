@@ -297,12 +297,6 @@ public class KitchenSinkController {
          } else {
                 text = "youtubeYuri";
          }
-         intIndex = strOrig.indexOf("video");
-         if (intIndex == -1) {
-                intIndex = 0;
-         } else {
-                text = "sugestYoutubeYuri";
-         }
          intIndex = strOrig.indexOf("crazy");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -321,7 +315,7 @@ public class KitchenSinkController {
          } else {
                 text = "yuri";
          }
-         intIndex = strOrig.indexOf("hahaha");
+         intIndex = strOrig.indexOf("haha");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
@@ -383,7 +377,7 @@ public class KitchenSinkController {
             case "bye yuri": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
-                    this.replyText(replyToken, "I hate you!!!");
+                    this.replyText(replyToken, "I hate you!!! And you'll see, you are going to invite me again!!!!");
                     lineMessagingClient.leaveGroup(((GroupSource) source).getGroupId()).get();
                 } else if (source instanceof RoomSource) {
                     this.replyText(replyToken, "Leaving room");
