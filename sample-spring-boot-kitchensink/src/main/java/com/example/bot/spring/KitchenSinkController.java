@@ -291,12 +291,6 @@ public class KitchenSinkController {
          } else {
                 text = "kkk";
          }
-         intIndex = strOrig.indexOf("yuri youtube");
-         if (intIndex == -1) {
-                intIndex = 0;
-         } else {
-                text = "youtubeYuri";
-         }
          intIndex = strOrig.indexOf("crazy");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -326,6 +320,12 @@ public class KitchenSinkController {
                 intIndex = 0;
          } else {
                 text = "bye yuri";
+         }
+         intIndex = strOrig.indexOf("yuri youtube");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "youtubeYuri";
          }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         switch (text) {
