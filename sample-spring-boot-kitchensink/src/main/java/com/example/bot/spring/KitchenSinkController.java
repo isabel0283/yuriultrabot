@@ -279,12 +279,6 @@ public class KitchenSinkController {
          } else {
                 text = "thanksYuri";
          }
-         intIndex = strOrig.indexOf("?");
-         if (intIndex == -1) {
-                intIndex = 0;
-         } else {
-                text = "questionYuri";
-         }
          intIndex = strOrig.indexOf("kkk");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -441,7 +435,7 @@ public class KitchenSinkController {
                 break;
             case "thanksYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "You are welcome!");
+                this.replyText(replyToken, "You welcome!");
                 break;
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
