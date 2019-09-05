@@ -52,23 +52,19 @@ import com.linecorp.bot.model.event.MemberLeftEvent;
 import com.linecorp.bot.model.event.MessageEvent;
 import com.linecorp.bot.model.event.PostbackEvent;
 import com.linecorp.bot.model.event.UnfollowEvent;
-import com.linecorp.bot.model.event.message.AudioMessageContent;
 import com.linecorp.bot.model.event.message.ContentProvider;
 import com.linecorp.bot.model.event.message.FileMessageContent;
 import com.linecorp.bot.model.event.message.LocationMessageContent;
 import com.linecorp.bot.model.event.message.StickerMessageContent;
 import com.linecorp.bot.model.event.message.TextMessageContent;
-import com.linecorp.bot.model.event.message.VideoMessageContent;
 import com.linecorp.bot.model.event.source.GroupSource;
 import com.linecorp.bot.model.event.source.RoomSource;
 import com.linecorp.bot.model.event.source.Source;
-import com.linecorp.bot.model.message.AudioMessage;
 import com.linecorp.bot.model.message.ImageMessage;
 import com.linecorp.bot.model.message.LocationMessage;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.StickerMessage;
 import com.linecorp.bot.model.message.TextMessage;
-import com.linecorp.bot.model.message.VideoMessage;
 import com.linecorp.bot.model.response.BotApiResponse;
 import com.linecorp.bot.spring.boot.annotation.EventMapping;
 import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
@@ -101,48 +97,6 @@ public class KitchenSinkController {
     }
 
     @EventMapping
-    public void handleAudioMessageEvent(MessageEvent<AudioMessageContent> event) throws IOException {
-        handleHeavyContent(
-                event.getReplyToken(),
-                event.getMessage().getId(),
-                responseBody -> {
-                    final ContentProvider provider = event.getMessage().getContentProvider();
-                    final DownloadedContent mp4;
-                    if (provider.isExternal()) {
-                        mp4 = new DownloadedContent(null, provider.getOriginalContentUrl());
-                    } else {
-                        mp4 = saveContent("mp4", responseBody);
-                    }
-                    reply(event.getReplyToken(), new AudioMessage(mp4.getUri(), 100));
-                });
-    }
-
-    @EventMapping
-    public void handleVideoMessageEvent(MessageEvent<VideoMessageContent> event) throws IOException {
-        // You need to install ffmpeg and ImageMagick.
-        handleHeavyContent(
-                event.getReplyToken(),
-                event.getMessage().getId(),
-                responseBody -> {
-                    final ContentProvider provider = event.getMessage().getContentProvider();
-                    final DownloadedContent mp4;
-                    final DownloadedContent previewImg;
-                    if (provider.isExternal()) {
-                        mp4 = new DownloadedContent(null, provider.getOriginalContentUrl());
-                        previewImg = new DownloadedContent(null, provider.getPreviewImageUrl());
-                    } else {
-                        mp4 = saveContent("mp4", responseBody);
-                        previewImg = createTempFile("jpg");
-                        system("convert",
-                               mp4.path + "[0]",
-                               previewImg.path.toString());
-                    }
-                    reply(event.getReplyToken(),
-                          new VideoMessage(mp4.getUri(), previewImg.uri));
-                });
-    }
-
-    @EventMapping
     public void handleFileMessageEvent(MessageEvent<FileMessageContent> event) {
         this.reply(event.getReplyToken(),
                    new TextMessage(String.format("Received '%s'(%d bytes)",
@@ -164,7 +118,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleJoinEvent(JoinEvent event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "Thanks for adding me to your group! :)");
+        this.replyText(replyToken, "Thanks for adding me to your group!");
     }
 
     @EventMapping
@@ -401,7 +355,7 @@ public class KitchenSinkController {
             case "bye yuri": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
-                    this.replyText(replyToken, "I hate you! You'll see, you are going to invite me again!");
+                    this.replyText(replyToken, "Invite me again if you need me...");
                     lineMessagingClient.leaveGroup(((GroupSource) source).getGroupId()).get();
                 } else if (source instanceof RoomSource) {
                     this.replyText(replyToken, "Leaving room");
@@ -411,7 +365,7 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            case "flex":
+            case "alter_flex":
                 this.reply(replyToken, new ExampleFlexMessageSupplier().get());
                 break;
             case "quickreply":
@@ -421,15 +375,15 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Yes?");
                 break;
-            case "work":
+            case "alter_work":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Only real people need a work, not me... lol");
                 break;
-            case "bot":
+            case "alter_bot":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "I'm glad I'm not a human!");
                 break;
-            case "crazy":
+            case "alter_crazy":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "No one is crazier than me! hahaha!");
                 break;
@@ -437,7 +391,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "You welcome!");
                 break;
-            case "food":
+            case "alter_food":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Suddenly I feel hungry... :(");
                 break;
@@ -445,15 +399,15 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "There is a pervert here talking about sex...");
                 break;
-            case "love":
+            case "alter_love":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Love means nothing to me...");
                 break;
-            case "hahaha":
+            case "alter_hahaha":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "I don't see anything funny about it...");
                 break;
-            case "kkk":
+            case "alter_kkk":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Hahaha!");
                 break;
