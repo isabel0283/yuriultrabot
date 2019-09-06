@@ -250,11 +250,11 @@ public class KitchenSinkController {
          } else {
                 text = "work";
          }
-         intIndex = strOrig.indexOf("yurichan");
+         intIndex = strOrig.indexOf("yuri i love you");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "yuri";
+                text = "yuriiloveyou";
          }
          intIndex = strOrig.indexOf("haha");
          if (intIndex == -1) {
@@ -398,9 +398,9 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "There is a pervert here talking about sex...");
                 break;
-            case "alter_love":
+            case "yuriiloveyou":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Love means nothing to me...");
+                this.replyText(replyToken, "I don't care...");
                 break;
             case "alter_hahaha":
                 log.info("Returns echo message {}: {}", replyToken, text);
