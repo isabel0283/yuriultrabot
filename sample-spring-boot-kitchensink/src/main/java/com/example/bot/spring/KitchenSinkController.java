@@ -304,7 +304,7 @@ public class KitchenSinkController {
                 JSONArray mainArray = jsonObject.getJSONArray("items");
                 JSONObject subjsonobj = mainArray.getJSONObject(0);
                 String video = subjsonobj.getJSONObject("id").getString("videoId");
-                this.replyText(replyToken, "I've found this one https://youtu.be/" + video);
+                this.replyText(replyToken, "https://youtu.be/" + video);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
