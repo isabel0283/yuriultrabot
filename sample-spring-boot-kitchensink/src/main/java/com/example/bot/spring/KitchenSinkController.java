@@ -374,9 +374,13 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Yes?");
                 break;
+            case "love":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "Nobody really loves you...");
+                break;
             case "alter_work":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Only real people need a work, not me... lol");
+                this.replyText(replyToken, "My only work is to exist... ");
                 break;
             case "alter_bot":
                 log.info("Returns echo message {}: {}", replyToken, text);
