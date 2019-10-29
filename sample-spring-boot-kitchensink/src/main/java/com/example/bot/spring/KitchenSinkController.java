@@ -137,7 +137,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleMemberJoined(MemberJoinedEvent event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "Welcome and thanks for joining this group! :)");
+        this.replyText(replyToken, "Welcome and thanks for joining this group! I'll try to not bothering you so much...");
     }
 
     @EventMapping
@@ -225,6 +225,12 @@ public class KitchenSinkController {
                 intIndex = 0;
          } else {
                 text = "love";
+         }
+        intIndex = strOrig.indexOf("don't care");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "dontcare";
          }
         intIndex = strOrig.indexOf("thanks yuri");
         if (intIndex == -1) {
@@ -386,9 +392,9 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "I'm glad I'm not a human!");
                 break;
-            case "alter_crazy":
+            case "dontcare":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "No one is crazier than me! hahaha!");
+                this.replyText(replyToken, "Fine!");
                 break;
             case "thanksYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
