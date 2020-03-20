@@ -299,7 +299,7 @@ public class KitchenSinkController {
                     break;
                 }
                 keyword = keyword.replace(" ", "+");
-                String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + keyword + "&key=AIzaSyCIky_AwVV1XNvChlx5Dlq517RjJFs_yIA";
+                String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + keyword + "&key=AIzaSyAkW1C_AMaU60nOpJunpMAu9RLq09l84Ms";
                 Document result = Jsoup.connect(url)
                     .userAgent("Mozilla")
                     .timeout(3000)
