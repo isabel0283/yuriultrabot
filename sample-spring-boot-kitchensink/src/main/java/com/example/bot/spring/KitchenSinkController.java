@@ -384,7 +384,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Nobody really loves you...");
                 break;
-            case "alter_work":
+            case "work":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "My only work is to exist... ");
                 break;
@@ -400,13 +400,13 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "You welcome!");
                 break;
-            case "alter_food":
+            case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Suddenly I feel hungry... :(");
                 break;
             case "sex":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "There is a pervert here talking about sex...");
+                this.replyText(replyToken, "...");
                 break;
             case "yuriiloveyou":
                 log.info("Returns echo message {}: {}", replyToken, text);
@@ -423,6 +423,10 @@ public class KitchenSinkController {
             case "questionYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.reply(replyToken, new StickerMessage("11539", "52114129"));
+                break;
+            case "sad":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "I dont know what happiness is");
                 break;
             default:
                 break;
