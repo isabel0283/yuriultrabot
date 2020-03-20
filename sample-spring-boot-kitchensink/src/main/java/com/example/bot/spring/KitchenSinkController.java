@@ -281,6 +281,7 @@ public class KitchenSinkController {
                 text = "youtubeYuri";
          }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
+        TimeUnit.SECONDS.sleep(2);
         switch (text) {
             case "sugestYoutubeYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
