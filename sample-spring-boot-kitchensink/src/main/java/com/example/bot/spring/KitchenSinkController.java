@@ -108,7 +108,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "Got image message");
+        this.replyText(replyToken, "Is it you? Looks like...");
     }
 
     @EventMapping
