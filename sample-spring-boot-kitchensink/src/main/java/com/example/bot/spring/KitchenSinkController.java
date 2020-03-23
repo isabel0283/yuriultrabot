@@ -217,6 +217,12 @@ public class KitchenSinkController {
         String textClear = textOriginal.trim();
         String text = textClear.toLowerCase();
         String strOrig = text;
+        intIndex = strOrig.indexOf("test");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "test";
+        }
         int intIndex = strOrig.indexOf("food");
         if (intIndex == -1) {
                 intIndex = 0;
@@ -400,9 +406,11 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Nobody really loves you...");
                 break;
-            case "work":
+            case "test":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "My only work is to exist... ");
+                Random rand = new Random(); 
+                int rand_int = rand.nextInt(5); 
+                this.replyText(replyToken, "My only work is to exist... " + rand_int);
                 break;
             case "alter_bot":
                 log.info("Returns echo message {}: {}", replyToken, text);
