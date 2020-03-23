@@ -399,10 +399,26 @@ public class KitchenSinkController {
             case "quickreply":
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
-            case "yuri":
+            case "yuri": {
+                Random rand = new Random();
+                int myrandInt = rand.nextInt(5);
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Yes?");
+                switch (myrandInt) {
+                       case "0":
+                           String message = "Yes?";
+                       case "1":
+                           String message = "What?";
+                       case "2":
+                           String message = "Stop saying my name!";
+                       case "3":
+                           String message = "Don't say my name";
+                       case "4":
+                           String message = "That's my name...";
+                       default;
+                }
+                this.replyText(replyToken, message);
                 break;
+             }
             case "love":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Nobody really loves you...");
