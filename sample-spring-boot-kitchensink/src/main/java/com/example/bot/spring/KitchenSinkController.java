@@ -408,15 +408,21 @@ public class KitchenSinkController {
                 switch (strRandom) {
                        case "0":
                            message = "Yes?";
+                           break;
                        case "1":
                            message = "What?";
+                           break;
                        case "2":
                            message = "Stop saying my name!";
+                           break;
                        case "3":
                            message = "Don't say my name!";
+                           break;
                        case "4":
                            message = "Why are you calling me?";
+                           break;
                        default:
+                           break;
                 }
                 this.replyText(replyToken, message);
                 break;
