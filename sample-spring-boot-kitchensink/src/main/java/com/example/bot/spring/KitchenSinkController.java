@@ -402,7 +402,7 @@ public class KitchenSinkController {
                 break;
             case "yuri": {
                 Random rand = new Random();
-                int myrandInt = rand.nextInt(5);
+                int myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 String strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -420,6 +420,21 @@ public class KitchenSinkController {
                            break;
                        case "4":
                            message = "Why are you calling me?";
+                           break;
+                       case "5":
+                           message = "Dont talk to me!";
+                           break;
+                       case "6":
+                           message = "What do you want?";
+                           break;
+                       case "7":
+                           message = "Do you like my name?";
+                           break;
+                       case "8":
+                           message = "Don't you have anything else to do?";
+                           break;
+                       case "9":
+                           message = "Go get a life!";
                            break;
                        default:
                            break;
