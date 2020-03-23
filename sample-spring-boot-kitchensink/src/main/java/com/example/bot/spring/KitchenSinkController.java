@@ -110,7 +110,7 @@ public class KitchenSinkController {
         String replyToken = event.getReplyToken();
         this.replyText(replyToken, "Got image message");
     }
-    
+
     @EventMapping
     public void handleUnfollowEvent(UnfollowEvent event) {
         log.info("unfollowed this bot: {}", event);
