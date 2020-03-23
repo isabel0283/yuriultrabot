@@ -136,6 +136,12 @@ public class KitchenSinkController {
     }
 
     @EventMapping
+    public void handleImageEvent(ImageEvent event) {
+        String replyToken = event.getReplyToken();
+        this.replyText(replyToken, "Got image message");
+    }
+    
+    @EventMapping
     public void handleMemberJoined(MemberJoinedEvent event) {
         String replyToken = event.getReplyToken();
         this.replyText(replyToken, "Welcome to this group! I'll try to not bothering you so much...");
@@ -143,6 +149,7 @@ public class KitchenSinkController {
 
     @EventMapping
     public void handleMemberLeft(MemberLeftEvent event) {
+        String replyToken = event.getReplyToken();
         log.info("Got memberLeft message: {}", event.getLeft().getMembers()
                 .stream().map(Source::getUserId)
                 .collect(Collectors.joining(",")));
