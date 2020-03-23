@@ -113,7 +113,7 @@ public class KitchenSinkController {
     }
 
     @EventMapping
-    public void handleImageEvent(MessageEvent<VideoMessageContent> event) {
+    public void handleVideoEvent(MessageEvent<VideoMessageContent> event) {
         String replyToken = event.getReplyToken();
         this.replyText(replyToken, "That took a life to upload...");
     }
