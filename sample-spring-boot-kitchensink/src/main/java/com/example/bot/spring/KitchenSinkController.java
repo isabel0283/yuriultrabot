@@ -401,7 +401,7 @@ public class KitchenSinkController {
                 break;
             case "yuri": {
                 Random rand = new Random();
-                int myrandInt = rand.nextInt(5);
+                int myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 switch (myrandInt) {
                        case "0":
@@ -414,7 +414,7 @@ public class KitchenSinkController {
                            String message = "Don't say my name";
                        case "4":
                            String message = "That's my name...";
-                       default;
+                       default:
                 }
                 this.replyText(replyToken, message);
                 break;
