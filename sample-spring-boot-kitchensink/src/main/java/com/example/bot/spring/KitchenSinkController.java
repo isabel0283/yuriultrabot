@@ -146,6 +146,7 @@ public class KitchenSinkController {
         log.info("Got memberLeft message: {}", event.getLeft().getMembers()
                 .stream().map(Source::getUserId)
                 .collect(Collectors.joining(",")));
+        this.replyText(replyToken, "May the force be with you...");
     }
 
     @EventMapping
@@ -454,7 +455,6 @@ public class KitchenSinkController {
             Thread.currentThread().interrupt();
         }
     }
-
     private static DownloadedContent saveContent(String ext, MessageContentResponse responseBody) {
         log.info("Got content-type: {}", responseBody);
 
