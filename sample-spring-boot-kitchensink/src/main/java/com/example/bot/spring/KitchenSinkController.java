@@ -224,7 +224,6 @@ public class KitchenSinkController {
          } else {
                 text = "test";
         }
-        int intIndex = strOrig.indexOf("food");
         if (intIndex == -1) {
                 intIndex = 0;
          } else {
