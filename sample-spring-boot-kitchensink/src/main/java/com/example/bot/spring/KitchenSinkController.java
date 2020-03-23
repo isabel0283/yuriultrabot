@@ -58,6 +58,7 @@ import com.linecorp.bot.model.event.message.ImageMessageContent;
 import com.linecorp.bot.model.event.message.LocationMessageContent;
 import com.linecorp.bot.model.event.message.StickerMessageContent;
 import com.linecorp.bot.model.event.message.TextMessageContent;
+import com.linecorp.bot.model.event.message.VideoMessageContent;
 import com.linecorp.bot.model.event.source.GroupSource;
 import com.linecorp.bot.model.event.source.RoomSource;
 import com.linecorp.bot.model.event.source.Source;
@@ -109,6 +110,12 @@ public class KitchenSinkController {
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
         this.replyText(replyToken, "Is it you? Looks like...");
+    }
+
+    @EventMapping
+    public void handleImageEvent(MessageEvent<VideoMessageContent> event) {
+        String replyToken = event.getReplyToken();
+        this.replyText(replyToken, "That took a life to upload...");
     }
 
     @EventMapping
