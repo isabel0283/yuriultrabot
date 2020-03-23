@@ -461,9 +461,9 @@ public class KitchenSinkController {
             Thread.currentThread().interrupt();
         }
     }
+
     private static DownloadedContent saveContent(String ext, MessageContentResponse responseBody) {
         log.info("Got content-type: {}", responseBody);
-
         DownloadedContent tempFile = createTempFile(ext);
         try (OutputStream outputStream = Files.newOutputStream(tempFile.path)) {
             ByteStreams.copy(responseBody.getStream(), outputStream);
