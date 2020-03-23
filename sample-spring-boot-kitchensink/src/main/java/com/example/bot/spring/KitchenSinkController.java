@@ -408,9 +408,9 @@ public class KitchenSinkController {
                 break;
             case "test":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                Random rand = new Random(); 
-                int rand_int = rand.nextInt(5); 
-                this.replyText(replyToken, "My only work is to exist... " + rand_int);
+                Random rand = new Random();
+                int myrandInt = rand.nextInt(5);
+                this.replyText(replyToken, "The number is... " + myrandInt);
                 break;
             case "alter_bot":
                 log.info("Returns echo message {}: {}", replyToken, text);
