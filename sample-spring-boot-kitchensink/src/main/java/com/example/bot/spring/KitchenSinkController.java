@@ -304,10 +304,11 @@ public class KitchenSinkController {
          }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         TimeUnit.SECONDS.sleep(2);
+        String message = "...";
         switch (text) {
             case "sugestYoutubeYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                String message = "You could ask me to search for a video, like this: Yuri Youtube kurt cobain";
+                message = "You could ask me to search for a video, like this: Yuri Youtube kurt cobain";
                 this.replyText(replyToken, message);
                 break;
             case "youtubeYuri":
@@ -403,7 +404,6 @@ public class KitchenSinkController {
                 Random rand = new Random();
                 int myrandInt = rand.nextInt(5);
                 log.info("Returns echo message {}: {}", replyToken, text);
-                String message = "...";
                 String strRandom = "" + myrandInt;
                 switch (strRandom) {
                        case "0":
