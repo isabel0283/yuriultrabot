@@ -491,8 +491,8 @@ public class KitchenSinkController {
                 break;
             case "test":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                Random rand = new Random();
-                int myrandInt = rand.nextInt(5);
+                rand = new Random();
+                myrandInt = rand.nextInt(5);
                 this.replyText(replyToken, "The number is... " + myrandInt);
                 break;
             case "alter_bot":
