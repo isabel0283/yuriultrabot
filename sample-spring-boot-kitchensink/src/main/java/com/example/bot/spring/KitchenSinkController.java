@@ -236,11 +236,11 @@ public class KitchenSinkController {
          } else {
                 text = "sex";
         }
-        intIndex = strOrig.indexOf("bot");
+        intIndex = strOrig.indexOf("lurk");
         if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "bot";
+                text = "lurking";
          }
         intIndex = strOrig.indexOf("love");
         if (intIndex == -1) {
@@ -513,7 +513,7 @@ public class KitchenSinkController {
                 break;
             case "sex":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "...");
+                this.replyText(replyToken, "Don't you have anything else to talk about?");
                 break;
             case "yuriiloveyou":
                 log.info("Returns echo message {}: {}", replyToken, text);
@@ -590,9 +590,9 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.reply(replyToken, new StickerMessage("11539", "52114129"));
                 break;
-            case "sad":
+            case "lurking":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "I dont know what happiness is");
+                this.replyText(replyToken, "Thats me... Now what?");
                 break;
             default:
                 break;
