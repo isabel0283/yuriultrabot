@@ -560,10 +560,32 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
             }
-            case "alter_kkk":
+            case "no":{
+                myrandInt = rand.nextInt(5);
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Hahaha!");
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Why not?";
+                           break;
+                       case "1":
+                           message = "Are you sure?";
+                           break;
+                       case "2":
+                           message = "Ok...";
+                           break;
+                       case "3":
+                           message = "If you say so...";
+                           break;
+                       case "4":
+                           message = "Agree!";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
                 break;
+            }
             case "questionYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.reply(replyToken, new StickerMessage("11539", "52114129"));
