@@ -428,7 +428,7 @@ public class KitchenSinkController {
                            message = "What do you want?";
                            break;
                        case "7":
-                           message = "Do you like my name?";
+                           message = "I don't have time for you!";
                            break;
                        case "8":
                            message = "Don't you have anything else to do?";
@@ -518,10 +518,44 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "I don't care...");
                 break;
-            case "alter_hahaha":
+            case "hahaha":
+                Random rand = new Random();
+                int myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "I don't see anything funny about it...");
-                break;
+                String strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "That's not funny at all...";
+                           break;
+                       case "1":
+                           message = "My wall is funnier...";
+                           break;
+                       case "2":
+                           message = "You are making us feel uncomfortable...";
+                           break;
+                       case "3":
+                           message = "Hahaha! thats so pathetic...";
+                           break;
+                       case "4":
+                           message = "Why are you laughing?";
+                           break;
+                       case "5":
+                           message = "Hey! that was close to be funny... Just close...";
+                           break;
+                       case "6":
+                           message = "Duh...";
+                           break;
+                       case "7":
+                           message = "Ehhh... What was that?";
+                           break;
+                       case "8":
+                           message = "That's not even close to funny...";
+                           break;
+                       case "9":
+                           message = "Was that really a joke?";
+                           break;
+                       default:
+                           break;
             case "alter_kkk":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Hahaha!");
