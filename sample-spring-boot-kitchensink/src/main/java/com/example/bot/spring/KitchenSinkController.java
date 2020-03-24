@@ -485,7 +485,7 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
              }
-            case "love":{
+            case "love": {
                 myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
