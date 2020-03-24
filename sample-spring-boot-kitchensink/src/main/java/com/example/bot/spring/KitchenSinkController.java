@@ -305,6 +305,8 @@ public class KitchenSinkController {
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         TimeUnit.SECONDS.sleep(1);
         Random rand = new Random();
+        String strRandom = "";
+        int myrandInt = 0;
         String message = "...";
         switch (text) {
             case "sugestYoutubeYuri":
@@ -402,9 +404,9 @@ public class KitchenSinkController {
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
             case "yuri": {
-                int myrandInt = rand.nextInt(10);
+                myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
-                String strRandom = "" + myrandInt;
+                strRandom = "" + myrandInt;
                 switch (strRandom) {
                        case "0":
                            message = "Yes?";
@@ -443,9 +445,9 @@ public class KitchenSinkController {
                 break;
              }
              case "work": {
-                int myrandInt = rand.nextInt(10);
+                myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
-                String strRandom = "" + myrandInt;
+                strRandom = "" + myrandInt;
                 switch (strRandom) {
                        case "0":
                            message = "At least you have work, no?";
@@ -518,9 +520,9 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "I don't care...");
                 break;
             case "hahaha": {
-                int myrandInt = rand.nextInt(10);
+                myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
-                String strRandom = "" + myrandInt;
+                strRandom = "" + myrandInt;
                 switch (strRandom) {
                        case "0":
                            message = "That's not funny at all...";
