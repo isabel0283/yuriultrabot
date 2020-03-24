@@ -571,7 +571,7 @@ public class KitchenSinkController {
                            message = "You are making us feel uncomfortable...";
                            break;
                        case "3":
-                           message = "Hahaha! thats so pathetic...";
+                           message = "Hahaha! that's so pathetic...";
                            break;
                        case "4":
                            message = "Why are you laughing?";
