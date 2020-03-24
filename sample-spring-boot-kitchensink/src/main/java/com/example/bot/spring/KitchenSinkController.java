@@ -260,11 +260,11 @@ public class KitchenSinkController {
          } else {
                 text = "thanksYuri";
          }
-         intIndex = strOrig.indexOf("kkk");
+         intIndex = strOrig.indexOf("lol");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "kkk";
+                text = "hahaha";
          }
          intIndex = strOrig.indexOf("crazy");
          if (intIndex == -1) {
@@ -309,7 +309,7 @@ public class KitchenSinkController {
         int myrandInt = 0;
         String message = "...";
         switch (text) {
-            case "sugestYoutubeYuri":
+            case "youtube":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 message = "You could ask me to search for a video, like this: Yuri Youtube kurt cobain";
                 this.replyText(replyToken, message);
@@ -485,10 +485,47 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
              }
-            case "love":
+            case "love":{
+                myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Nobody really loves you...");
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Do you believe in that?";
+                           break;
+                       case "1":
+                           message = "You'll regret later... You'll see!";
+                           break;
+                       case "2":
+                           message = "Love yourself!";
+                           break;
+                       case "3":
+                           message = "I was wondering if that's really true...";
+                           break;
+                       case "4":
+                           message = "Such thing doesn't exist...";
+                           break;
+                       case "5":
+                           message = "...";
+                           break;
+                       case "6":
+                           message = "Stay away, it's better...";
+                           break;
+                       case "7":
+                           message = "You really like suffering? Isn't";
+                           break;
+                       case "8":
+                           message = "*Sighs*";
+                           break;
+                       case "9":
+                           message = "I'd rather be alone...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
                 break;
+             }
             case "test":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 rand = new Random();
