@@ -303,7 +303,8 @@ public class KitchenSinkController {
                 text = "youtubeYuri";
          }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
-        TimeUnit.SECONDS.sleep(2);
+        TimeUnit.SECONDS.sleep(1);
+        Random rand = new Random();
         String message = "...";
         switch (text) {
             case "sugestYoutubeYuri":
@@ -401,7 +402,6 @@ public class KitchenSinkController {
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
             case "yuri": {
-                Random rand = new Random();
                 int myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 String strRandom = "" + myrandInt;
@@ -443,7 +443,6 @@ public class KitchenSinkController {
                 break;
              }
              case "work": {
-                Random rand = new Random();
                 int myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 String strRandom = "" + myrandInt;
@@ -519,7 +518,6 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "I don't care...");
                 break;
             case "hahaha": {
-                Random rand = new Random();
                 int myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 String strRandom = "" + myrandInt;
