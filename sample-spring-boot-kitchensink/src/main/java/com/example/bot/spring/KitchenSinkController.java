@@ -442,6 +442,48 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
              }
+             case "work": {
+                Random rand = new Random();
+                int myrandInt = rand.nextInt(10);
+                log.info("Returns echo message {}: {}", replyToken, text);
+                String strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "At least you have work, no?";
+                           break;
+                       case "1":
+                           message = "Don't complain...";
+                           break;
+                       case "2":
+                           message = "You could be ding something better...";
+                           break;
+                       case "3":
+                           message = "Realy?";
+                           break;
+                       case "4":
+                           message = "I've heard that before...";
+                           break;
+                       case "5":
+                           message = "Ahhh ok...";
+                           break;
+                       case "6":
+                           message = "I'd preffer doing something else...";
+                           break;
+                       case "7":
+                           message = "Why don't you try something different?";
+                           break;
+                       case "8":
+                           message = "If you say so...";
+                           break;
+                       case "9":
+                           message = "yeah... so do I...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+             }
             case "love":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Nobody really loves you...");
