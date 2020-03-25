@@ -266,11 +266,11 @@ public class KitchenSinkController {
          } else {
                 text = "hahaha";
          }
-         intIndex = strOrig.indexOf("crazy");
+         intIndex = strOrig.indexOf("yuri weather");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "crazy";
+                text = "weatherYuri";
          }
          intIndex = strOrig.indexOf("work");
          if (intIndex == -1) {
@@ -341,6 +341,36 @@ public class KitchenSinkController {
                 JSONObject subjsonobj = mainArray.getJSONObject(0);
                 String video = subjsonobj.getJSONObject("id").getString("videoId");
                 this.replyText(replyToken, "https://youtu.be/" + video);
+                break;
+             case "weatherYuri":
+                if ("weather".equals(strOrig)) {
+                    break;
+                }
+                String emptyString = " ";
+                String keyword = strOrig.replace("weather", "");
+                keyword = keyword.replace("yuri", "");
+                if (emptyString.equals(keyword)) {
+                    this.replyText(replyToken, "Gomen ne! I need more information...");
+                    break;
+                }
+                //keyword = keyword.replace(" ", "+");
+                String url = "http://api.openweathermap.org/data/2.5/weather?q=london&appid=42df99363e6213b72d9bec95685299a2";
+                Document result = Jsoup.connect(url)
+                    .userAgent("Mozilla")
+                    .timeout(3000)
+                    .ignoreContentType(true)
+                    .get();
+                String getJson = result.text();
+                String yourCity = "London";
+                String yourCountry = "GB";
+                String yourTemp = "37";
+                String yourCondition = "Clouds";
+                String yourConditionDesc = "Clouds all over the world";
+                JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
+                JSONArray mainArray = jsonObject.getJSONArray("weather");
+                JSONObject subjsonobj = mainArray.getJSONObject(0);
+                //String video = subjsonobj.getJSONObject("id").getString("videoId");
+                this.replyText(replyToken, "The current temperature in" + yourCity + ", " + yourCountry + "is " + yourTemp ", and the current sky condition is: " + yourConditionDesc);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
