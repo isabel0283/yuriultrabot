@@ -375,7 +375,8 @@ public class KitchenSinkController {
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourCity = wjsonObject.getString("name");
                 String yourCountry = wjsonObject.getString("country");
-                String yourTemp = wjsonObject.getString("temp");
+                //String yourTemp = wjsonObject.getString("temp");
+                String yourTemp = "37";
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
                 //String wreport = "The current weather conditions in ";
