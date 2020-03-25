@@ -304,6 +304,7 @@ public class KitchenSinkController {
          }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         Random randWait = new Random();
+        int myrandWait = 0;
         myrandWait = randWait.nextInt(5) + 1;
         TimeUnit.SECONDS.sleep(myrandWait);
         Random rand = new Random();
