@@ -375,8 +375,8 @@ public class KitchenSinkController {
                 JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourCity = wsubjsonobj.getJSONObject("sys").getString("name");
-                this.replyText(replyToken, "The current temperature in" + yourCity + ", " + yourCountry + "is " + yourTemp);
-                this.replyText(replyToken, "The current sky condition is: " + yourConditionDesc);
+                this.replyText(replyToken, "The temperature in" + yourCity + ", " + yourCountry + "is " + yourTemp);
+                this.replyText(replyToken, "The sky condition is: " + yourConditionDesc);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
