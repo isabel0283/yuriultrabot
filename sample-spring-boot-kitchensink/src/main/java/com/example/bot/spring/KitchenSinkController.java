@@ -377,7 +377,7 @@ public class KitchenSinkController {
                 JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourCity = wsubjsonobj.getJSONObject("sys").getString("name");
-                //this.replyText(replyToken, "Temperature in" + yourCity + ", " + yourCountry + "is " + yourTemp);
+                //this.replyText(replyToken, "Temperature" + yourCity + ", " + yourCountry + "is " + yourTemp);
                 //this.replyText(replyToken, "The sky condition is: " + yourConditionDesc);
                 break;
             case "yuri show me something pretty": {
