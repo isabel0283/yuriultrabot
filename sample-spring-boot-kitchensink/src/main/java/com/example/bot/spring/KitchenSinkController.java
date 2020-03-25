@@ -367,7 +367,7 @@ public class KitchenSinkController {
                     .get();
                 String wgetJson = wresult.text();
                 //next line for control delete when done;
-                this.replyText(replyToken, wgetJson);
+                //this.replyText(replyToken, wgetJson);
                 //String yourCity = "LondonTest";
                 JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
@@ -375,7 +375,7 @@ public class KitchenSinkController {
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourCity = wjsonObject.getString("name");
                 String yourCountry = wjsonObject.getString("country");
-                String yourTemp = wjsonObject.getString("temp");
+                Float yourTemp = wjsonObject.getString("temp");
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
                 String wreport = "The current weather conditions in ";
