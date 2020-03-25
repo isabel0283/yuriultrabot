@@ -110,7 +110,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "Is it yours? Looks like...");
+        this.replyText(replyToken, "I like this picture!");
     }
 
     @EventMapping
@@ -303,7 +303,9 @@ public class KitchenSinkController {
                 text = "youtubeYuri";
          }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
-        TimeUnit.SECONDS.sleep(1);
+        Random randWait = new Random();
+        myrandWait = randWait.nextInt(5) + 1;
+        TimeUnit.SECONDS.sleep(myrandWait);
         Random rand = new Random();
         String strRandom = "";
         int myrandInt = 0;
