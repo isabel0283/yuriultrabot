@@ -361,7 +361,7 @@ public class KitchenSinkController {
                     .ignoreContentType(true)
                     .get();
                 String wgetJson = wresult.text();
-                String yourCity = "LondonTest";
+                //String yourCity = "LondonTest";
                 String yourCountry = "GB";
                 String yourTemp = "37";
                 String yourCondition = "Clouds";
