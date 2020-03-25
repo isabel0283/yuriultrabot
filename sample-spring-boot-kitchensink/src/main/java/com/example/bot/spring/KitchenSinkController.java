@@ -367,7 +367,7 @@ public class KitchenSinkController {
                     .get();
                 String wgetJson = wresult.text();
                 //next line for control delete when done;
-                this.replyText(replyToken, wgetJson);
+                //this.replyText(replyToken, wgetJson);
                 //String yourCity = "LondonTest";
                 String yourCountry = "GB";
                 String yourTemp = "37";
