@@ -346,30 +346,30 @@ public class KitchenSinkController {
                 if ("weather".equals(strOrig)) {
                     break;
                 }
-                String emptyString = " ";
-                String keyword = strOrig.replace("weather", "");
-                keyword = keyword.replace("yuri", "");
-                if (emptyString.equals(keyword)) {
+                String wemptyString = " ";
+                String keywordCity = strOrig.replace("weather", "");
+                keywordCity = keywordCity.replace("yuri", "");
+                if (wemptyString.equals(keyword)) {
                     this.replyText(replyToken, "Gomen ne! I need more information...");
                     break;
                 }
                 //keyword = keyword.replace(" ", "+");
-                String url = "http://api.openweathermap.org/data/2.5/weather?q=london&appid=42df99363e6213b72d9bec95685299a2";
-                Document result = Jsoup.connect(url)
+                String wurl = "http://api.openweathermap.org/data/2.5/weather?q=london&appid=42df99363e6213b72d9bec95685299a2";
+                Document wresult = Jsoup.connect(wurl)
                     .userAgent("Mozilla")
                     .timeout(3000)
                     .ignoreContentType(true)
                     .get();
-                String getJson = result.text();
-                String yourCity = "London";
+                String wgetJson = wresult.text();
+                String yourCity = "LondonTest";
                 String yourCountry = "GB";
                 String yourTemp = "37";
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
-                JSONObject jsonObject = (JSONObject) new JSONTokener(getJson).nextValue();
-                JSONArray mainArray = jsonObject.getJSONArray("weather");
-                JSONObject subjsonobj = mainArray.getJSONObject(0);
-                //String video = subjsonobj.getJSONObject("id").getString("videoId");
+                JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
+                JSONArray wmainArray = wjsonObject.getJSONArray("weather");
+                JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
+                String yourCity = wsubjsonobj.getJSONObject("sys").getString("name");
                 this.replyText(replyToken, "The current temperature in" + yourCity + ", " + yourCountry + "is " + yourTemp + ", and the current sky condition is: " + yourConditionDesc);
                 break;
             case "yuri show me something pretty": {
