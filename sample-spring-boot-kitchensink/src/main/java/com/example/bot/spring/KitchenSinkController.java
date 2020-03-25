@@ -358,7 +358,8 @@ public class KitchenSinkController {
                     this.replyText(replyToken, "Gomen ne! I need more information...");
                     break;
                 }
-                String wurl = "http://api.openweathermap.org/data/2.5/weather?q=london&appid=42df99363e6213b72d9bec95685299a2";
+                keywordCity = keywordCity.replace(" ", "");
+                String wurl = "http://api.openweathermap.org/data/2.5/weather?q=" + keywordCity + "&appid=42df99363e6213b72d9bec95685299a2";
                 Document wresult = Jsoup.connect(wurl)
                     .userAgent("Mozilla")
                     .timeout(3000)
@@ -368,16 +369,16 @@ public class KitchenSinkController {
                 //next line for control delete when done;
                 //this.replyText(replyToken, wgetJson);
                 //String yourCity = "LondonTest";
-                String yourCountry = "GB";
-                String yourTemp = "37";
-                String yourCondition = "Clouds";
-                String yourConditionDesc = "Clouds all over the world";
                 JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourCity = wjsonObject.getString("name");
-                this.replyText(replyToken, "Temperature" + yourCity + ", " + yourCountry + "is " + yourTemp);
+                String yourCountry = wjsonObject.sys.getString("country");
+                String yourTemp = wjsonObject.main.getString("temp");
+                String yourCondition = "Clouds";
+                String yourConditionDesc = "Clouds all over the world";
+                this.replyText(replyToken, "Temperature in" + yourCity + ", " + yourCountry + " is " + yourTemp);
                 this.replyText(replyToken, "The sky condition is: " + yourConditionDesc);
                 break;
             case "yuri show me something pretty": {
