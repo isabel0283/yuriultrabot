@@ -358,7 +358,7 @@ public class KitchenSinkController {
                     this.replyText(replyToken, "Gomen ne! I need more information...");
                     break;
                 }
-                keywordCity = keywordCity.replace(" ", "");
+                //keywordCity = keywordCity.replace(" ", "");
                 String wurl = "http://api.openweathermap.org/data/2.5/weather?q=" + keywordCity + "&units=metric&appid=42df99363e6213b72d9bec95685299a2";
                 Document wresult = Jsoup.connect(wurl)
                     .userAgent("Mozilla")
