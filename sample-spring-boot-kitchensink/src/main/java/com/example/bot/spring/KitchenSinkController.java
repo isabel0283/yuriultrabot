@@ -632,7 +632,7 @@ public class KitchenSinkController {
                 break;
             case "lurking":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Thats me... Now what?");
+                this.replyText(replyToken, "Thats me... Any problem with that?");
                 break;
             default:
                 break;
