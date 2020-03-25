@@ -374,8 +374,8 @@ public class KitchenSinkController {
                 //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourCity = wjsonObject.getString("name");
-                String yourCountry = wjsonObject.sys.getString("country");
-                String yourTemp = wjsonObject.main.getString("temp");
+                String yourCountry = wjsonObject.getString("country");
+                String yourTemp = wjsonObject.getString("temp");
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
                 this.replyText(replyToken, "Temperature in" + yourCity + ", " + yourCountry + " is " + yourTemp);
