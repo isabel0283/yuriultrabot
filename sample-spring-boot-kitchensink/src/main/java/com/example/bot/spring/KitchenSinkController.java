@@ -372,11 +372,11 @@ public class KitchenSinkController {
                 String yourTemp = "37";
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
-                JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson);
+                JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
-                String yourCity = wsubjsonobj.getString("name");
+                String yourCity = wjsonObject.getString("name");
                 this.replyText(replyToken, "Temperature" + yourCity + ", " + yourCountry + "is " + yourTemp);
                 this.replyText(replyToken, "The sky condition is: " + yourConditionDesc);
                 break;
