@@ -317,6 +317,11 @@ public class KitchenSinkController {
                 message = "You could ask me to search for a video, like this: Yuri Youtube kurt cobain";
                 this.replyText(replyToken, message);
                 break;
+            case "weather":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                message = "Ask me the current weather in your city, like this: Yuri weather kurashiki";
+                this.replyText(replyToken, message);
+                break;
             case "youtubeYuri":
                 if ("youtube".equals(strOrig)) {
                     break;
@@ -349,7 +354,7 @@ public class KitchenSinkController {
                 String wemptyString = " ";
                 String keywordCity = strOrig.replace("weather", "");
                 keywordCity = keywordCity.replace("yuri", "");
-                if (wemptyString.equals(keyword)) {
+                if (wemptyString.equals(keywordCity)) {
                     this.replyText(replyToken, "Gomen ne! I need more information...");
                     break;
                 }
