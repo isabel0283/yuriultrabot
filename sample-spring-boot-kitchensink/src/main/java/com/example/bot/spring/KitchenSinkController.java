@@ -378,8 +378,8 @@ public class KitchenSinkController {
                 String yourTemp = wjsonObject.getString("temp");
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
-                this.replyText(replyToken, "Temperature in" + yourCity + ", " + yourCountry + " is " + yourTemp);
-                this.replyText(replyToken, "The sky condition is: " + yourConditionDesc);
+                String wreport = "The current weather conditions in "
+                this.replyText(replyToken, wreport + yourCity + ", " + yourCountry + " is " + yourTemp);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
