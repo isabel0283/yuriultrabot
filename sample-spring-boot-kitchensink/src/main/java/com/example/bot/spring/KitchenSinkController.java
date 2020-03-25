@@ -375,11 +375,11 @@ public class KitchenSinkController {
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourCity = wjsonObject.getString("name");
                 String yourCountry = wjsonObject.getString("country");
-                Float yourTemp = wjsonObject.getString("temp");
+                String yourTemp = wjsonObject.getString("temp");
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
-                String wreport = "The current weather conditions in ";
-                this.replyText(replyToken, wreport + yourCity + ", " + yourCountry + " is " + yourTemp);
+                //String wreport = "The current weather conditions in ";
+                this.replyText(replyToken, "Report " + yourCity + ", " + yourCountry + " is " + yourTemp);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
