@@ -358,7 +358,6 @@ public class KitchenSinkController {
                     this.replyText(replyToken, "Gomen ne! I need more information...");
                     break;
                 }
-                //keyword = keyword.replace(" ", "+");
                 String wurl = "http://api.openweathermap.org/data/2.5/weather?q=london&appid=42df99363e6213b72d9bec95685299a2";
                 Document wresult = Jsoup.connect(wurl)
                     .userAgent("Mozilla")
@@ -367,7 +366,7 @@ public class KitchenSinkController {
                     .get();
                 String wgetJson = wresult.text();
                 //next line for control delete when done;
-                //this.replyText(replyToken, wgetJson);
+                this.replyText(replyToken, wgetJson);
                 //String yourCity = "LondonTest";
                 String yourCountry = "GB";
                 String yourTemp = "37";
@@ -377,8 +376,8 @@ public class KitchenSinkController {
                 JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourCity = wsubjsonobj.getJSONObject("sys").getString("name");
-                //this.replyText(replyToken, "Temperature" + yourCity + ", " + yourCountry + "is " + yourTemp);
-                //this.replyText(replyToken, "The sky condition is: " + yourConditionDesc);
+                this.replyText(replyToken, "Temperature" + yourCity + ", " + yourCountry + "is " + yourTemp);
+                this.replyText(replyToken, "The sky condition is: " + yourConditionDesc);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
