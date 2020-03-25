@@ -359,7 +359,7 @@ public class KitchenSinkController {
                     break;
                 }
                 keywordCity = keywordCity.replace(" ", "");
-                String wurl = "http://api.openweathermap.org/data/2.5/weather?q=" + keywordCity + "&appid=42df99363e6213b72d9bec95685299a2";
+                String wurl = "http://api.openweathermap.org/data/2.5/weather?q=" + keywordCity + "&units=metric&appid=42df99363e6213b72d9bec95685299a2";
                 Document wresult = Jsoup.connect(wurl)
                     .userAgent("Mozilla")
                     .timeout(3000)
@@ -367,7 +367,7 @@ public class KitchenSinkController {
                     .get();
                 String wgetJson = wresult.text();
                 //next line for control delete when done;
-                //this.replyText(replyToken, wgetJson);
+                this.replyText(replyToken, wgetJson);
                 //String yourCity = "LondonTest";
                 JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
