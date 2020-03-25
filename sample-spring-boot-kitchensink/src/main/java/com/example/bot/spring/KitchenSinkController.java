@@ -110,7 +110,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "I like this picture!");
+        this.replyText(replyToken, "I saw that before...");
     }
 
     @EventMapping
@@ -448,7 +448,7 @@ public class KitchenSinkController {
                 break;
              }
              case "work": {
-                myrandInt = rand.nextInt(10);
+                myrandInt = rand.nextInt(15);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -489,7 +489,7 @@ public class KitchenSinkController {
                 break;
              }
             case "love": {
-                myrandInt = rand.nextInt(10);
+                myrandInt = rand.nextInt(15);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -560,7 +560,7 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "I don't care...");
                 break;
             case "hahaha": {
-                myrandInt = rand.nextInt(10);
+                myrandInt = rand.nextInt(15);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -601,7 +601,7 @@ public class KitchenSinkController {
                 break;
             }
             case "no": {
-                myrandInt = rand.nextInt(5);
+                myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
