@@ -378,7 +378,7 @@ public class KitchenSinkController {
                 String yourTemp = wjsonObject.getString("temp");
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
-                String wreport = "The current weather conditions in "
+                String wreport = "The current weather conditions in ";
                 this.replyText(replyToken, wreport + yourCity + ", " + yourCountry + " is " + yourTemp);
                 break;
             case "yuri show me something pretty": {
