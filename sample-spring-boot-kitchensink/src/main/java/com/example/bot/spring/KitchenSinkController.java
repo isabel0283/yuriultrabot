@@ -355,10 +355,10 @@ public class KitchenSinkController {
                 String keywordCity = strOrig.replace("weather", "");
                 keywordCity = keywordCity.replace("yuri", "");
                 if (wemptyString.equals(keywordCity)) {
-                    this.replyText(replyToken, "Gomen ne! I need more information...");
+                    this.replyText(replyToken, "I'm sorry! Please specify the city!");
                     break;
                 }
-                //keywordCity = keywordCity.replace(" ", "");
+                keywordCity = keywordCity.replace(" ", "");
                 String wurl = "http://api.openweathermap.org/data/2.5/weather?q=" + keywordCity + "&units=metric&appid=42df99363e6213b72d9bec95685299a2";
                 Document wresult = Jsoup.connect(wurl)
                     .userAgent("Mozilla")
@@ -373,8 +373,8 @@ public class KitchenSinkController {
                 //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
-                String yourCity = wjsonObject.getString("name");
                 String yourCountry = wjsonObject.getString("country");
+                String yourCity = wjsonObject.getString("name");
                 //String yourTemp = wjsonObject.getString("temp");
                 String yourTemp = "37";
                 String yourCondition = "Clouds";
