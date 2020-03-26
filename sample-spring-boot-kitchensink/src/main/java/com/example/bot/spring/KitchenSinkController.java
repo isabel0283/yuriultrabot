@@ -385,9 +385,9 @@ public class KitchenSinkController {
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, and humidity is " + yourHumidity + "%.";
                 //this.replyText(replyToken, wreport);
-                this.reply(replyToken, Arrays.asList(
-                    new TextMessage(wreport), 
-                    new ImageMessage(cloudIconurl, cloudIconurl), 
+                this.reply(replyToken,
+                    Arrays.asList(new TextMessage(wreport),
+                    new ImageMessage(cloudIconurl, cloudIconurl),
                     new ImageMessage(flagIconurl, flagIconurl)));
                 break;
             case "yuri show me something pretty": {
