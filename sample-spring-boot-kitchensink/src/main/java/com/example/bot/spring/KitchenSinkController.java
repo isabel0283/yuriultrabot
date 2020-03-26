@@ -378,7 +378,7 @@ public class KitchenSinkController {
                 //this.replyText(replyToken, yourTemp);
                 //String yourTemp = wjsonObject.getString("temp");
                 //String yourTemp = "37";
-                String yourCountry ="PA";
+                String yourCountry = "PA";
                 String yourCity = "London";
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
