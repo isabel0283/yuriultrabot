@@ -371,13 +371,13 @@ public class KitchenSinkController {
                 JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
-                Float yourTemp = wjsonObject.getJSONObject("main").getFloat("temp");
+                String yourTemp = wjsonObject.getJSONObject("main").getString("temp").text();
                 //this.replyText(replyToken, "this is" + yourTemp);
                 String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
                 String yourCity = wjsonObject.getString("name");
                 //this.replyText(replyToken, yourTemp);
                 //String yourTemp = wjsonObject.getString("temp");
-                String yourTemp = "37";
+                //String yourTemp = "37";
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
                 String wreport = "The current weather conditions in ";
