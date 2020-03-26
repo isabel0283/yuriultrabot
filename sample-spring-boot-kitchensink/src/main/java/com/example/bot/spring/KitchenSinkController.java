@@ -378,7 +378,7 @@ public class KitchenSinkController {
                 JSONObject weatherDetails = weatherArray.getJSONObject(0);
                 String yourConditionDesc = weatherDetails.getString("description");
                 JSONObject mainDetails = wjsonObject.getJSONObject("main");
-                Long yourTemp = mainDetails.getLong("pressure");
+                Long yourTemp = mainDetails.getLong("temp");
                 //this.replyText(replyToken, "this is" + yourCountry);
                 //String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
                 //String yourCity = wjsonObject.getString("name");
