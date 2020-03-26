@@ -387,9 +387,9 @@ public class KitchenSinkController {
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
-                wreport = wreport + "Humidity humidity is at " + yourHumidity + "%.";
+                wreport = wreport + "Humidity is at " + yourHumidity + "%.";
                 this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
-                //this.replyText(replyToken, wreport);
+                this.replyText(replyToken, wreport);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
