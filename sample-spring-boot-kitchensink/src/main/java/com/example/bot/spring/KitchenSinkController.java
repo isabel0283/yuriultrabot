@@ -366,9 +366,6 @@ public class KitchenSinkController {
                     .ignoreContentType(true)
                     .get();
                 String wgetJson = wresult.text();
-                //next line for control delete when done;
-                //this.replyText(replyToken, wgetJson);
-                //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 JSONObject wjsonObject = new JSONObject(wgetJson);
                 String yourCity = wjsonObject.getString("name");
                 JSONObject sysDetails = wjsonObject.getJSONObject("sys");
@@ -378,12 +375,12 @@ public class KitchenSinkController {
                 JSONObject weatherDetails = weatherArray.getJSONObject(0);
                 String yourConditionDesc = weatherDetails.getString("description");
                 JSONObject mainDetails = wjsonObject.getJSONObject("main");
-                Long yourTemp = mainDetails.getLong("temp");
-                Long yourHumidity = mainDetails.getLong("humidity");
+                Double yourTemp = mainDetails.getDouble("temp");
+                Double yourHumidity = mainDetails.getDouble("humidity");
                 String yourCondition = "Clouds";
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
-                wreport = wreport + "°C, and humidity is " + yourHumidity + "%";
+                wreport = wreport + "°C, and humidity is " + yourHumidity + "%.";
                 this.replyText(replyToken, wreport);
                 break;
             case "yuri show me something pretty": {
