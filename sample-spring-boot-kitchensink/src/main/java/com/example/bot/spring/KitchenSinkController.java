@@ -355,7 +355,7 @@ public class KitchenSinkController {
                 String keywordCity = strOrig.replace("weather", "");
                 keywordCity = keywordCity.replace("yuri", "");
                 if (wemptyString.equals(keywordCity)) {
-                    this.replyText(replyToken, "I'm sorry! Please specify the city!");
+                    this.replyText(replyToken, "I'm sorry! Please specify a city!");
                     break;
                 }
                 keywordCity = keywordCity.replace(" ", "");
@@ -372,6 +372,7 @@ public class KitchenSinkController {
                 //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourTemp = wjsonObject.getJSONObject("main").getString("temp");
+                this.replyText(replyToken, yourTemp);
                 String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
                 String yourCity = wjsonObject.getString("name");
                 this.replyText(replyToken, yourTemp);
@@ -380,7 +381,7 @@ public class KitchenSinkController {
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
                 String wreport = "The current weather conditions in ";
-                this.replyText(replyToken, wreport + yourCity + ", " + yourCountry + " is " + yourTemp);
+                //this.replyText(replyToken, wreport + yourCity + ", " + yourCountry + " is " + yourTemp);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
