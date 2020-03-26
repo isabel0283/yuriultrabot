@@ -384,8 +384,8 @@ public class KitchenSinkController {
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, and humidity is " + yourHumidity + "%.";
-                this.reply(ImageMessage(cloudIconurl, cloudIconurl));
-                this.reply(ImageMessage(flagIconurl, flagIconurl));
+                //this.reply(ImageMessage(cloudIconurl, cloudIconurl));
+                //this.reply(ImageMessage(flagIconurl, flagIconurl));
                 this.replyText(replyToken, wreport + cloudIconurl + flagIconurl);
                 this.reply(ImageMessage(cloudIconurl, cloudIconurl));
                 //this.reply(replyToken,
