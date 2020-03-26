@@ -380,15 +380,15 @@ public class KitchenSinkController {
                 Double yourTempmax = mainDetails.getDouble("temp_max");
                 Double yourHumidity = mainDetails.getDouble("humidity");
                 //Urls of icons
-                String cloudIconurl = "http://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
-                String flagIconurl = "http://openweathermap.org/images/flags/" + yourCountry + ".png";
+                //String cloudIconurl = "http://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
+                //String flagIconurl = "http://openweathermap.org/images/flags/" + yourCountry + ".png";
                 //Building the report
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
                 wreport = wreport + "Humidity is at " + yourHumidity + "%.";
-                this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
+                //this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
                 this.replyText(replyToken, wreport);
                 break;
             case "yuri show me something pretty": {
