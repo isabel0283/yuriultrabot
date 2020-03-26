@@ -369,12 +369,12 @@ public class KitchenSinkController {
                 //next line for control delete when done;
                 //this.replyText(replyToken, wgetJson);
                 JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
-                //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
+                String yourTemp = wjsonObject.getJSONObject("main").getString("temp");
                 String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
                 String yourCity = wjsonObject.getString("name");
-                String yourTemp = wjsonObject.getJSONObject("main").getString("temp");
+                this.replyText(replyToken, yourTemp);
                 //String yourTemp = wjsonObject.getString("temp");
                 //String yourTemp = "37";
                 String yourCondition = "Clouds";
