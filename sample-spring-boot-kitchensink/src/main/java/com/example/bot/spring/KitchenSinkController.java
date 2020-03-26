@@ -372,8 +372,8 @@ public class KitchenSinkController {
                 //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
-                String yourCountry = wjsonObject.getString("country");
-                this.replyText(replyToken, yourCountry);
+                String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
+                //this.replyText(replyToken, yourCountry);
                 //String yourCity = "LondonTest";
                 String yourCity = wjsonObject.getString("name");
                 //String yourTemp = wjsonObject.getString("temp");
