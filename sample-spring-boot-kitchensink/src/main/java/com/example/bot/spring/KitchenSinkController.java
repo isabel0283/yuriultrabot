@@ -372,13 +372,13 @@ public class KitchenSinkController {
                 String yourCountry = sysDetails.getString("country");
                 JSONArray weatherArray = wjsonObject.getJSONArray("weather");
                 JSONObject weatherDetails = weatherArray.getJSONObject(0);
-                String yourConditionDesc = weatherDetails.getString("description");
-                String yourCloudicon = weatherDetails.getString("icon");
+                String yourConditionDesc = weatherDetails.getString("description");                
                 JSONObject mainDetails = wjsonObject.getJSONObject("main");
                 Double yourTemp = mainDetails.getDouble("temp");
                 Double yourTempmin = mainDetails.getDouble("temp_min");
                 Double yourTempmax = mainDetails.getDouble("temp_max");
                 Double yourHumidity = mainDetails.getDouble("humidity");
+                //String yourCloudicon = weatherDetails.getString("icon");
                 //Urls of icons
                 //String cloudIconurl = "http://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
                 //String flagIconurl = "http://openweathermap.org/images/flags/" + yourCountry + ".png";
