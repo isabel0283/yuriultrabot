@@ -379,6 +379,7 @@ public class KitchenSinkController {
                 String yourConditionDesc = weatherDetails.getString("description");
                 JSONObject mainDetails = wjsonObject.getJSONObject("main");
                 Long yourTemp = mainDetails.getLong("temp");
+                Long yourHumidity = mainDetails.getLong("humidity");
                 //this.replyText(replyToken, "this is" + yourCountry);
                 //String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
                 //String yourCity = wjsonObject.getString("name");
@@ -390,7 +391,9 @@ public class KitchenSinkController {
                 String yourCondition = "Clouds";
                 //String yourConditionDesc = "Clouds all over the world";
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
-                this.replyText(replyToken, wreport  + ". The current temperature is " + yourTemp + "°C");
+                wreport = wreport + ". The current temperature is " + yourTemp;
+                wreport = wreport + "°C, and humidity is " + yourHumidity + "%";
+                this.replyText(replyToken, wreport);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
