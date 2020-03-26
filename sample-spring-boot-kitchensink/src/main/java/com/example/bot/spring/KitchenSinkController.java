@@ -377,14 +377,14 @@ public class KitchenSinkController {
                 JSONArray weatherArray = wjsonObject.getJSONArray("weather");
                 JSONObject weatherDetails = weatherArray.getJSONObject(0);
                 String yourConditionDesc = weatherDetails.getString("description");
-                //JSONObject mainDetails = wjsonObject.getJSONObject("main");
-                //String yourTemp = mainDetails.getString("temp");
+                JSONObject mainDetails = wjsonObject.getJSONObject("main");
+                String yourTemp = String mainDetails.getLong("pressure");
                 //this.replyText(replyToken, "this is" + yourCountry);
                 //String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
                 //String yourCity = wjsonObject.getString("name");
                 //this.replyText(replyToken, yourTemp);
                 //String yourTemp = wjsonObject.getString("temp");
-                String yourTemp = "37";
+                //String yourTemp = "37";
                 //String yourCountry = "PA";
                 //String yourCity = "London";
                 String yourCondition = "Clouds";
