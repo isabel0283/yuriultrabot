@@ -358,7 +358,7 @@ public class KitchenSinkController {
                     this.replyText(replyToken, "I'm sorry! Please specify a city!");
                     break;
                 }
-                keywordCity = keywordCity.replace(" ", "");
+                keywordCity = keywordCity.replace(" ", "+");
                 String wurl = "http://api.openweathermap.org/data/2.5/weather?q=" + keywordCity + "&units=metric&appid=42df99363e6213b72d9bec95685299a2";
                 Document wresult = Jsoup.connect(wurl)
                     .userAgent("Mozilla")
@@ -380,16 +380,7 @@ public class KitchenSinkController {
                 JSONObject mainDetails = wjsonObject.getJSONObject("main");
                 Long yourTemp = mainDetails.getLong("temp");
                 Long yourHumidity = mainDetails.getLong("humidity");
-                //this.replyText(replyToken, "this is" + yourCountry);
-                //String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
-                //String yourCity = wjsonObject.getString("name");
-                //this.replyText(replyToken, yourTemp);
-                //String yourTemp = wjsonObject.getString("temp");
-                //String yourTemp = "37";
-                //String yourCountry = "PA";
-                //String yourCity = "London";
                 String yourCondition = "Clouds";
-                //String yourConditionDesc = "Clouds all over the world";
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, and humidity is " + yourHumidity + "%";
