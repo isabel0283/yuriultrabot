@@ -319,7 +319,7 @@ public class KitchenSinkController {
                 break;
             case "weather":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                message = "Ask me the current weather in your city, like this: Yuri weather kurashiki";
+                message = "Ask me the current weather in your city, like this: Yuri weather Kurashiki";
                 this.replyText(replyToken, message);
                 break;
             case "youtubeYuri":
@@ -384,7 +384,10 @@ public class KitchenSinkController {
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, and humidity is " + yourHumidity + "%.";
+                this.reply(ImageMessage(cloudIconurl, cloudIconurl));
+                this.reply(ImageMessage(flagIconurl, flagIconurl));
                 this.replyText(replyToken, wreport + cloudIconurl + flagIconurl);
+                this.reply(ImageMessage(cloudIconurl, cloudIconurl));
                 //this.reply(replyToken,
                 //    Arrays.asList(new TextMessage(wreport),
                 //    new ImageMessage(cloudIconurl, cloudIconurl),
