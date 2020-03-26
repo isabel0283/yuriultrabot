@@ -368,20 +368,22 @@ public class KitchenSinkController {
                 String wgetJson = wresult.text();
                 //next line for control delete when done;
                 //this.replyText(replyToken, wgetJson);
-                JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
-                //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
-                //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
-                String yourTemp = wjsonObject.getJSONObject("main").getString("temp").text();
+                //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
+                JSONObject wjsonObject = new JSONObject(wgetJson);
+                JSONObject mainDetails = wjsonObject.getJSONObject("main");
+                String yourTemp = mainDetails.getString("temp");
                 //this.replyText(replyToken, "this is" + yourTemp);
-                String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
-                String yourCity = wjsonObject.getString("name");
+                //String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
+                //String yourCity = wjsonObject.getString("name");
                 //this.replyText(replyToken, yourTemp);
                 //String yourTemp = wjsonObject.getString("temp");
                 //String yourTemp = "37";
+                String yourCountry ="PA";
+                String yourCity = "London";
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
                 String wreport = "The current weather conditions in ";
-                this.replyText(replyToken, wreport + yourCity + ", " + yourCountry + " is " + String.valueOf(yourTemp));
+                this.replyText(replyToken, wreport + yourCity + ", " + yourCountry + " is " + yourTemp);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
