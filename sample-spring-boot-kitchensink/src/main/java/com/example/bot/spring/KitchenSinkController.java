@@ -370,14 +370,17 @@ public class KitchenSinkController {
                 String yourCity = wjsonObject.getString("name");
                 JSONObject sysDetails = wjsonObject.getJSONObject("sys");
                 String yourCountry = sysDetails.getString("country");
-                //new lines
                 JSONArray weatherArray = wjsonObject.getJSONArray("weather");
                 JSONObject weatherDetails = weatherArray.getJSONObject(0);
                 String yourConditionDesc = weatherDetails.getString("description");
+                String yourCloudicon = weatherDetails.getString("icon");
                 JSONObject mainDetails = wjsonObject.getJSONObject("main");
                 Double yourTemp = mainDetails.getDouble("temp");
                 Double yourHumidity = mainDetails.getDouble("humidity");
-                String yourCondition = "Clouds";
+                //Urls of icons
+                String cloudIconurl = "http://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
+                String flagIconurl = "http://openweathermap.org/images/flags/" + yourCountry + ".png";
+                //Building the report
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, and humidity is " + yourHumidity + "%.";
@@ -570,16 +573,6 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
              }
-            case "test":
-                log.info("Returns echo message {}: {}", replyToken, text);
-                rand = new Random();
-                myrandInt = rand.nextInt(5);
-                this.replyText(replyToken, "The number is... " + myrandInt);
-                break;
-            case "alter_bot":
-                log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "I'm glad I'm not a human!");
-                break;
             case "dontcare":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Fine!");
