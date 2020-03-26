@@ -367,7 +367,7 @@ public class KitchenSinkController {
                     .get();
                 String wgetJson = wresult.text();
                 //next line for control delete when done;
-                //this.replyText(replyToken, wgetJson);
+                this.replyText(replyToken, wgetJson);
                 //String yourCity = "LondonTest";
                 JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
@@ -380,7 +380,7 @@ public class KitchenSinkController {
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
                 //String wreport = "The current weather conditions in ";
-                this.replyText(replyToken, "Report " + yourCity + ", " + yourCountry + " is " + yourTemp);
+                //this.replyText(replyToken, "Report " + yourCity + ", " + yourCountry + " is " + yourTemp);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
