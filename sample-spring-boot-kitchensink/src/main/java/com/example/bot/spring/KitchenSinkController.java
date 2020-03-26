@@ -373,19 +373,22 @@ public class KitchenSinkController {
                 String yourCity = wjsonObject.getString("name");
                 JSONObject sysDetails = wjsonObject.getJSONObject("sys");
                 String yourCountry = sysDetails.getString("country");
+                //new lines
+                JSONArray weatherArray = wjsonObject.getJSONArray("weather");
+                JSONObject weatherDetails = weatherArray.getJSONObject(0);
+                String yourConditionDesc = weatherDetails.getString("description");
                 //JSONObject mainDetails = wjsonObject.getJSONObject("main");
                 //String yourTemp = mainDetails.getString("temp");
-                var wjson = JSON.parse(wgetJson);
                 //this.replyText(replyToken, "this is" + yourCountry);
                 //String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
                 //String yourCity = wjsonObject.getString("name");
                 //this.replyText(replyToken, yourTemp);
                 //String yourTemp = wjsonObject.getString("temp");
-                //String yourTemp = "37";
+                String yourTemp = "37";
                 //String yourCountry = "PA";
                 //String yourCity = "London";
                 String yourCondition = "Clouds";
-                String yourConditionDesc = "Clouds all over the world";
+                //String yourConditionDesc = "Clouds all over the world";
                 String wreport = "The current weather conditions in ";
                 this.replyText(replyToken, wreport + yourCity + ", " + yourCountry + " is " + yourTemp);
                 break;
@@ -506,7 +509,7 @@ public class KitchenSinkController {
                            message = "Don't complain...";
                            break;
                        case "2":
-                           message = "You could be ding something better...";
+                           message = "You could be doing something better...";
                            break;
                        case "3":
                            message = "Realy?";
