@@ -372,7 +372,7 @@ public class KitchenSinkController {
                 String yourCountry = sysDetails.getString("country");
                 JSONArray weatherArray = wjsonObject.getJSONArray("weather");
                 JSONObject weatherDetails = weatherArray.getJSONObject(0);
-                String yourConditionDesc = weatherDetails.getString("description");                
+                String yourConditionDesc = weatherDetails.getString("description");
                 JSONObject mainDetails = wjsonObject.getJSONObject("main");
                 Double yourTemp = mainDetails.getDouble("temp");
                 Double yourTempmin = mainDetails.getDouble("temp_min");
