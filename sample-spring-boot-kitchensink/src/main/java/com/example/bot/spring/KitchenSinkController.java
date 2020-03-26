@@ -373,8 +373,9 @@ public class KitchenSinkController {
                 String yourCity = wjsonObject.getString("name");
                 JSONObject sysDetails = wjsonObject.getJSONObject("sys");
                 String yourCountry = sysDetails.getString("country");
-                JSONObject mainDetails = wjsonObject.getJSONObject("main");
-                String yourTemp = mainDetails.getString("temp");
+                //JSONObject mainDetails = wjsonObject.getJSONObject("main");
+                //String yourTemp = mainDetails.getString("temp");
+                var wjson = JSON.parse(wgetJson);
                 //this.replyText(replyToken, "this is" + yourCountry);
                 //String yourCountry = wjsonObject.getJSONObject("sys").getString("country");
                 //String yourCity = wjsonObject.getString("name");
