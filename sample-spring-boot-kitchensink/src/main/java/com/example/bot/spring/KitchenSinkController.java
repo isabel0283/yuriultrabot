@@ -389,7 +389,7 @@ public class KitchenSinkController {
                 //String yourCity = "London";
                 String yourCondition = "Clouds";
                 //String yourConditionDesc = "Clouds all over the world";
-                String wreport = "We have " + yourConditionDesc + "in " + yourCity + ", " + yourCountry;
+                String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 this.replyText(replyToken, wreport  + ". The current temperature is " + yourTemp + "°C");
                 break;
             case "yuri show me something pretty": {
