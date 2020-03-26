@@ -367,22 +367,30 @@ public class KitchenSinkController {
                     .get();
                 String wgetJson = wresult.text();
                 //next line for control delete when done;
+<<<<<<< HEAD
                 //this.replyText(replyToken, wgetJson);
                 //String yourCity = "LondonTest";
+=======
+                this.replyText(replyToken, wgetJson);
+>>>>>>> 5b1738ce50d619e78e16d7817c40e12f39bd3aa0
                 JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONObject wjsonObject = (JSONObject) new JSONTokener(wgetJson).nextValue();
                 //JSONArray wmainArray = wjsonObject.getJSONArray("weather");
                 //JSONObject wsubjsonobj = wmainArray.getJSONObject(0);
                 String yourCountry = wjsonObject.getString("country");
+<<<<<<< HEAD
 				this.replyText(replyToken, yourCountry);
+=======
+                //String yourCity = "LondonTest";
+>>>>>>> 5b1738ce50d619e78e16d7817c40e12f39bd3aa0
                 String yourCity = wjsonObject.getString("name");
 				this.replyText(replyToken,  yourCity + " " + yourCountry);
                 //String yourTemp = wjsonObject.getString("temp");
                 String yourTemp = "37";
                 String yourCondition = "Clouds";
                 String yourConditionDesc = "Clouds all over the world";
-                //String wreport = "The current weather conditions in ";
-                //this.replyText(replyToken, "Report " + yourCity + ", " + yourCountry + " is " + yourTemp);
+                String wreport = "The current weather conditions in ";
+                this.replyText(replyToken, "Report " + yourCity + ", " + yourCountry + " is " + yourTemp);
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
