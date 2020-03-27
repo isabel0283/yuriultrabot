@@ -360,9 +360,9 @@ public class KitchenSinkController {
                 }
                 keywordCity = keywordCity.replace(" ", "+");
                 String wurl = "http://api.openweathermap.org/data/2.5/weather?q=" + keywordCity + "&units=metric&appid=42df99363e6213b72d9bec95685299a2";
-                //Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36
+                //Mozilla
                 Document wresult = Jsoup.connect(wurl)
-                    .userAgent("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36")
+                    .userAgent("Mozilla/5.0 (Windows NT 6.1) Chrome/41.0.2228.0 Safari/537.36")
                     .timeout(3000)
                     .ignoreContentType(true)
                     .get();
