@@ -370,7 +370,7 @@ public class KitchenSinkController {
                 String yourCity = wjsonObject.getString("name");
                 Integer responseCode = wjsonObject.getInt("cod");
                 if (responseCode.equals(404)) {
-                    this.replyText(replyToken, "Didn't find that city or you are wrong. Maybe the second one...");
+                    this.replyText(replyToken, "Couldn't find that or you are wrong. Maybe the second one...");
                     break;
                 }
                 JSONObject sysDetails = wjsonObject.getJSONObject("sys");
