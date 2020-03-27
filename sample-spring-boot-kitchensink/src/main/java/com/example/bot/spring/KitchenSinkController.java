@@ -369,7 +369,7 @@ public class KitchenSinkController {
                 JSONObject wjsonObject = new JSONObject(wgetJson);
                 String yourCity = wjsonObject.getString("name");
                 int responseCode = wjsonObject.getInt("cod");
-                if (responseCode.equals(404)) {
+                if (responseCode == 404) {
                     this.replyText(replyToken, "Couldn't find that or you are wrong. Maybe the second one...");
                     break;
                 }
