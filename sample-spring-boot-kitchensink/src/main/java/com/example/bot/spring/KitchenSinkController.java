@@ -387,8 +387,8 @@ public class KitchenSinkController {
                 Double yourHumidity = mainDetails.getDouble("humidity");
                 String yourCloudicon = weatherDetails.getString("icon");
                 //Urls of icons
-                String cloudIconurl = "http://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
-                String flagIconurl = "http://openweathermap.org/images/flags/" + yourCountry + ".png";
+                String cloudIconurl = "http://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png?_ignore=";
+                String flagIconurl = "http://openweathermap.org/images/flags/" + yourCountry + ".png?_ignore=";
                 //Building the report
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
