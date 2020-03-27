@@ -413,12 +413,11 @@ public class KitchenSinkController {
                 String cloudIconurl = "https://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
                 //String flagIconurl = "https://openweathermap.org/images/flags/" + yourCountry + ".png";
                 //comment
-                //comment
                 final DownloadedContent jpg;
                 final DownloadedContent previewImg;
                 jpg = new DownloadedContent(null, cloudIconurl);
                 previewImg = new DownloadedContent(null, cloudIconurl);
-                system("convert","-resize", "100x", jpg.path.toString(), previewImg.path.toString());
+                system("convert","-resize", "100x100", jpg.path.toString(), previewImg.path.toString());
                 this.reply(replyToken, new ImageMessage(jpg.getUri(), previewImg.getUri()));
                 //comment
                 //Building the report
