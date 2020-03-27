@@ -371,10 +371,8 @@ public class KitchenSinkController {
                 //this.replyText(replyToken, "The index " + wintIndex);
                 if (wintIndex != -1) {
                     this.replyText(replyToken, "Couldn't find that or you are wrong. Maybe the second one...");
-                    break;
                 } else {
                     wintIndex = 0;
-                    break;
                 }
                 JSONObject wjsonObject = new JSONObject(wgetJson);
                 String yourCity = wjsonObject.getString("name");
