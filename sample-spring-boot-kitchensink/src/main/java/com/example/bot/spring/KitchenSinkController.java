@@ -111,19 +111,18 @@ public class KitchenSinkController {
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
         Random randimg = new Random();
-        Integer myrandIntimg = randimg.nextInt(5);
-                //log.info("Returns echo message {}: {}", replyToken, text);
+        Integer myrandIntimg = randimg.nextInt(10);
                 String strRandomimg = "" + myrandIntimg;
                 String messageimg = "";
                 switch (strRandomimg) {
                        case "0":
-                           messageimg = "Interesting";
+                           messageimg = "Interesting...";
                            break;
                        case "1":
                            messageimg = "That's a good one!";
                            break;
                        case "2":
-                           messageimg = "Ok...";
+                           messageimg = "Ohhh...";
                            break;
                        case "3":
                            messageimg = "I saw that before...";
@@ -411,8 +410,8 @@ public class KitchenSinkController {
                 Double yourHumidity = mainDetails.getDouble("humidity");
                 String yourCloudicon = weatherDetails.getString("icon");
                 //Urls of icons
-                String cloudIconurl = "https://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
-                String flagIconurl = "https://openweathermap.org/images/flags/" + yourCountry + ".png";
+                String cloudIconurl = "https://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png?_ignore=";
+                String flagIconurl = "https://openweathermap.org/images/flags/" + yourCountry + ".png?_ignore=";
                 //Building the report
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
