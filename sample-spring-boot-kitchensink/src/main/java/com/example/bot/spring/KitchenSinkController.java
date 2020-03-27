@@ -305,7 +305,7 @@ public class KitchenSinkController {
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         Random randWait = new Random();
         int myrandWait = 0;
-        myrandWait = randWait.nextInt(3) + 1;
+        myrandWait = randWait.nextInt(2) + 1;
         TimeUnit.SECONDS.sleep(myrandWait);
         Random rand = new Random();
         String strRandom = "";
@@ -367,6 +367,7 @@ public class KitchenSinkController {
                     .get();
                 String wgetJson = wresult.text();
                 //int responseCode = wjsonObject.getInt("cod");
+                this.replyText(replyToken, wgetJson);
                 int wintIndex = wgetJson.indexOf("city not found");
                 //this.replyText(replyToken, "The index " + wintIndex);
                 if (wintIndex != -1) {
