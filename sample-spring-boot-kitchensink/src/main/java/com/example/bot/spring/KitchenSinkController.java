@@ -370,7 +370,7 @@ public class KitchenSinkController {
                 //.userAgent("Mozilla")
                 String wgetJson = wresult.text();
                 //int responseCode = wjsonObject.getInt("cod");
-                this.replyText(replyToken, wgetJson);
+                //this.replyText(replyToken, wgetJson);
                 int wintIndex = wgetJson.indexOf("city not found");
                 //this.replyText(replyToken, "The index " + wintIndex);
                 if (wintIndex != -1) {
