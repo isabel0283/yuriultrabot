@@ -364,6 +364,7 @@ public class KitchenSinkController {
                 Document wresult = Jsoup.connect(wurl)
                     .userAgent("Mozilla/5.0 (Windows NT 6.1) Chrome/41.0.2228.0 Safari/537.36")
                     .timeout(3000)
+                    .ignoreHttpErrors(true)
                     .ignoreContentType(true)
                     .get();
                 //.userAgent("Mozilla")
