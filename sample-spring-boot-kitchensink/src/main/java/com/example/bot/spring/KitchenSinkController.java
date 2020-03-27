@@ -305,7 +305,7 @@ public class KitchenSinkController {
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         Random randWait = new Random();
         int myrandWait = 0;
-        myrandWait = randWait.nextInt(5) + 1;
+        myrandWait = randWait.nextInt(3) + 1;
         TimeUnit.SECONDS.sleep(myrandWait);
         Random rand = new Random();
         String strRandom = "";
@@ -369,10 +369,14 @@ public class KitchenSinkController {
                 JSONObject wjsonObject = new JSONObject(wgetJson);
                 String yourCity = wjsonObject.getString("name");
                 int responseCode = wjsonObject.getInt("cod");
-                if (responseCode == 404) {
+                intIndex = wgetJson.indexOf("404");
+                if (intIndex == -1) {
+                    intIndex = 0;
+                    }
+                 else {
                     this.replyText(replyToken, "Couldn't find that or you are wrong. Maybe the second one...");
                     break;
-                }
+                    }
                 JSONObject sysDetails = wjsonObject.getJSONObject("sys");
                 String yourCountry = sysDetails.getString("country");
                 JSONArray weatherArray = wjsonObject.getJSONArray("weather");
