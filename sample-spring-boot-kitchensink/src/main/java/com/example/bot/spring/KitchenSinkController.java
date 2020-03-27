@@ -369,10 +369,10 @@ public class KitchenSinkController {
                 JSONObject wjsonObject = new JSONObject(wgetJson);
                 String yourCity = wjsonObject.getString("name");
                 Double responseCode = wjsonObject.getDouble("cod");
-                if (responseCode == 404) {
-                    this.replyText(replyToken, "Didn't find that city or you typed it wrong.");
-                    break;
-                }
+                //if (responseCode == 404) {
+                //    this.replyText(replyToken, "Didn't find that city or you typed it wrong.");
+                //    break;
+                //}
                 JSONObject sysDetails = wjsonObject.getJSONObject("sys");
                 String yourCountry = sysDetails.getString("country");
                 JSONArray weatherArray = wjsonObject.getJSONArray("weather");
@@ -392,7 +392,7 @@ public class KitchenSinkController {
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
-                wreport = wreport + "Humidity is at " + yourHumidity + "%.";
+                wreport = wreport + "Humidity is at " + yourHumidity + "%." + responseCode;
                 //this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
                 this.replyText(replyToken, wreport);
                 break;
