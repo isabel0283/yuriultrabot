@@ -416,17 +416,12 @@ public class KitchenSinkController {
                 final DownloadedContent previewImg;
                 jpg = new DownloadedContent(null, cloudIconurl);
                 previewImg = new DownloadedContent(null, cloudIconurl);
-                //system("convert","-resize", "100x100", jpg.path.toString(), previewImg.path.toString());
-                //this.reply(replyToken, new ImageMessage(jpg.getUri(), previewImg.getUri()));
-                //comment
                 //Building the report
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
                 wreport = wreport + "Humidity is at " + yourHumidity + "%.";
-                //this.replyText(replyToken, wreport);
-                //this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
                 this.reply(replyToken,
                            Arrays.asList(
                                new ImageMessage(jpg.getUri(), previewImg.getUri()),
