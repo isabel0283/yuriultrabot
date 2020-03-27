@@ -368,7 +368,7 @@ public class KitchenSinkController {
                 String wgetJson = wresult.text();
                 JSONObject wjsonObject = new JSONObject(wgetJson);
                 //int responseCode = wjsonObject.getInt("cod");
-                intIndex = wgetJson.indexOf("404");
+                intIndex = wgetJson.indexOf("city not found");
                 if (intIndex == -1) {
                     intIndex = 0;
                 } else {
