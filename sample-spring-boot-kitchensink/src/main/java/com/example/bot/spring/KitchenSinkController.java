@@ -368,7 +368,7 @@ public class KitchenSinkController {
                 String wgetJson = wresult.text();
                 JSONObject wjsonObject = new JSONObject(wgetJson);
                 String yourCity = wjsonObject.getString("name");
-                Integer responseCode = wjsonObject.getInt("cod");
+                int responseCode = wjsonObject.getInt("cod");
                 if (responseCode.equals(404)) {
                     this.replyText(replyToken, "Couldn't find that or you are wrong. Maybe the second one...");
                     break;
@@ -392,7 +392,7 @@ public class KitchenSinkController {
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
-                wreport = wreport + "Humidity is at " + yourHumidity + "%." + responseCode;
+                wreport = wreport + "Humidity is at " + yourHumidity + "%.";
                 //this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
                 this.replyText(replyToken, wreport);
                 break;
