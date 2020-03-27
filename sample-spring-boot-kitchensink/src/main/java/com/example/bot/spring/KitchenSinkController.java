@@ -368,7 +368,7 @@ public class KitchenSinkController {
                 String wgetJson = wresult.text();
                 //int responseCode = wjsonObject.getInt("cod");
                 int wintIndex = wgetJson.indexOf("city not found");
-                this.replyText(replyToken, wintIndex);
+                this.replyText(replyToken, "The index " + wintIndex);
                 if (wintIndex == -1) {
                     wintIndex = 0;
                 } else {
@@ -396,7 +396,7 @@ public class KitchenSinkController {
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
-                wreport = wreport + "Humidity is at " + yourHumidity + "%." + wintIndex;
+                wreport = wreport + "Humidity is at " + yourHumidity + "%.";
                 //this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
                 this.replyText(replyToken, wreport);
                 break;
