@@ -418,6 +418,7 @@ public class KitchenSinkController {
                 final DownloadedContent previewImg;
                 jpg = new DownloadedContent(null, cloudIconurl);
                 previewImg = new DownloadedContent(null, cloudIconurl);
+                system("convert","-resize", "100x", jpg.path.toString(), previewImg.path.toString());
                 this.reply(replyToken, new ImageMessage(jpg.getUri(), previewImg.getUri()));
                 //comment
                 //Building the report
