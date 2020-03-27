@@ -367,12 +367,8 @@ public class KitchenSinkController {
                     .ignoreHttpErrors(true)
                     .ignoreContentType(true)
                     .get();
-                //.userAgent("Mozilla")
                 String wgetJson = wresult.text();
-                //int responseCode = wjsonObject.getInt("cod");
-                //this.replyText(replyToken, wgetJson);
                 int wintIndex = wgetJson.indexOf("city not found");
-                //this.replyText(replyToken, "The index " + wintIndex);
                 if (wintIndex != -1) {
                     this.replyText(replyToken, "Couldn't find that or you are wrong. Maybe the second one...");
                     break;
@@ -389,17 +385,18 @@ public class KitchenSinkController {
                 Double yourTempmin = mainDetails.getDouble("temp_min");
                 Double yourTempmax = mainDetails.getDouble("temp_max");
                 Double yourHumidity = mainDetails.getDouble("humidity");
-                //String yourCloudicon = weatherDetails.getString("icon");
+                String yourCloudicon = weatherDetails.getString("icon");
                 //Urls of icons
-                //String cloudIconurl = "http://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
-                //String flagIconurl = "http://openweathermap.org/images/flags/" + yourCountry + ".png";
+                String cloudIconurl = "http://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
+                String flagIconurl = "http://openweathermap.org/images/flags/" + yourCountry + ".png";
                 //Building the report
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
                 wreport = wreport + ". The current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
                 wreport = wreport + "Humidity is at " + yourHumidity + "%.";
-                //this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
+                this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
+                this.reply(replyToken, new ImageMessage(cloudIconurl, cloudIconurl));
                 this.replyText(replyToken, wreport);
                 break;
             case "yuri show me something pretty": {
