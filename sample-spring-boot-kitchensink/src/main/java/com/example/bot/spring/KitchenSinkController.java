@@ -412,13 +412,12 @@ public class KitchenSinkController {
                 //Urls of icons
                 String cloudIconurl = "https://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
                 //String flagIconurl = "https://openweathermap.org/images/flags/" + yourCountry + ".png";
-                //comment
                 final DownloadedContent jpg;
                 final DownloadedContent previewImg;
                 jpg = new DownloadedContent(null, cloudIconurl);
                 previewImg = new DownloadedContent(null, cloudIconurl);
                 //system("convert","-resize", "100x100", jpg.path.toString(), previewImg.path.toString());
-                this.reply(replyToken, new ImageMessage(jpg.getUri(), previewImg.getUri()));
+                //this.reply(replyToken, new ImageMessage(jpg.getUri(), previewImg.getUri()));
                 //comment
                 //Building the report
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
@@ -426,9 +425,12 @@ public class KitchenSinkController {
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
                 wreport = wreport + "Humidity is at " + yourHumidity + "%.";
-                this.replyText(replyToken, wreport);
+                //this.replyText(replyToken, wreport);
                 //this.reply(replyToken, new ImageMessage(flagIconurl, flagIconurl));
-                this.reply(replyToken, new ImageMessage(cloudIconurl, cloudIconurl));
+                this.reply(replyToken,
+                           Arrays.asList(
+                               new ImageMessage(jpg.getUri(), previewImg.getUri()),
+                               new TextMessage(wreport)));
                 break;
             case "yuri show me something pretty": {
                 log.info("Invoking 'profile' command: source:{}",
