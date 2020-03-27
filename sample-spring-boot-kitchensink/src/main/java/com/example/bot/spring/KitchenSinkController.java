@@ -112,7 +112,7 @@ public class KitchenSinkController {
         String replyToken = event.getReplyToken();
         Random randimg = new Random();
         Integer myrandIntimg = randimg.nextInt(5);
-                log.info("Returns echo message {}: {}", replyToken, text);
+                //log.info("Returns echo message {}: {}", replyToken, text);
                 String strRandomimg = "" + myrandIntimg;
                 String messageimg = "";
                 switch (strRandomimg) {
