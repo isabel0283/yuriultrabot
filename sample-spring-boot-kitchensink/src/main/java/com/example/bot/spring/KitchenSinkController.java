@@ -367,7 +367,6 @@ public class KitchenSinkController {
                     .get();
                 String wgetJson = wresult.text();
                 JSONObject wjsonObject = new JSONObject(wgetJson);
-                String yourCity = wjsonObject.getString("name");
                 //int responseCode = wjsonObject.getInt("cod");
                 intIndex = wgetJson.indexOf("404");
                 if (intIndex == -1) {
@@ -376,6 +375,7 @@ public class KitchenSinkController {
                     this.replyText(replyToken, "Couldn't find that or you are wrong. Maybe the second one...");
                     break;
                 }
+                String yourCity = wjsonObject.getString("name");
                 JSONObject sysDetails = wjsonObject.getJSONObject("sys");
                 String yourCountry = sysDetails.getString("country");
                 JSONArray weatherArray = wjsonObject.getJSONArray("weather");
