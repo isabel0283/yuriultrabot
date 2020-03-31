@@ -711,86 +711,16 @@ public class KitchenSinkController {
                 break;
             case "test":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                string messageFlex = "
- {
-  "type": "bubble",
-  "hero": {
-    "type": "image",
-    "url": "https://openweathermap.org/img/wn/10d@2x.png",
-    "size": "md",
-    "aspectRatio": "20:20",
-    "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "http://linecorp.com/"
-    },
-    "align": "center"
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "Panama, PA",
-        "weight": "bold",
-        "size": "xl"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "margin": "lg",
-        "spacing": "sm",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Weather description",
-                "wrap": true,
-                "color": "#666666",
-                "size": "sm",
-                "flex": 5
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "temperatures",
-                "size": "sm",
-                "color": "#666666"
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "humidity",
-                "size": "sm",
-                "color": "#666666"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "styles": {
-    "hero": {
-      "backgroundColor": "#ccccFF"
-    }
-  }
-}"
+                string messageFlex = "{"type":"bubble","hero":{"type":"image","url":"https://openweathermap.org/img/wn/10d@2x.png","
+                messageFlex = messageFlex + ""size":"md","aspectRatio":"20:20","aspectMode":"cover","action":{"type":"uri","
+                messageFlex = messageFlex + ""uri":"http://linecorp.com/"},"align":"center"},"body":{"type":"box","layout":"vertical","
+                messageFlex = messageFlex + ""contents":[{"type":"text","text":"Panama, PA","weight":"bold","size":"xl"},{"
+                messageFlex = messageFlex + ""type":"box","layout":"vertical","margin":"lg","spacing":"sm","contents":[{"type":"box","
+                messageFlex = messageFlex + ""layout":"baseline","spacing":"sm","contents":[{"type":"text","text":"Weather description","
+                messageFlex = messageFlex + ""wrap":true,"color":"#666666","size":"sm","flex":5}]},{"type":"box","layout":"vertical","
+                messageFlex = messageFlex + ""contents":[{"type":"text","text":"temperatures","size":"sm","color":"#666666"}]},{"
+                messageFlex = messageFlex + ""type":"box","layout":"vertical","contents":[{"type":"text","text":"humidity","size":"sm","
+                messageFlex = messageFlex + ""color":"#666666"}]}]}]},"styles":{"hero":{"backgroundColor":"#ccccFF"}}}"
                 this.reply(replyToken, new FlexMessage(messageFlex));
                 break;
             default:
