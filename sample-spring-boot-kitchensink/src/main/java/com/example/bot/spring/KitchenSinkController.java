@@ -418,10 +418,10 @@ public class KitchenSinkController {
                 previewImg = new DownloadedContent(null, cloudIconurl);
                 //Building the report
                 String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
-                wreport = wreport + ". The current temperature is " + yourTemp;
+                wreport = wreport + ". \nThe current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
-                wreport = wreport + "Humidity is at " + yourHumidity + "%.";
+                wreport = wreport + "\nHumidity is at " + yourHumidity + "%.";
                 this.reply(replyToken,
                            Arrays.asList(
                                new ImageMessage(jpg.getUri(), previewImg.getUri()),
