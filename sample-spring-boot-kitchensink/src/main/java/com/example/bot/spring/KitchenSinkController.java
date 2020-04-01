@@ -681,8 +681,10 @@ public class KitchenSinkController {
                            message = "Was that really a joke?";
                            break;
                        default:
-                           exit(0);
                            break;
+                }
+                if ("...".equals(message)) {
+                    break;
                 }
                 this.replyText(replyToken, message);
                 break;
