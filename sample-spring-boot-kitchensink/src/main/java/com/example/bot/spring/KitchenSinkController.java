@@ -325,6 +325,12 @@ public class KitchenSinkController {
          } else {
                 text = "youtubeYuri";
          }
+        intIndex = strOrig.indexOf("yuri please stop");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "stopYuri";
+         }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         Random randWait = new Random();
         int myrandWait = 0;
@@ -633,6 +639,11 @@ public class KitchenSinkController {
             case "yuriiloveyou":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "I don't care...");
+                break;
+            case "stopYuri":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "I'll be back... You'll see!");
+                TimeUnit.SECONDS.sleep(300);
                 break;
             case "hahaha": {
                 myrandInt = rand.nextInt(15);
