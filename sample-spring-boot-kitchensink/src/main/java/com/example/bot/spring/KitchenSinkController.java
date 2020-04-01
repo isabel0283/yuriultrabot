@@ -642,11 +642,11 @@ public class KitchenSinkController {
                 break;
             case "stopYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                TimeUnit.MINUTES.sleep(1);
+                Thread.sleep(300000);
                 this.replyText(replyToken, "I'm here again!");
                 break;
             case "hahaha": {
-                myrandInt = rand.nextInt(15);
+                myrandInt = rand.nextInt(20);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
