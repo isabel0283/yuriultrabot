@@ -498,7 +498,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
             case "yuri": {
-                myrandInt = rand.nextInt(15);
+                myrandInt = rand.nextInt(20);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -539,7 +539,7 @@ public class KitchenSinkController {
                 break;
              }
              case "work": {
-                myrandInt = rand.nextInt(15);
+                myrandInt = rand.nextInt(20);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -580,7 +580,7 @@ public class KitchenSinkController {
                 break;
              }
             case "love": {
-                myrandInt = rand.nextInt(15);
+                myrandInt = rand.nextInt(20);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -681,6 +681,7 @@ public class KitchenSinkController {
                            message = "Was that really a joke?";
                            break;
                        default:
+                           exit(0);
                            break;
                 }
                 this.replyText(replyToken, message);
