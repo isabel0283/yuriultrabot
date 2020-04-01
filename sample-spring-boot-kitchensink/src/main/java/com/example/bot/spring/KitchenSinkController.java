@@ -642,8 +642,8 @@ public class KitchenSinkController {
                 break;
             case "stopYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "I'll be back... You'll see!");
                 TimeUnit.SECONDS.sleep(300);
+                this.replyText(replyToken, "I'm here again!");
                 break;
             case "hahaha": {
                 myrandInt = rand.nextInt(15);
