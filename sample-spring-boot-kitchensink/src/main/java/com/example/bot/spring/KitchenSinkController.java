@@ -339,7 +339,7 @@ public class KitchenSinkController {
         Random rand = new Random();
         String strRandom = "";
         int myrandInt = 0;
-        String message = "...";
+        String message = "";
         switch (text) {
             case "youtube":
                 log.info("Returns echo message {}: {}", replyToken, text);
@@ -654,13 +654,13 @@ public class KitchenSinkController {
                            message = "That's not funny at all...";
                            break;
                        case "1":
-                           message = "My wall is funnier...";
+                           message = "I didn't understand that one...";
                            break;
                        case "2":
                            message = "You are making us feel uncomfortable...";
                            break;
                        case "3":
-                           message = "Hahaha! that's so pathetic...";
+                           message = "Hahaha! Really?";
                            break;
                        case "4":
                            message = "Why are you laughing?";
@@ -675,7 +675,7 @@ public class KitchenSinkController {
                            message = "Ehhh... What was that?";
                            break;
                        case "8":
-                           message = "That's not even close to funny...";
+                           message = "If you say so...";
                            break;
                        case "9":
                            message = "Was that really a joke?";
@@ -685,9 +685,10 @@ public class KitchenSinkController {
                 }
                 if ("...".equals(message)) {
                     break;
-                }
+                } else {
                 this.replyText(replyToken, message);
                 break;
+                }
             }
             case "no": {
                 myrandInt = rand.nextInt(10);
