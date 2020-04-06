@@ -44,7 +44,6 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                      .size(ImageSize.MD)
                      .aspectMode(ImageAspectMode.Fit)
                      .build();
-
         final Box bodyBlock = createBodyBlock();
         final Box footerBlock = createFooterBlock();
         final Bubble bubble =
@@ -64,7 +63,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                 Text.builder()
                     .text("Courtesy of OpenWeather®")
                     .weight(TextWeight.REGULAR)
-                    .size(FlexFontSize.SM)
+                    .size(FlexFontSize.XS)
                     .build();
 
         return Box.builder()
@@ -75,13 +74,23 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     }
 
     private Box createBodyBlock() {
-        final Text title =
-                Text.builder()
-                    .text("London, UK")
-                    .weight(TextWeight.REGULAR)
-                    .size(FlexFontSize.XL)
-                    .build();
-
+        final Box title = Box
+                .builder()
+                .layout(FlexLayout.BASELINE)
+                .spacing(FlexMarginSize.SM)
+                .contents(asList(
+                        Icon.builder()
+                            .size(FlexFontSize.SM)
+                            .url(URI.create("https://openweathermap.org/images/flags/jp.png"))
+                            .build(),
+                        Text.builder()
+                            .text("Tokyo, JP")
+                            .weight(TextWeight.REGULAR)
+                            .size(FlexFontSize.LG)
+                            .build();
+                ))
+                .build();
+               
         final Box info = createInfoBox();
 
         return Box.builder()
