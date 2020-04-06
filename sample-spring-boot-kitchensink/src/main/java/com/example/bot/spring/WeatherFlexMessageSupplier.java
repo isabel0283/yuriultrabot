@@ -87,7 +87,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                             .text("Tokyo, JP")
                             .weight(TextWeight.REGULAR)
                             .size(FlexFontSize.LG)
-                            .build();
+                            .build()
                 ))
                 .build();
                
