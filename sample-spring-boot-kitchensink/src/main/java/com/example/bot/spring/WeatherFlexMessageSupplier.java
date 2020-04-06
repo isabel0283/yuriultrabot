@@ -40,14 +40,14 @@ import com.linecorp.bot.model.message.flex.unit.FlexFontSize;
 import com.linecorp.bot.model.message.flex.unit.FlexLayout;
 import com.linecorp.bot.model.message.flex.unit.FlexMarginSize;
 
-public class ExampleFlexMessageSupplier implements Supplier<FlexMessage> {
+public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     @Override
     public FlexMessage get() {
         final Image heroBlock =
                 Image.builder()
                      .url("https://openweathermap.org/img/wn/02d@2x.png")
-                     .size(ImageSize.FULL_WIDTH)
-                     .aspectRatio(ImageAspectRatio.R10TO10)
+                     .size(ImageSize.MD_WIDTH)
+                     .aspectRatio(ImageAspectRatio.R20TO20)
                      .aspectMode(ImageAspectMode.Fit)
                      .build();
 
@@ -76,7 +76,7 @@ public class ExampleFlexMessageSupplier implements Supplier<FlexMessage> {
         return Box.builder()
                   .layout(FlexLayout.VERTICAL)
                   .spacing(FlexMarginSize.SM)
-                  .contents(asList(spacer, callAction, separator, websiteAction))
+                  .contents(asList(spacer, separator, weatherSupplier))
                   .build();
     }
 
