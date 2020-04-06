@@ -20,6 +20,7 @@ import static java.util.Arrays.asList;
 
 import java.util.function.Supplier;
 
+import com.linecorp.bot.model.action.URIAction;
 import com.linecorp.bot.model.message.FlexMessage;
 import com.linecorp.bot.model.message.flex.component.Box;
 import com.linecorp.bot.model.message.flex.component.Icon;
@@ -100,7 +101,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     }
 
     private Box createInfoBox() {
-        final Box place = Box
+        final Box temperature = Box
                 .builder()
                 .layout(FlexLayout.BASELINE)
                 .spacing(FlexMarginSize.SM)
@@ -120,7 +121,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                             .build()
                 ))
                 .build();
-        final Box time =
+        final Box humidity =
                 Box.builder()
                    .layout(FlexLayout.BASELINE)
                    .spacing(FlexMarginSize.SM)
@@ -145,7 +146,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                   .layout(FlexLayout.VERTICAL)
                   .margin(FlexMarginSize.LG)
                   .spacing(FlexMarginSize.SM)
-                  .contents(asList(place, time))
+                  .contents(asList(temperature, humidity))
                   .build();
     }
 }
