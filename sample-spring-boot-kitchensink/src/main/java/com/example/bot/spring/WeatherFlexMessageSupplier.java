@@ -75,23 +75,12 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     }
 
     private Box createBodyBlock() {
-        final Box title = Box
-                .builder()
-                .layout(FlexLayout.BASELINE)
-                .spacing(FlexMarginSize.SM)
-                .contents(asList(
-                        Image.builder()
-                            .url(URI.create("https://openweathermap.org/images/flags/jp.png"))
-                            .size(ImageSize.MD)
-                            .aspectMode(ImageAspectMode.Fit)
-                            .build(),
-                        Text.builder()
-                            .text("Tokyo, JP")
-                            .weight(TextWeight.REGULAR)
-                            .size(FlexFontSize.LG)
-                            .build()
-                ))
-                .build();
+        final Box title = Text
+                   .builder()
+                   .text("Tokyo, JP")
+                   .weight(TextWeight.REGULAR)
+                   .size(FlexFontSize.LG)
+                   .build();
                
         final Box info = createInfoBox();
 
