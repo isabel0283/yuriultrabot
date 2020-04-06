@@ -54,7 +54,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                       .footer(footerBlock)
                       .build();
 
-        return new FlexMessage("ALT", bubble);
+        return new FlexMessage("Weather results", bubble);
     }
 
     private Box createFooterBlock() {
@@ -77,18 +77,16 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     private Box createBodyBlock() {
         final Text title =
                 Text.builder()
-                    .text("Brown Cafe")
+                    .text("London, UK")
                     .weight(TextWeight.REGULAR)
                     .size(FlexFontSize.XL)
                     .build();
-
-        final Box review = createReviewBox();
 
         final Box info = createInfoBox();
 
         return Box.builder()
                   .layout(FlexLayout.VERTICAL)
-                  .contents(asList(title, review, info))
+                  .contents(asList(title, info))
                   .build();
     }
 
@@ -139,27 +137,6 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                   .margin(FlexMarginSize.LG)
                   .spacing(FlexMarginSize.SM)
                   .contents(asList(place, time))
-                  .build();
-    }
-
-    private Box createReviewBox() {
-        final Icon goldStar =
-                Icon.builder().size(FlexFontSize.SM).url("https://example.com/gold_star.png").build();
-        final Icon grayStar =
-                Icon.builder().size(FlexFontSize.SM).url("https://example.com/gray_star.png").build();
-        final Text point =
-                Text.builder()
-                    .text("4.0")
-                    .size(FlexFontSize.SM)
-                    .color("#999999")
-                    .margin(FlexMarginSize.MD)
-                    .flex(0)
-                    .build();
-
-        return Box.builder()
-                  .layout(FlexLayout.BASELINE)
-                  .margin(FlexMarginSize.MD)
-                  .contents(asList(goldStar, goldStar, goldStar, goldStar, grayStar, point))
                   .build();
     }
 }
