@@ -494,6 +494,9 @@ public class KitchenSinkController {
             case "alter_flex":
                 this.reply(replyToken, new ExampleFlexMessageSupplier().get());
                 break;
+            case "test_weather":
+                this.reply(replyToken, new WeatherFlexMessageSupplier().get());
+                break;
             case "quickreply":
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
