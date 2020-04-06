@@ -45,11 +45,10 @@ public class ExampleFlexMessageSupplier implements Supplier<FlexMessage> {
     public FlexMessage get() {
         final Image heroBlock =
                 Image.builder()
-                     .url("https://example.com/cafe.jpg")
+                     .url("https://openweathermap.org/img/wn/02d@2x.png")
                      .size(ImageSize.FULL_WIDTH)
-                     .aspectRatio(ImageAspectRatio.R20TO13)
-                     .aspectMode(ImageAspectMode.Cover)
-                     .action(new URIAction("label", "http://example.com", null))
+                     .aspectRatio(ImageAspectRatio.R10TO10)
+                     .aspectMode(ImageAspectMode.Fit)
                      .build();
 
         final Box bodyBlock = createBodyBlock();
@@ -66,19 +65,13 @@ public class ExampleFlexMessageSupplier implements Supplier<FlexMessage> {
 
     private Box createFooterBlock() {
         final Spacer spacer = Spacer.builder().size(FlexMarginSize.SM).build();
-        final Button callAction = Button
-                .builder()
-                .style(ButtonStyle.LINK)
-                .height(ButtonHeight.SMALL)
-                .action(new URIAction("CALL", "tel:000000", null))
-                .build();
         final Separator separator = Separator.builder().build();
-        final Button websiteAction =
-                Button.builder()
-                      .style(ButtonStyle.LINK)
-                      .height(ButtonHeight.SMALL)
-                      .action(new URIAction("WEBSITE", "https://example.com", null))
-                      .build();
+        final Text weatherSupplier =
+                Text.builder()
+                    .text("Courtesy of OpenWeather®")
+                    .weight(TextWeight.REGULAR)
+                    .size(FlexFontSize.SM)
+                    .build();
 
         return Box.builder()
                   .layout(FlexLayout.VERTICAL)
@@ -91,7 +84,7 @@ public class ExampleFlexMessageSupplier implements Supplier<FlexMessage> {
         final Text title =
                 Text.builder()
                     .text("Brown Cafe")
-                    .weight(TextWeight.BOLD)
+                    .weight(TextWeight.REGULAR)
                     .size(FlexFontSize.XL)
                     .build();
 
