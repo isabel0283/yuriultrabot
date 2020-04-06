@@ -81,7 +81,6 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                 .spacing(FlexMarginSize.SM)
                 .contents(asList(
                         Icon.builder()
-                            .size(FlexFontSize.SM)
                             .url(URI.create("https://openweathermap.org/images/flags/jp.png"))
                             .build(),
                         Text.builder()
