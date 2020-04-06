@@ -46,8 +46,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
         final Image heroBlock =
                 Image.builder()
                      .url("https://openweathermap.org/img/wn/02d@2x.png")
-                     .size(ImageSize.MD_WIDTH)
-                     .aspectRatio(ImageAspectRatio.R20TO20)
+                     .size(ImageSize.MD)
                      .aspectMode(ImageAspectMode.Fit)
                      .build();
 
