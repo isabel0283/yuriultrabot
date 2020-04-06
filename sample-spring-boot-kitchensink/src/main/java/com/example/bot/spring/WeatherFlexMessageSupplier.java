@@ -18,9 +18,9 @@ package com.example.bot.spring;
 
 import static java.util.Arrays.asList;
 
+import java.net.URI;
 import java.util.function.Supplier;
 
-import com.linecorp.bot.model.action.URIAction;
 import com.linecorp.bot.model.message.FlexMessage;
 import com.linecorp.bot.model.message.flex.component.Box;
 import com.linecorp.bot.model.message.flex.component.Icon;
