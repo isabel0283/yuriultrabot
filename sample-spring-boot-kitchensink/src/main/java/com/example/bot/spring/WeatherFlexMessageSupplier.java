@@ -80,8 +80,10 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                 .layout(FlexLayout.BASELINE)
                 .spacing(FlexMarginSize.SM)
                 .contents(asList(
-                        Icon.builder()
+                        Image.builder()
                             .url(URI.create("https://openweathermap.org/images/flags/jp.png"))
+                            .size(ImageSize.MD)
+                            .aspectMode(ImageAspectMode.Fit)
                             .build(),
                         Text.builder()
                             .text("Tokyo, JP")
