@@ -496,7 +496,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, new ExampleFlexMessageSupplier().get());
                 break;
             case "test_weather":
-                public String testwreportLocation = "Test City, TS";
+                String testwreportLocation = "Test City, TS";
                 this.reply(replyToken, new WeatherFlexMessageSupplier().get());
                 break;
             case "quickreply":
