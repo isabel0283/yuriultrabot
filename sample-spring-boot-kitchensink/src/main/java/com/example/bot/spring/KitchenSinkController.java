@@ -423,7 +423,8 @@ public class KitchenSinkController {
                 jpg = new DownloadedContent(null, cloudIconurl);
                 previewImg = new DownloadedContent(null, cloudIconurl);
                 //Building the report
-                String wreport = "We have " + yourConditionDesc + " in " + yourCity + ", " + yourCountry;
+                String wreportLocation = yourCity + ", " + yourCountry;
+                String wreport = "We have " + yourConditionDesc + " in " + wreportLocation;
                 wreport = wreport + ". \nThe current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
                 wreport = wreport + "°C and the highest is " + yourTempmax + "°C. ";
@@ -495,6 +496,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, new ExampleFlexMessageSupplier().get());
                 break;
             case "test_weather":
+                wreportLocation = "Test City, TS";
                 this.reply(replyToken, new WeatherFlexMessageSupplier().get());
                 break;
             case "quickreply":
