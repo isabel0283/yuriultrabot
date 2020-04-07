@@ -81,9 +81,10 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                    .size(FlexFontSize.LG)
                    .build();
 
-        final Icon flag = Icon
+        final Image flag = Image
                    .builder()
-                   .size(FlexFontSize.XXS)
+                   .size(ImageSize.MD)
+                   .aspectMode(ImageAspectMode.Fit)
                    .url("https://openweathermap.org/images/flags/jp.png")
                    .build();
 
@@ -102,7 +103,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                 .spacing(FlexMarginSize.SM)
                 .contents(asList(
                         Text.builder()
-                            .text("Place")
+                            .text("Temperature")
                             .color("#aaaaaa")
                             .size(FlexFontSize.SM)
                             .flex(1)
@@ -122,13 +123,13 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                    .spacing(FlexMarginSize.SM)
                    .contents(asList(
                            Text.builder()
-                               .text("Time")
+                               .text("Humidity")
                                .color("#aaaaaa")
                                .size(FlexFontSize.SM)
                                .flex(1)
                                .build(),
                            Text.builder()
-                               .text("10:00 - 23:00")
+                               .text("78%")
                                .wrap(true)
                                .color("#666666")
                                .size(FlexFontSize.SM)
