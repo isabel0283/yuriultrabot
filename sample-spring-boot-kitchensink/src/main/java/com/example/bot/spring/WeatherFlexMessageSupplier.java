@@ -61,6 +61,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
         final Text weatherSupplier =
                 Text.builder()
                     .text("Courtesy of OpenWeather®")
+                    .align("center")
                     .weight(TextWeight.REGULAR)
                     .size(FlexFontSize.XS)
                     .build();
@@ -194,7 +195,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                   .layout(FlexLayout.VERTICAL)
                   .margin(FlexMarginSize.LG)
                   .spacing(FlexMarginSize.SM)
-                  .contents(asList(conditions, maxtemperature, mintemperature, currtemperature, humidity))
+                  .contents(asList(conditions, currtemperature, maxtemperature, mintemperature, humidity))
                   .build();
     }
 }
