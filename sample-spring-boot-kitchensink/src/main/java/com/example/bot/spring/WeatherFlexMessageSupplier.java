@@ -22,7 +22,6 @@ import java.util.function.Supplier;
 
 import com.linecorp.bot.model.message.FlexMessage;
 import com.linecorp.bot.model.message.flex.component.Box;
-import com.linecorp.bot.model.message.flex.component.Icon;
 import com.linecorp.bot.model.message.flex.component.Image;
 import com.linecorp.bot.model.message.flex.component.Image.ImageAspectMode;
 import com.linecorp.bot.model.message.flex.component.Image.ImageSize;
