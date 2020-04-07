@@ -37,7 +37,6 @@ import com.linecorp.bot.model.message.flex.unit.FlexMarginSize;
 
 public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     @Override
-    String location = "Prueba de Ciudad, Pais";
     public FlexMessage get() {
         final Image heroBlock =
                 Image.builder()
@@ -78,7 +77,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     private Box createBodyBlock() {
         final Text title = Text
                    .builder()
-                   .text(location)
+                   .text(Kurashiki, JP)
                    .weight(TextWeight.BOLD)
                    .size(FlexFontSize.LG)
                    .build();
