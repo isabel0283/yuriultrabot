@@ -18,7 +18,6 @@ package com.example.bot.spring;
 
 import static java.util.Arrays.asList;
 
-import java.net.URI;
 import java.util.function.Supplier;
 
 import com.linecorp.bot.model.message.FlexMessage;
@@ -78,14 +77,14 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
         final Text title = Text
                    .builder()
                    .text("Tokyo, JP")
-                   .weight(TextWeight.REGULAR)
+                   .weight(TextWeight.BOLD)
                    .size(FlexFontSize.LG)
                    .build();
 
         final Icon flag = Icon
                    .builder()
                    .size(FlexFontSize.XXS)
-                   .url(URI.create("https://openweathermap.org/images/flags/jp.png"))
+                   .url("https://openweathermap.org/images/flags/jp.png")
                    .build();
 
         final Box info = createInfoBox();
