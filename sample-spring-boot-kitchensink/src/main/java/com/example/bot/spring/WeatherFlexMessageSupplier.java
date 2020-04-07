@@ -30,6 +30,7 @@ import com.linecorp.bot.model.message.flex.component.Spacer;
 import com.linecorp.bot.model.message.flex.component.Text;
 import com.linecorp.bot.model.message.flex.component.Text.TextWeight;
 import com.linecorp.bot.model.message.flex.container.Bubble;
+import com.linecorp.bot.model.message.flex.unit.FlexAlign;
 import com.linecorp.bot.model.message.flex.unit.FlexFontSize;
 import com.linecorp.bot.model.message.flex.unit.FlexLayout;
 import com.linecorp.bot.model.message.flex.unit.FlexMarginSize;
@@ -61,6 +62,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
         final Text weatherSupplier =
                 Text.builder()
                     .text("Courtesy of OpenWeather®")
+                    .align(FlexAlign.CENTER)
                     .weight(TextWeight.REGULAR)
                     .size(FlexFontSize.XS)
                     .build();
