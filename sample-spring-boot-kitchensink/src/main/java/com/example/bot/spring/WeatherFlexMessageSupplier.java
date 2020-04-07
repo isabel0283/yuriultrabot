@@ -77,7 +77,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     private Box createBodyBlock() {
         final Text title = Text
                    .builder()
-                   .text(Kurashiki, JP)
+                   .text("Kurashiki, JP")
                    .weight(TextWeight.BOLD)
                    .size(FlexFontSize.LG)
                    .build();
