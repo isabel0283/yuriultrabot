@@ -75,7 +75,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     private Box createBodyBlock() {
         final Text title = Text
                    .builder()
-                   .text(wreportLocation)
+                   .text("Weather in Kurashiki, JP")
                    .weight(TextWeight.BOLD)
                    .size(FlexFontSize.LG)
                    .build();
@@ -89,19 +89,19 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     }
 
     private Box createInfoBox() {
-        final Box temperature = Box
+        final Box conditions = Box
                 .builder()
                 .layout(FlexLayout.BASELINE)
                 .spacing(FlexMarginSize.SM)
                 .contents(asList(
                         Text.builder()
-                            .text("Temperature")
+                            .text("Conditions")
                             .color("#aaaaaa")
                             .size(FlexFontSize.SM)
                             .flex(2)
                             .build(),
                         Text.builder()
-                            .text("Shinjuku, Tokyo")
+                            .text("Few clouds")
                             .wrap(true)
                             .color("#666666")
                             .size(FlexFontSize.SM)
@@ -109,6 +109,26 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                             .build()
                 ))
                 .build();
+        final Box temperature =
+                Box.builder()
+                   .layout(FlexLayout.BASELINE)
+                   .spacing(FlexMarginSize.SM)
+                   .contents(asList(
+                           Text.builder()
+                               .text("Temperature")
+                               .color("#aaaaaa")
+                               .size(FlexFontSize.SM)
+                               .flex(2)
+                               .build(),
+                           Text.builder()
+                               .text("25°C")
+                               .wrap(true)
+                               .color("#666666")
+                               .size(FlexFontSize.SM)
+                               .flex(4)
+                               .build()
+                   ))
+                   .build();
         final Box humidity =
                 Box.builder()
                    .layout(FlexLayout.BASELINE)
@@ -134,7 +154,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                   .layout(FlexLayout.VERTICAL)
                   .margin(FlexMarginSize.LG)
                   .spacing(FlexMarginSize.SM)
-                  .contents(asList(temperature, humidity))
+                  .contents(asList(conditions, temperature, humidity))
                   .build();
     }
 }
