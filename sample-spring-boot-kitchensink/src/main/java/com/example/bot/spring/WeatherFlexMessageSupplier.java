@@ -77,7 +77,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     private Box createBodyBlock() {
         final Text title = Text
                    .builder()
-                   .text(KitchenSinkController.wreportLocation.get())
+                   .text(KitchenSinkController.testwreportLocation.get())
                    .weight(TextWeight.BOLD)
                    .size(FlexFontSize.LG)
                    .build();
