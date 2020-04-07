@@ -423,7 +423,7 @@ public class KitchenSinkController {
                 jpg = new DownloadedContent(null, cloudIconurl);
                 previewImg = new DownloadedContent(null, cloudIconurl);
                 //Building the report
-                public static String wreportLocation = yourCity + ", " + yourCountry;
+                public String wreportLocation = yourCity + ", " + yourCountry;
                 String wreport = "We have " + yourConditionDesc + " in " + wreportLocation;
                 wreport = wreport + ". \nThe current temperature is " + yourTemp;
                 wreport = wreport + "°C, the lowest for today is " + yourTempmin;
