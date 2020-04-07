@@ -497,7 +497,7 @@ public class KitchenSinkController {
                 break;
             case "test_weather":
                 String testwreportLocation = "Test City, TS";
-                this.reply(replyToken, new WeatherFlexMessageSupplier().get());
+                this.reply(replyToken, new WeatherFlexMessageSupplier(testwreportLocation).get());
                 break;
             case "quickreply":
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
@@ -633,11 +633,11 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "You welcome!");
                 break;
-            case "food":
+            case "alter_food":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Suddenly I feel hungry... :(");
                 break;
-            case "sex":
+            case "alter_sex":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Don't you have anything else to talk about?");
                 break;
