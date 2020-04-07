@@ -109,7 +109,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                             .build()
                 ))
                 .build();
-        final Box temperature =
+        final Box currtemperature =
                 Box.builder()
                    .layout(FlexLayout.BASELINE)
                    .spacing(FlexMarginSize.SM)
@@ -122,6 +122,46 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                                .build(),
                            Text.builder()
                                .text("25°C")
+                               .wrap(true)
+                               .color("#666666")
+                               .size(FlexFontSize.SM)
+                               .flex(4)
+                               .build()
+                   ))
+                   .build();
+        final Box mintemperature =
+                Box.builder()
+                   .layout(FlexLayout.BASELINE)
+                   .spacing(FlexMarginSize.SM)
+                   .contents(asList(
+                           Text.builder()
+                               .text("Minimum")
+                               .color("#aaaaaa")
+                               .size(FlexFontSize.SM)
+                               .flex(2)
+                               .build(),
+                           Text.builder()
+                               .text("22°C")
+                               .wrap(true)
+                               .color("#666666")
+                               .size(FlexFontSize.SM)
+                               .flex(4)
+                               .build()
+                   ))
+                   .build();
+        final Box maxtemperature =
+                Box.builder()
+                   .layout(FlexLayout.BASELINE)
+                   .spacing(FlexMarginSize.SM)
+                   .contents(asList(
+                           Text.builder()
+                               .text("Maximum")
+                               .color("#aaaaaa")
+                               .size(FlexFontSize.SM)
+                               .flex(2)
+                               .build(),
+                           Text.builder()
+                               .text("29°C")
                                .wrap(true)
                                .color("#666666")
                                .size(FlexFontSize.SM)
@@ -154,7 +194,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                   .layout(FlexLayout.VERTICAL)
                   .margin(FlexMarginSize.LG)
                   .spacing(FlexMarginSize.SM)
-                  .contents(asList(conditions, temperature, humidity))
+                  .contents(asList(conditions, maxtemperature, mintemperature, currtemperature, humidity))
                   .build();
     }
 }
