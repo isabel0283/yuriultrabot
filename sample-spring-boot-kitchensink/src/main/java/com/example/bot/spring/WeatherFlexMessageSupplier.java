@@ -80,18 +80,11 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                    .size(FlexFontSize.LG)
                    .build();
 
-        final Image flag = Image
-                   .builder()
-                   .size(ImageSize.MD)
-                   .aspectMode(ImageAspectMode.Fit)
-                   .url("https://openweathermap.org/images/flags/jp.png")
-                   .build();
-
         final Box info = createInfoBox();
 
         return Box.builder()
                   .layout(FlexLayout.VERTICAL)
-                  .contents(asList(flag, title, info))
+                  .contents(asList(title, info))
                   .build();
     }
 
@@ -105,14 +98,14 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                             .text("Temperature")
                             .color("#aaaaaa")
                             .size(FlexFontSize.SM)
-                            .flex(1)
+                            .flex(2)
                             .build(),
                         Text.builder()
                             .text("Shinjuku, Tokyo")
                             .wrap(true)
                             .color("#666666")
                             .size(FlexFontSize.SM)
-                            .flex(5)
+                            .flex(4)
                             .build()
                 ))
                 .build();
@@ -125,14 +118,14 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                                .text("Humidity")
                                .color("#aaaaaa")
                                .size(FlexFontSize.SM)
-                               .flex(1)
+                               .flex(2)
                                .build(),
                            Text.builder()
                                .text("78%")
                                .wrap(true)
                                .color("#666666")
                                .size(FlexFontSize.SM)
-                               .flex(5)
+                               .flex(4)
                                .build()
                    ))
                    .build();
