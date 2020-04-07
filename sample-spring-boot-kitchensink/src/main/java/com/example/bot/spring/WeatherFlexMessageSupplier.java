@@ -35,7 +35,7 @@ import com.linecorp.bot.model.message.flex.unit.FlexFontSize;
 import com.linecorp.bot.model.message.flex.unit.FlexLayout;
 import com.linecorp.bot.model.message.flex.unit.FlexMarginSize;
 
-public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
+public class WeatherFlexMessageSupplier (String location) implements Supplier<FlexMessage> {
     @Override
     public FlexMessage get() {
         final Image heroBlock =
@@ -77,7 +77,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     private Box createBodyBlock() {
         final Text title = Text
                    .builder()
-                   .text(KitchenSinkController.testwreportLocation.get())
+                   .text(location)
                    .weight(TextWeight.BOLD)
                    .size(FlexFontSize.LG)
                    .build();
