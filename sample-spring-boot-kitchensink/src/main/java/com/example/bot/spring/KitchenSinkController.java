@@ -496,7 +496,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, new ExampleFlexMessageSupplier().get());
                 break;
             case "test_weather":
-                wreportLocation = "Test City, TS";
+                public final testwreportLocation = "Test City, TS";
                 this.reply(replyToken, new WeatherFlexMessageSupplier().get());
                 break;
             case "quickreply":
@@ -725,7 +725,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.reply(replyToken, new StickerMessage("11539", "52114129"));
                 break;
-            case "lurking":
+            case "alter_lurking":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Thats me... Any problem with that?");
                 break;
