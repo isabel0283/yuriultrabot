@@ -137,7 +137,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                    .spacing(FlexMarginSize.SM)
                    .contents(asList(
                            Text.builder()
-                               .text("Minimum")
+                               .text("- Minimum")
                                .color("#aaaaaa")
                                .size(FlexFontSize.SM)
                                .flex(2)
@@ -157,7 +157,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                    .spacing(FlexMarginSize.SM)
                    .contents(asList(
                            Text.builder()
-                               .text("Maximum")
+                               .text("- Maximum")
                                .color("#aaaaaa")
                                .size(FlexFontSize.SM)
                                .flex(2)
