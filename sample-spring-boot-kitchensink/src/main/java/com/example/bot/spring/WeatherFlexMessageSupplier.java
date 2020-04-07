@@ -75,7 +75,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     }
 
     private Box createBodyBlock() {
-        final Box title = Text
+        final Text title = Text
                    .builder()
                    .text("Tokyo, JP")
                    .weight(TextWeight.REGULAR)
