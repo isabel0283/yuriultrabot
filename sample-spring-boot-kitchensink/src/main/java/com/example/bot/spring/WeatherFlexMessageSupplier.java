@@ -18,12 +18,10 @@ package com.example.bot.spring;
 
 import static java.util.Arrays.asList;
 
-import java.net.URI;
 import java.util.function.Supplier;
 
 import com.linecorp.bot.model.message.FlexMessage;
 import com.linecorp.bot.model.message.flex.component.Box;
-import com.linecorp.bot.model.message.flex.component.Icon;
 import com.linecorp.bot.model.message.flex.component.Image;
 import com.linecorp.bot.model.message.flex.component.Image.ImageAspectMode;
 import com.linecorp.bot.model.message.flex.component.Image.ImageSize;
@@ -81,7 +79,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
                    .weight(TextWeight.REGULAR)
                    .size(FlexFontSize.LG)
                    .build();
-               
+
         final Box info = createInfoBox();
 
         return Box.builder()
