@@ -61,7 +61,6 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
         final Text weatherSupplier =
                 Text.builder()
                     .text("Courtesy of OpenWeather®")
-                    .align(FlexAlign.CENTER)
                     .weight(TextWeight.REGULAR)
                     .size(FlexFontSize.XS)
                     .build();
