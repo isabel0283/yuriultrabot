@@ -235,6 +235,8 @@ public class KitchenSinkController {
         );
     }
 
+    public String testwreportLocation = "Default Location";
+    
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
         String textOriginal = content.getText();
@@ -496,7 +498,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, new ExampleFlexMessageSupplier().get());
                 break;
             case "test_weather":
-                String testwreportLocation = "Test City, TS";
+                testwreportLocation = "Test City, TS";
                 this.reply(replyToken, new WeatherFlexMessageSupplier().get());
                 break;
             case "quickreply":
