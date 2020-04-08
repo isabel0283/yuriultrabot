@@ -76,8 +76,7 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
 
     private Box createBodyBlock() {
         KitchenSinkController weather = new KitchenSinkController();
-        //String location = weather.testwreportLocation;
-        String location = weather.wreportLocation;
+        String location = weather.testwreportLocation;
         final Text title = Text
                    .builder()
                    .text(location)
