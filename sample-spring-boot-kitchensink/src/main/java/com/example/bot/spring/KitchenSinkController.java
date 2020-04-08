@@ -624,8 +624,12 @@ public class KitchenSinkController {
                        default:
                            break;
                 }
+                if ("...".equals(message)) {
+                    break;
+                } else {
                 this.replyText(replyToken, message);
                 break;
+                }
              }
             case "dontcare":
                 log.info("Returns echo message {}: {}", replyToken, text);
