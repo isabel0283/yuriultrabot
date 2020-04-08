@@ -235,7 +235,7 @@ public class KitchenSinkController {
         );
     }
 
-    public String testwreportLocation;
+    public static String testwreportLocation;
 
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
