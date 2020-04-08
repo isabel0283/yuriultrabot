@@ -75,9 +75,11 @@ public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     }
 
     private Box createBodyBlock() {
+        WeatherFlexMessageSupplier weather = new WeatherFlexMessageSupplier();
+        String location = WeatherFlexMessageSupplier.testwreportLocation();
         final Text title = Text
                    .builder()
-                   .text("Kurashiki, JP")
+                   .text(location)
                    .weight(TextWeight.BOLD)
                    .size(FlexFontSize.LG)
                    .build();
