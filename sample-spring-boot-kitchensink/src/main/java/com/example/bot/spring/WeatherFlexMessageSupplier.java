@@ -35,7 +35,7 @@ import com.linecorp.bot.model.message.flex.unit.FlexFontSize;
 import com.linecorp.bot.model.message.flex.unit.FlexLayout;
 import com.linecorp.bot.model.message.flex.unit.FlexMarginSize;
 
-public class WeatherFlexMessageSupplier implements Supplier<FlexMessage>(String locationx) {
+public class WeatherFlexMessageSupplier implements Supplier<FlexMessage> {
     @Override
     public FlexMessage get() {
         final Image heroBlock =
