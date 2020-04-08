@@ -235,7 +235,7 @@ public class KitchenSinkController {
         );
     }
 
-    public static String testwreportLocation = "Default Location";
+    public String testwreportLocation = "Default Location";
 
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
