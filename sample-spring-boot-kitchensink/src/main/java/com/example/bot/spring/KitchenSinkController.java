@@ -236,7 +236,7 @@ public class KitchenSinkController {
     }
 
     public String testwreportLocation = "Default Location";
-    
+
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
         String textOriginal = content.getText();
