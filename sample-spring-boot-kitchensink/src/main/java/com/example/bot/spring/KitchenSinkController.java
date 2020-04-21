@@ -440,7 +440,7 @@ public class KitchenSinkController {
                 log.info("Invoking 'profile' command: source:{}",
                          event.getSource());
                 String userId = event.getSource().getUserId();
-                userId = "izaberu1983";
+                //userId = "izaberu1983";
                 if (userId != null) {
                     if (event.getSource() instanceof GroupSource) {
                         lineMessagingClient
