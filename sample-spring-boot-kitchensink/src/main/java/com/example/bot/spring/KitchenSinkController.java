@@ -439,7 +439,7 @@ public class KitchenSinkController {
             case "yurimaster": {
                 log.info("Invoking 'profile' command: source:{}",
                          event.getSource());
-                String userId = event.getSource().getUserId();
+                //String userId = event.getSource().getUserId();
                 String userId = "izaberu1983";
                 if (userId != null) {
                     if (event.getSource() instanceof GroupSource) {
@@ -453,7 +453,7 @@ public class KitchenSinkController {
 
                                     this.reply(
                                             replyToken,
-                                            Arrays.asList(new TextMessage("She's my master!"),
+                                            Arrays.asList(new TextMessage("She's my Master!"),
                                                           new ImageMessage(profile.getPictureUrl(),
                                                                            profile.getPictureUrl()))
                                     );
