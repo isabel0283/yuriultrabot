@@ -732,9 +732,9 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.reply(replyToken, new StickerMessage("11539", "52114129"));
                 break;
-            case "alter_lurking":
+            case "lurking":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Thats me... Any problem with that?");
+                this.replyText(replyToken, "Thats me...");
                 break;
             case "testyuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
