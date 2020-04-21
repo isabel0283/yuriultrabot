@@ -243,11 +243,11 @@ public class KitchenSinkController {
         String textClear = textOriginal.trim();
         String text = textClear.toLowerCase();
         String strOrig = text;
-        int intIndex = strOrig.indexOf("testyuri");
+        int intIndex = strOrig.indexOf("your master");
         if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "testyuri";
+                text = "yurimaster";
         }
         intIndex = strOrig.indexOf("food");
         if (intIndex == -1) {
@@ -436,10 +436,11 @@ public class KitchenSinkController {
                                new ImageMessage(jpg.getUri(), previewImg.getUri()),
                                new TextMessage(wreport)));
                 break;
-            case "yuri show me something pretty": {
+            case "yurimaster": {
                 log.info("Invoking 'profile' command: source:{}",
                          event.getSource());
                 String userId = event.getSource().getUserId();
+                String userId = "izaberu1983";
                 if (userId != null) {
                     if (event.getSource() instanceof GroupSource) {
                         lineMessagingClient
@@ -452,7 +453,7 @@ public class KitchenSinkController {
 
                                     this.reply(
                                             replyToken,
-                                            Arrays.asList(new TextMessage("Like this? :)"),
+                                            Arrays.asList(new TextMessage("She's my master!"),
                                                           new ImageMessage(profile.getPictureUrl(),
                                                                            profile.getPictureUrl()))
                                     );
