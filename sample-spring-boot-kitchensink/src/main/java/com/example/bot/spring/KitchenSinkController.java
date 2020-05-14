@@ -365,10 +365,11 @@ public class KitchenSinkController {
                     break;
                 }
                 keyword = keyword.replace(" ", "+");
-                String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + keyword + "&key=AIzaSyAkW1C_AMaU60nOpJunpMAu9RLq09l84Ms";
+                String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + keyword + "&key=AIzaSyC06VSmiAJkezeJqjQeqn20FJyxYvXacPc";
                 Document result = Jsoup.connect(url)
-                    .userAgent("Mozilla")
+                    .userAgent("Mozilla/5.0 (Windows NT 6.1) Chrome/41.0.2228.0 Safari/537.36")
                     .timeout(3000)
+                    .ignoreHttpErrors(true)
                     .ignoreContentType(true)
                     .get();
                 String getJson = result.text();
