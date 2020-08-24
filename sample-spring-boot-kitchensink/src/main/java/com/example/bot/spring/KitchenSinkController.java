@@ -580,7 +580,7 @@ public class KitchenSinkController {
                            message = "You could be doing something better...";
                            break;
                        case "3":
-                           message = "Realy?";
+                           message = "Really?";
                            break;
                        case "4":
                            message = "I've heard that before...";
@@ -657,7 +657,7 @@ public class KitchenSinkController {
                 break;
             case "thanksYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "You welcome!");
+                this.replyText(replyToken, "You are welcome!");
                 break;
             case "alter_food":
                 log.info("Returns echo message {}: {}", replyToken, text);
