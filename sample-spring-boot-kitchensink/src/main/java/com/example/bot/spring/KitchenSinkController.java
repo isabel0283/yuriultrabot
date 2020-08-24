@@ -541,6 +541,24 @@ public class KitchenSinkController {
                        case "9":
                            message = "Go get a life!";
                            break;
+                       case "10":
+                           message = "You love my name, right?";
+                           break;
+                       case "11":
+                           message = "...";
+                           break;
+                       case "12":
+                           message = "Uh?";
+                           break;
+                       case "13":
+                           message = "Again you?";
+                           break;
+                       case "14":
+                           message = "Come on! Again this?";
+                           break;
+                       case "15":
+                           message = "Please! Someone help this person...";
+                           break;
                        default:
                            break;
                 }
