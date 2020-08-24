@@ -691,7 +691,7 @@ public class KitchenSinkController {
                            message = "If you say so...";
                            break;
                        case "9":
-                           message = "Was that really a joke?";
+                           message = "Here we go again...";
                            break;
                        default:
                            break;
