@@ -673,7 +673,7 @@ public class KitchenSinkController {
                 break;
             case "stopYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                Thread.sleep(300000);
+                Thread.sleep(30000);
                 this.replyText(replyToken, "I'm here again!");
                 break;
             case "hahaha": {
@@ -721,6 +721,41 @@ public class KitchenSinkController {
                 break;
                 }
             }
+            case "yes": {
+                myrandInt = rand.nextInt(10);
+                log.info("Returns echo message {}: {}", replyToken, text);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Got it!";
+                           break;
+                       case "1":
+                           message = "Are you sure?";
+                           break;
+                       case "2":
+                           message = "Ok...";
+                           break;
+                       case "3":
+                           message = "Good!";
+                           break;
+                       case "4":
+                           message = "Agree!";
+                           break;
+                       case "5":
+                           message = "You are a positive person!";
+                           break;
+                       case "6":
+                           message = "Think twice...";
+                           break;
+                       case "7":
+                           message = "I'd say no instead...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
             case "no": {
                 myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
@@ -740,6 +775,15 @@ public class KitchenSinkController {
                            break;
                        case "4":
                            message = "Agree!";
+                           break;
+                       case "5":
+                           message = "You are a negative person!";
+                           break;
+                       case "6":
+                           message = "Think twice...";
+                           break;
+                       case "7":
+                           message = "I'd say yes instead...";
                            break;
                        default:
                            break;
