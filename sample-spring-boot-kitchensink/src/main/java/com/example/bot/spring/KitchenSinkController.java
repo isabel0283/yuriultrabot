@@ -333,6 +333,12 @@ public class KitchenSinkController {
          } else {
                 text = "stopYuri";
          }
+         intIndex = strOrig.indexOf("hello");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "hello";
+         }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         Random randWait = new Random();
         int myrandWait = 0;
@@ -673,8 +679,7 @@ public class KitchenSinkController {
                 break;
             case "stopYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                Thread.sleep(30000);
-                this.replyText(replyToken, "I'm here again!");
+                this.replyText(replyToken, "Hahaha! You wish!!!");
                 break;
             case "hahaha": {
                 myrandInt = rand.nextInt(20);
@@ -784,6 +789,32 @@ public class KitchenSinkController {
                            break;
                        case "7":
                            message = "I'd say yes instead...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
+            case "hello": {
+                myrandInt = rand.nextInt(5);
+                log.info("Returns echo message {}: {}", replyToken, text);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           this.reply(replyToken, new StickerMessage("11539", "52114114"));
+                           break;
+                       case "1":
+                           message = "Hi!";
+                           break;
+                       case "2":
+                           message = "Hello!";
+                           break;
+                       case "3":
+                           message = "Hey!";
+                           break;
+                       case "4":
+                           message = "こんにちは";
                            break;
                        default:
                            break;
