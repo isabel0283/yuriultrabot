@@ -797,7 +797,7 @@ public class KitchenSinkController {
                 break;
             }
             case "hello": {
-                myrandInt = rand.nextInt(5);
+                myrandInt = rand.nextInt(10);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -805,16 +805,19 @@ public class KitchenSinkController {
                            this.reply(replyToken, new StickerMessage("11539", "52114114"));
                            break;
                        case "1":
-                           message = "Hi!";
+                           message = "Hi there!";
                            break;
                        case "2":
                            message = "Hello!";
                            break;
                        case "3":
-                           message = "Hey!";
+                           message = "Hey! what's up?";
                            break;
                        case "4":
                            message = "こんにちは";
+                           break;
+                       case "4":
+                           message = "I'd say glad to see you again, but I'm just like this... Hi!";
                            break;
                        default:
                            break;
