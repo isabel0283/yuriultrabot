@@ -339,6 +339,12 @@ public class KitchenSinkController {
          } else {
                 text = "hello";
          }
+         intIndex = strOrig.indexOf("how are you");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "howareyou";
+         }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         Random randWait = new Random();
         int myrandWait = 0;
@@ -393,12 +399,11 @@ public class KitchenSinkController {
                 String keywordCity = strOrig.replace("weather", "");
                 keywordCity = keywordCity.replace("yuri", "");
                 if (wemptyString.equals(keywordCity)) {
-                    this.replyText(replyToken, "I'm sorry! Please specify a city!");
+                    this.replyText(replyToken, "Please specify a city!");
                     break;
                 }
                 keywordCity = keywordCity.replace(" ", "+");
                 String wurl = "http://api.openweathermap.org/data/2.5/weather?q=" + keywordCity + "&units=metric&appid=42df99363e6213b72d9bec95685299a2";
-                //Mozilla
                 Document wresult = Jsoup.connect(wurl)
                     .userAgent("Mozilla/5.0 (Windows NT 6.1) Chrome/41.0.2228.0 Safari/537.36")
                     .timeout(3000)
@@ -426,7 +431,6 @@ public class KitchenSinkController {
                 String yourCloudicon = weatherDetails.getString("icon");
                 //Urls of icons
                 String cloudIconurl = "https://openweathermap.org/img/wn/" + yourCloudicon + "@2x.png";
-                //String flagIconurl = "https://openweathermap.org/images/flags/" + yourCountry + ".png";
                 final DownloadedContent jpg;
                 final DownloadedContent previewImg;
                 jpg = new DownloadedContent(null, cloudIconurl);
@@ -460,7 +464,7 @@ public class KitchenSinkController {
 
                                     this.reply(
                                             replyToken,
-                                            Arrays.asList(new TextMessage("She's my Master!"),
+                                            Arrays.asList(new TextMessage("Here's my Master!"),
                                                           new ImageMessage(profile.getPictureUrl(),
                                                                            profile.getPictureUrl()))
                                     );
@@ -664,6 +668,10 @@ public class KitchenSinkController {
             case "thanksYuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "You are welcome!");
+                break;
+            case "howareyou":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "Me?");
                 break;
             case "alter_food":
                 log.info("Returns echo message {}: {}", replyToken, text);
