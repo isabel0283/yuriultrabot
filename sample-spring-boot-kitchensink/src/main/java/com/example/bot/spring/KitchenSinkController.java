@@ -816,8 +816,11 @@ public class KitchenSinkController {
                        case "4":
                            message = "こんにちは";
                            break;
-                       case "4":
+                       case "5":
                            message = "I'd say glad to see you again, but I'm just like this... Hi!";
+                           break;
+                       case "6":
+                           message = "There you are...";
                            break;
                        default:
                            break;
