@@ -122,13 +122,16 @@ public class KitchenSinkController {
                            messageimg = "That's a good one!";
                            break;
                        case "2":
-                           messageimg = "Ohhh...";
+                           messageimg = "Oh...";
                            break;
                        case "3":
                            messageimg = "I saw that before...";
                            break;
                        case "4":
-                           messageimg = "Do you have more like that one?";
+                           messageimg = "I see...";
+                           break;
+                       case "4":
+                           messageimg = "That's definitely your style!";
                            break;
                        default:
                            break;
@@ -139,7 +142,33 @@ public class KitchenSinkController {
     @EventMapping
     public void handleVideoEvent(MessageEvent<VideoMessageContent> event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "That took a life to upload...");
+        Random randvid = new Random();
+        Integer myrandIntvid = randvid.nextInt(10);
+                String strRandomvid = "" + myrandIntvid;
+                String messagevid = "";
+                switch (strRandomvid) {
+                       case "0":
+                           messagevid = "Interesting...";
+                           break;
+                       case "1":
+                           messagevid = "Nice video!";
+                           break;
+                       case "2":
+                           messagevid = "That again?";
+                           break;
+                       case "3":
+                           messagevid = "I saw that video before...";
+                           break;
+                       case "4":
+                           messagevid = "I see this is the kind of stuff you like";
+                           break;
+                       case "4":
+                           messagevid = "That took a life to upload!";
+                           break;
+                       default:
+                           break;
+                }
+        this.replyText(replyToken, messagevid);
     }
 
     @EventMapping
