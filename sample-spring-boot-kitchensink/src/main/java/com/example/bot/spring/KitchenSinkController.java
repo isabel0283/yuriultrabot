@@ -380,12 +380,6 @@ public class KitchenSinkController {
          } else {
                 text = "hello";
          }
-         intIndex = strOrig.indexOf("hi");
-         if (intIndex == -1) {
-                intIndex = 0;
-         } else {
-                text = "hello";
-         }
          intIndex = strOrig.indexOf("how are you");
          if (intIndex == -1) {
                 intIndex = 0;
