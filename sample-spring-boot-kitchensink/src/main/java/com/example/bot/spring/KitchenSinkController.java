@@ -130,7 +130,7 @@ public class KitchenSinkController {
                        case "4":
                            messageimg = "I see...";
                            break;
-                       case "4":
+                       case "5":
                            messageimg = "That's definitely your style!";
                            break;
                        default:
@@ -162,7 +162,7 @@ public class KitchenSinkController {
                        case "4":
                            messagevid = "I see this is the kind of stuff you like";
                            break;
-                       case "4":
+                       case "5":
                            messagevid = "That took a life to upload!";
                            break;
                        default:
@@ -362,7 +362,19 @@ public class KitchenSinkController {
          } else {
                 text = "stopYuri";
          }
+         intIndex = strOrig.indexOf("yuri stop");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "stopYuri";
+         }
          intIndex = strOrig.indexOf("hello");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "hello";
+         }
+         intIndex = strOrig.indexOf("hi");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
@@ -702,11 +714,11 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Me?");
                 break;
-            case "alter_food":
+            case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Suddenly I feel hungry... :(");
+                this.replyText(replyToken, "Suddenly I feel hungry...");
                 break;
-            case "alter_sex":
+            case "sex":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Don't you have anything else to talk about?");
                 break;
