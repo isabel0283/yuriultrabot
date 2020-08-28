@@ -284,6 +284,12 @@ public class KitchenSinkController {
          } else {
                 text = "food";
          }
+        intIndex = strOrig.indexOf("bye");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "bye";
+         }
         intIndex = strOrig.indexOf("sex");
         if (intIndex == -1) {
                 intIndex = 0;
@@ -870,6 +876,38 @@ public class KitchenSinkController {
                            break;
                        case "6":
                            message = "There you are...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
+            case "bye": {
+                myrandInt = rand.nextInt(10);
+                log.info("Returns echo message {}: {}", replyToken, text);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           this.reply(replyToken, new StickerMessage("11537", "52002771"));
+                           break;
+                       case "1":
+                           message = "Bye bye!";
+                           break;
+                       case "2":
+                           message = "See you later!";
+                           break;
+                       case "3":
+                           message = "Take care...";
+                           break;
+                       case "4":
+                           message = "さよなら";
+                           break;
+                       case "5":
+                           message = "Well... Bye!";
+                           break;
+                       case "6":
+                           message = "There you go...";
                            break;
                        default:
                            break;
