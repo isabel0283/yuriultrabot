@@ -179,7 +179,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleFollowEvent(FollowEvent event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "Got followed event");
+        this.replyText(replyToken, "Now what?");
     }
 
     @EventMapping
@@ -492,7 +492,7 @@ public class KitchenSinkController {
                 log.info("Invoking 'profile' command: source:{}",
                          event.getSource());
                 String userId = event.getSource().getUserId();
-                //userId = "izaberu1983";
+                userId = "isabel0283";
                 if (userId != null) {
                     if (event.getSource() instanceof GroupSource) {
                         lineMessagingClient
