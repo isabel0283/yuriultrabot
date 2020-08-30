@@ -296,6 +296,12 @@ public class KitchenSinkController {
          } else {
                 text = "sex";
         }
+        intIndex = strOrig.indexOf("video");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "video";
+        }
         intIndex = strOrig.indexOf("lurk");
         if (intIndex == -1) {
                 intIndex = 0;
