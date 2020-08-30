@@ -555,7 +555,7 @@ public class KitchenSinkController {
             }
             case "video": {
                 log.info("Returns echo message {}: {}", replyToken, text);
-                myrandInt = rand.nextInt(20);
+                myrandInt = rand.nextInt(10);
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
                        case "0":
