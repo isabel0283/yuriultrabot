@@ -547,9 +547,29 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            case "alter_flex":
-                this.reply(replyToken, new ExampleFlexMessageSupplier().get());
-                break;
+            case "video": {
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(20);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "I like this one https://www.youtube.com/watch?v=sDW4a9V301k";
+                           break;
+                       case "1":
+                           message = "The other day I was watching this https://www.youtube.com/watch?v=u-rCfjbHVmg";
+                           break;
+                       case "2":
+                           message = "This is what I like to watch https://www.youtube.com/watch?v=Kdc8swKVd9E";
+                           break;
+                       case "3":
+                           message = "I spend my nights watching things like this https://www.youtube.com/watch?v=lUNbuLnQpxQ";
+                           break;
+                       case "4":
+                           message = "I don't think you would like this https://www.youtube.com/watch?v=P7VK09LpgW8";
+                           break;
+                       default:
+                           break;
+                }
             case "test_weather":
                 testwreportLocation = "Test City, TS";
                 this.reply(replyToken, new WeatherFlexMessageSupplier().get());
