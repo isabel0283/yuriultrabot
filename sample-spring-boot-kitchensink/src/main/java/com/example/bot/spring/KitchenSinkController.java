@@ -570,6 +570,7 @@ public class KitchenSinkController {
                        default:
                            break;
                 }
+            }
             case "test_weather":
                 testwreportLocation = "Test City, TS";
                 this.reply(replyToken, new WeatherFlexMessageSupplier().get());
