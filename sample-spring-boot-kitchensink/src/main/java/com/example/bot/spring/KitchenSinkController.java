@@ -655,7 +655,7 @@ public class KitchenSinkController {
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
                        case "0":
-                           message = "Who else?;
+                           message = "Who else?";
                            break;
                        case "1":
                            message = "Me?";
