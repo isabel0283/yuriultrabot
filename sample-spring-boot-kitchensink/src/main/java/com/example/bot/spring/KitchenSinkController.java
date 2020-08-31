@@ -903,6 +903,10 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Me?");
                 break;
+            case "ok":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(replyToken, "Agree!");
+                break;
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Suddenly I feel hungry...");
