@@ -416,6 +416,12 @@ public class KitchenSinkController {
          } else {
                 text = "howareyou";
          }
+         intIndex = strOrig.indexOf("again");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "again";
+         }
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         Random randWait = new Random();
         int myrandWait = 0;
@@ -622,6 +628,32 @@ public class KitchenSinkController {
                            break;
                        case "4":
                            message = "Ask someone else...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
+            case "again": {
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Again?";
+                           break;
+                       case "1":
+                           message = "Again like agaaaaaiiiiin? or just again?";
+                           break;
+                       case "2":
+                           message = "Why again?";
+                           break;
+                       case "3":
+                           message = "It would be better if it happened just once...";
+                           break;
+                       case "4":
+                           message = "Ah! ok!";
                            break;
                        default:
                            break;
