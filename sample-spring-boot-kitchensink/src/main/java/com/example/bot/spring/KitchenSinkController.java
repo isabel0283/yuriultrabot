@@ -398,6 +398,12 @@ public class KitchenSinkController {
          } else {
                 text = "stopYuri";
          }
+         intIndex = strOrig.indexOf("stop yuri");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "stopYuri";
+         }
          intIndex = strOrig.indexOf("hello");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -415,6 +421,12 @@ public class KitchenSinkController {
                 intIndex = 0;
          } else {
                 text = "howareyou";
+         }
+         intIndex = strOrig.indexOf("what are you");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "whatareyou";
          }
          intIndex = strOrig.indexOf("again");
          if (intIndex == -1) {
@@ -903,6 +915,32 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Me?");
                 break;
+            case "whatareyou":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "You ask too much!";
+                           break;
+                       case "1":
+                           message = "Do you really care?";
+                           break;
+                       case "2":
+                           message = "You again?";
+                           break;
+                       case "3":
+                           message = "Why are you asking?";
+                           break;
+                       case "4":
+                           message = "Are you going to help with that?";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
             case "ok":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(10);
