@@ -302,6 +302,18 @@ public class KitchenSinkController {
          } else {
                 text = "video";
         }
+        intIndex = strOrig.indexOf("me?");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "questionme";
+        }
+        intIndex = strOrig.indexOf("you?");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "questionyou";
+        }
         intIndex = strOrig.indexOf("lurk");
         if (intIndex == -1) {
                 intIndex = 0;
@@ -604,6 +616,58 @@ public class KitchenSinkController {
                            break;
                        case "4":
                            message = "Hahaha! ok, if you say so...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
+            case "questionme": {
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Who else?;
+                           break;
+                       case "1":
+                           message = "Yeah, you!";
+                           break;
+                       case "2":
+                           message = "Really? Do I need to explain?";
+                           break;
+                       case "3":
+                           message = "No, the cat...";
+                           break;
+                       case "4":
+                           message = "No, me...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
+            case "questionyou": {
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Who else?;
+                           break;
+                       case "1":
+                           message = "Me?";
+                           break;
+                       case "2":
+                           message = "Who?";
+                           break;
+                       case "3":
+                           message = "...";
+                           break;
+                       case "4":
+                           message = "No, you...";
                            break;
                        default:
                            break;
