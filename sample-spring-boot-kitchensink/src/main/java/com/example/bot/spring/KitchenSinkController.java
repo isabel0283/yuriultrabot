@@ -911,7 +911,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Me?");
                 break;
-            case "whatareyou":
+            case "whatareyou": {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(10);
                 strRandom = "" + myrandInt;
@@ -937,7 +937,7 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
             }
-            case "ok":
+            case "ok": {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(10);
                 strRandom = "" + myrandInt;
@@ -1168,7 +1168,7 @@ public class KitchenSinkController {
                 break;
             case "testyuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Test command");
+                this.replyText(replyToken, "Test command received");
                 break;
             default:
                 break;
