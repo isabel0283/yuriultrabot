@@ -905,8 +905,30 @@ public class KitchenSinkController {
                 break;
             case "ok":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Agree!");
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "OK...";
+                           break;
+                       case "1":
+                           message = "Agree!";
+                           break;
+                       case "2":
+                           message = "Good!";
+                           break;
+                       case "3":
+                           message = "...";
+                           break;
+                       case "4":
+                           message = "Fine!!!";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
                 break;
+            }
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Suddenly I feel hungry...");
