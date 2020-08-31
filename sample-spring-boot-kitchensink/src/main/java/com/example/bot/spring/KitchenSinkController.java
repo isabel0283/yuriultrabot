@@ -386,6 +386,12 @@ public class KitchenSinkController {
          } else {
                 text = "hello";
          }
+         intIndex = strOrig.indexOf("i know");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "iknow";
+         }
          intIndex = strOrig.indexOf("how are you");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -572,6 +578,32 @@ public class KitchenSinkController {
                            break;
                        case "4":
                            message = "I don't think you would like this https://www.youtube.com/watch?v=P7VK09LpgW8";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
+            case "iknow": {
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Wow! you are so smart...";
+                           break;
+                       case "1":
+                           message = "I know that you know!";
+                           break;
+                       case "2":
+                           message = "Are you sure?";
+                           break;
+                       case "3":
+                           message = "I was thinking the same thing!";
+                           break;
+                       case "4":
+                           message = "Hahaha! ok, if you say so...";
                            break;
                        default:
                            break;
