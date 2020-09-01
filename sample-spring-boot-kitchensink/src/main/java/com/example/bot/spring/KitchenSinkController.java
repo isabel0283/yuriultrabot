@@ -54,7 +54,6 @@ import com.linecorp.bot.model.event.MemberLeftEvent;
 import com.linecorp.bot.model.event.MessageEvent;
 import com.linecorp.bot.model.event.PostbackEvent;
 import com.linecorp.bot.model.event.UnfollowEvent;
-import com.linecorp.bot.model.event.UnsendEvent;
 import com.linecorp.bot.model.event.message.FileMessageContent;
 import com.linecorp.bot.model.event.message.ImageMessageContent;
 import com.linecorp.bot.model.event.message.LocationMessageContent;
@@ -216,12 +215,6 @@ public class KitchenSinkController {
                 .collect(Collectors.joining(",")));
     }
 
-    @EventMapping
-    public void handleUnsendEvent(UnsendEvent event) {
-        String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "What did you unsend?");
-    }
-    
     @EventMapping
     public void handleOtherEvent(Event event) {
         log.info("Received message(Ignored): {}", event);
