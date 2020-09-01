@@ -988,13 +988,13 @@ public class KitchenSinkController {
                            message = "That's not funny at all...";
                            break;
                        case "1":
-                           message = "I didn't understand that one...";
+                           message = "I didn't see the joke...";
                            break;
                        case "2":
                            message = "You are making us feel uncomfortable...";
                            break;
                        case "3":
-                           message = "Hahaha! Really?";
+                           message = "Hahaha!";
                            break;
                        case "4":
                            message = "Why are you laughing?";
@@ -1006,7 +1006,7 @@ public class KitchenSinkController {
                            message = "Duh...";
                            break;
                        case "7":
-                           message = "Ehhh... What was that?";
+                           message = "OK...";
                            break;
                        case "8":
                            message = "If you say so...";
