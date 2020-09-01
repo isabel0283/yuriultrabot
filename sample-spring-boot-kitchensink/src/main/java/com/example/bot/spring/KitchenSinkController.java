@@ -216,6 +216,12 @@ public class KitchenSinkController {
     }
 
     @EventMapping
+    public void handleUnsendEvent(UnsendEvent event) {
+        String replyToken = event.getReplyToken();
+        this.replyText(replyToken, "What did you unsend?");
+    }
+    
+    @EventMapping
     public void handleOtherEvent(Event event) {
         log.info("Received message(Ignored): {}", event);
     }
