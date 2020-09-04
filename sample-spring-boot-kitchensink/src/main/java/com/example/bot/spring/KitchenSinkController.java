@@ -811,6 +811,12 @@ public class KitchenSinkController {
                        case "15":
                            message = "Please! Someone help this person...";
                            break;
+                       case "16":
+                           message = "I hate you!";
+                           break;
+                       case "17":
+                           message = "Please! Not again...";
+                           break;
                        default:
                            break;
                 }
