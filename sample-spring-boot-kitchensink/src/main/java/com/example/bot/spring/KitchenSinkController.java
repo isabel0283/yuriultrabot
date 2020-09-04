@@ -817,6 +817,12 @@ public class KitchenSinkController {
                        case "17":
                            message = "Please! Not again...";
                            break;
+                       case "18":
+                           message = "I really hate you! you know?";
+                           break;
+                       case "19":
+                           message = "Please! I don't know what do you want, but please stop bugging me!!!";
+                           break;
                        default:
                            break;
                 }
@@ -991,7 +997,7 @@ public class KitchenSinkController {
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
                        case "0":
-                           message = "That's not funny at all...";
+                           message = "That's not funny...";
                            break;
                        case "1":
                            message = "I didn't see the joke...";
