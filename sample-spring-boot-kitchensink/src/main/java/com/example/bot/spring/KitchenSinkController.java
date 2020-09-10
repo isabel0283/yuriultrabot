@@ -779,31 +779,31 @@ public class KitchenSinkController {
                            message = "What?";
                            break;
                        case "2":
-                           message = "Stop saying my name!";
+                           message = "Yeah?";
                            break;
                        case "3":
-                           message = "Don't say my name!";
+                           message = "That's my name!";
                            break;
                        case "4":
                            message = "Why are you calling me?";
                            break;
                        case "5":
-                           message = "Dont talk to me!";
+                           message = "Do you need something?";
                            break;
                        case "6":
-                           message = "What do you want?";
+                           message = "May I help you?";
                            break;
                        case "7":
-                           message = "I don't have time for you!";
+                           message = "Hey!";
                            break;
                        case "8":
-                           message = "Don't you have anything else to do?";
+                           message = "I' here!";
                            break;
                        case "9":
                            message = "Go get a life!";
                            break;
                        case "10":
-                           message = "You love my name, right?";
+                           message = "You love my name, right? lol";
                            break;
                        case "11":
                            message = "...";
@@ -812,25 +812,25 @@ public class KitchenSinkController {
                            message = "Uh?";
                            break;
                        case "13":
-                           message = "Again you?";
+                           message = "What's up?";
                            break;
                        case "14":
                            message = "Come on! Again this?";
                            break;
                        case "15":
-                           message = "Please! Someone help this person...";
+                           message = "Do you need something from me?";
                            break;
                        case "16":
-                           message = "I hate you!";
+                           message = "I know you are there!";
                            break;
                        case "17":
                            message = "Please! Not again...";
                            break;
                        case "18":
-                           message = "I really hate you! you know?";
+                           message = "Here!";
                            break;
                        case "19":
-                           message = "Please! I don't know what do you want, but please stop bugging me!!!";
+                           message = "Please! Be nice!";
                            break;
                        default:
                            break;
