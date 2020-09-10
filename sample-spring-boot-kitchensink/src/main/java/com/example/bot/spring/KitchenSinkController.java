@@ -990,7 +990,7 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
             }
-            case "food":
+            case "food": {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(10);
                 strRandom = "" + myrandInt;
