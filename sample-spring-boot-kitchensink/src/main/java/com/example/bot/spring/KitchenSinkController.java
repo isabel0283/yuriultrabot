@@ -1006,34 +1006,49 @@ public class KitchenSinkController {
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
                        case "0":
-                           message = "That's not funny...";
+                           message = "That's funny!";
                            break;
                        case "1":
-                           message = "I didn't see the joke...";
+                           message = "Lol!";
                            break;
                        case "2":
-                           message = "You are making us feel uncomfortable...";
+                           message = "Hahaha, again please!";
                            break;
                        case "3":
                            message = "Hahaha!";
                            break;
                        case "4":
-                           message = "Why are you laughing?";
+                           message = "I see you you laughing! That's good!";
                            break;
                        case "5":
-                           message = "Patience...";
+                           message = "Let me try to understand...";
                            break;
                        case "6":
-                           message = "Duh...";
+                           message = "Oh!";
                            break;
                        case "7":
-                           message = "OK...";
+                           this.reply(replyToken, new StickerMessage("11537", "52002744"));
                            break;
                        case "8":
                            message = "If you say so...";
                            break;
                        case "9":
-                           message = "Here we go again...";
+                           message = "Here we go again, lol.";
+                           break;
+                       case "10":
+                           message = "Duh...";
+                           break;
+                       case "11":
+                           message = "Hahaha, really?";
+                           break;
+                       case "12":
+                           message = "Hahaha, if you say so...";
+                           break;
+                       case "13":
+                           message = "I like to see people laughing.";
+                           break;
+                       case "14":
+                           this.reply(replyToken, new StickerMessage("11538", "51626516"));
                            break;
                        default:
                            break;
@@ -1136,7 +1151,7 @@ public class KitchenSinkController {
                            message = "こんにちは";
                            break;
                        case "5":
-                           message = "I'd say glad to see you again, but I'm just like this... Hi!";
+                           message = "I'm glad to see you again!";
                            break;
                        case "6":
                            message = "There you are...";
