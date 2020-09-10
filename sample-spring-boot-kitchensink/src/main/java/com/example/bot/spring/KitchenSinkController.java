@@ -160,10 +160,19 @@ public class KitchenSinkController {
                            messagevid = "I saw that video before...";
                            break;
                        case "4":
-                           messagevid = "I see this is the kind of stuff you like";
+                           messagevid = "I see this is the kind of stuff you like...";
                            break;
                        case "5":
-                           messagevid = "That took a life to upload!";
+                           messagevid = "Hmmm...";
+                           break;
+                       case "6":
+                           messagevid = "Oh! I like this one!";
+                           break;
+                       case "7":
+                           messagevid = "I saw that one the other day.";
+                           break;
+                       case "8":
+                           messagevid = "Thanks for sharing!";
                            break;
                        default:
                            break;
@@ -1153,7 +1162,7 @@ public class KitchenSinkController {
                            message = "See you later!";
                            break;
                        case "3":
-                           message = "Take care...";
+                           message = "Take care!";
                            break;
                        case "4":
                            message = "さよなら";
@@ -1163,6 +1172,12 @@ public class KitchenSinkController {
                            break;
                        case "6":
                            message = "There you go...";
+                           break;
+                       case "7":
+                           message = "Enjoy!";
+                           break;
+                       case "8":
+                           message = "We'll be waiting!";
                            break;
                        default:
                            break;
@@ -1176,7 +1191,7 @@ public class KitchenSinkController {
                 break;
             case "lurking":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Thats me...");
+                this.replyText(replyToken, "Hahaha! Thats me!");
                 break;
             case "testyuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
