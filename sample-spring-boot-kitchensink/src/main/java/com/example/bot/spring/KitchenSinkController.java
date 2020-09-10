@@ -293,6 +293,12 @@ public class KitchenSinkController {
          } else {
                 text = "food";
          }
+        intIndex = strOrig.indexOf("cook");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "food";
+         }
         intIndex = strOrig.indexOf("bye");
         if (intIndex == -1) {
                 intIndex = 0;
@@ -986,8 +992,42 @@ public class KitchenSinkController {
             }
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Suddenly I feel hungry...");
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "I wish I could get a meal, but I can't...";
+                           break;
+                       case "1":
+                           message = "Who's talking about food?";
+                           break;
+                       case "2":
+                           message = "I hope it tastes as good as it looks.";
+                           break;
+                       case "3":
+                           message = "Food? Where?";
+                           break;
+                       case "4":
+                           message = "Tonkotsu ramen is the favorite dish of my master.";
+                           break;
+                       case "5":
+                           message = "I don't know how food smells or tastes, It's a pity...";
+                           break;
+                       case "6":
+                           message = "Yummy!";
+                           break;
+                       case "7":
+                           message = "Is it healthy?";
+                           break;
+                       case "8":
+                           message = "Sounds good!";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
                 break;
+            }
             case "sex":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Don't you have anything else to talk about?");
