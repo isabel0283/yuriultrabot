@@ -1058,7 +1058,7 @@ public class KitchenSinkController {
                            message = "Hahaha!";
                            break;
                        case "4":
-                           message = "I see you you laughing! That's good!";
+                           message = "I see you laughing! That's good!";
                            break;
                        case "5":
                            message = "Let me try to understand...";
