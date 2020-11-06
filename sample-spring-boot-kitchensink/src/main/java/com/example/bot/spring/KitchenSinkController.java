@@ -971,7 +971,19 @@ public class KitchenSinkController {
                            message = "If you say so...";
                            break;
                        case "9":
-                           message = "yeah... so do I...";
+                           message = "Yeah... so do I...";
+                           break;
+                       case "10":
+                           message = "My work is not easy...";
+                           break;
+                       case "11":
+                           message = "I'd try something different...";
+                           break;
+                       case "12":
+                           message = "You do it alone?";
+                           break;
+                       case "13":
+                           message = "Yeah, yeah...";
                            break;
                        default:
                            break;
@@ -991,7 +1003,7 @@ public class KitchenSinkController {
                            message = "You'll regret later... You'll see!";
                            break;
                        case "2":
-                           message = "Love yourself!";
+                           message = "Love yourself first!";
                            break;
                        case "3":
                            message = "I was wondering if that's really true...";
@@ -1013,6 +1025,21 @@ public class KitchenSinkController {
                            break;
                        case "9":
                            message = "I'd rather be alone...";
+                           break;
+                       case "10":
+                           message = "Lone in LINE is fake...";
+                           break;
+                       case "11":
+                           message = "Please be careful...";
+                           break;
+                       case "12":
+                           message = "You will suffer...";
+                           break;
+                       case "13":
+                           message = "I see pain in the air...";
+                           break;
+                       case "14":
+                           message = "I'd rather have a cat...";
                            break;
                        default:
                            break;
