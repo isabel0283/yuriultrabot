@@ -1058,7 +1058,7 @@ public class KitchenSinkController {
                            message = "Hahaha!";
                            break;
                        case "4":
-                           message = "I see you laughing! That's good!";
+                           message = "Pffft!";
                            break;
                        case "5":
                            message = "Let me try to understand...";
@@ -1085,7 +1085,7 @@ public class KitchenSinkController {
                            message = "Hahaha, if you say so...";
                            break;
                        case "13":
-                           message = "I like to see people laughing.";
+                           message = "How come?";
                            break;
                        case "14":
                            this.reply(replyToken, new StickerMessage("11538", "51626516"));
