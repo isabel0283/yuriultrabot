@@ -133,6 +133,18 @@ public class KitchenSinkController {
                        case "5":
                            messageimg = "That's definitely your style!";
                            break;
+                       case "6":
+                           messageimg = "A friend of mine showed me that same picture";
+                           break;
+                       case "7":
+                           messageimg = "Long time no see that one!";
+                           break;
+                       case "8":
+                           messageimg = "Oh, I see!";
+                           break;
+                       case "9":
+                           messageimg = "What's that?";
+                           break;
                        default:
                            break;
                 }
@@ -173,6 +185,9 @@ public class KitchenSinkController {
                            break;
                        case "8":
                            messagevid = "Thanks for sharing!";
+                           break;
+                       case "9":
+                           messagevid = "I'll watch it later...";
                            break;
                        default:
                            break;
