@@ -308,6 +308,12 @@ public class KitchenSinkController {
          } else {
                 text = "food";
          }
+        intIndex = strOrig.indexOf("why?");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "questionwhy";
+         }
         intIndex = strOrig.indexOf("cook");
         if (intIndex == -1) {
                 intIndex = 0;
@@ -754,6 +760,47 @@ public class KitchenSinkController {
                            break;
                        case "4":
                            message = "Hahaha! ok, if you say so...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
+            case "questionwhy": {
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Why what?";
+                           break;
+                       case "1":
+                           message = "I don't know...";
+                           break;
+                       case "2":
+                           message = "Ask someone!";
+                           break;
+                       case "3":
+                           message = "Google it... duh...";
+                           break;
+                       case "4":
+                           message = "Ask somewhere else...";
+                           break;
+                       case "5":
+                           message = "What?";
+                           break;
+                       case "6":
+                           message = "Well...";
+                           break;
+                       case "7":
+                           message = "Does it matter?";
+                           break;
+                       case "8":
+                           message = "If I'd know I'd tell you...";
+                           break;
+                       case "9":
+                           message = "Who are you asking?...";
                            break;
                        default:
                            break;
