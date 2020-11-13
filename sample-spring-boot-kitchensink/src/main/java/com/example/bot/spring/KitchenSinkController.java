@@ -54,6 +54,7 @@ import com.linecorp.bot.model.event.MemberLeftEvent;
 import com.linecorp.bot.model.event.MessageEvent;
 import com.linecorp.bot.model.event.PostbackEvent;
 import com.linecorp.bot.model.event.UnfollowEvent;
+import com.linecorp.bot.model.event.UnsendEvent;
 import com.linecorp.bot.model.event.message.FileMessageContent;
 import com.linecorp.bot.model.event.message.ImageMessageContent;
 import com.linecorp.bot.model.event.message.LocationMessageContent;
@@ -234,8 +235,6 @@ public class KitchenSinkController {
 
     @EventMapping
     public void handleMemberLeft(MemberLeftEvent event) {
-        String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "May the force be with you!");
         log.info("Got memberLeft message: {}", event.getLeft().getMembers()
                 .stream().map(Source::getUserId)
                 .collect(Collectors.joining(",")));
