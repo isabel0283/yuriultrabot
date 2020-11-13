@@ -234,6 +234,8 @@ public class KitchenSinkController {
 
     @EventMapping
     public void handleMemberLeft(MemberLeftEvent event) {
+        String replyToken = event.getReplyToken();
+        this.replyText(replyToken, "May the force be with you!");
         log.info("Got memberLeft message: {}", event.getLeft().getMembers()
                 .stream().map(Source::getUserId)
                 .collect(Collectors.joining(",")));
