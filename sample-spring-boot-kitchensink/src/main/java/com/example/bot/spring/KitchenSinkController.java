@@ -102,7 +102,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleFileMessageEvent(MessageEvent<FileMessageContent> event) {
         this.reply(event.getReplyToken(),
-                   new TextMessage(String.format("Received '%s'(%d bytes)",
+                   new TextMessage(String.format("I'll look at that later, I'm busy now!",
                                                  event.getMessage().getFileName(),
                                                  event.getMessage().getFileSize())));
     }
