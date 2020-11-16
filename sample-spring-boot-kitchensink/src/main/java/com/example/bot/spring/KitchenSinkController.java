@@ -697,7 +697,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(10);
                 strRandom = "" + myrandInt;
-                String flirtTarget = text.replaceAll("yuri flirt with ","");
+                String flirtTarget = strOrig.replaceAll("yuri flirt with ","");
                 switch (strRandom) {
                        case "0":
                            message = "Yes, liar!";
