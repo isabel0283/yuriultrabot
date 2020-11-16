@@ -698,9 +698,10 @@ public class KitchenSinkController {
                 myrandInt = rand.nextInt(10);
                 strRandom = "" + myrandInt;
                 String flirtTarget = strOrig.replaceAll("yuri flirt with ","");
+                flirtTarget = flirtTarget.toUpperCase();
                 switch (strRandom) {
                        case "0":
-                           message = "Yes, liar!";
+                           message = "No! Other but " + flirtTarget + " please!;
                            break;
                        case "1":
                            message = "Truth is relative!";
@@ -714,10 +715,24 @@ public class KitchenSinkController {
                        case "4":
                            message = "Ask someone else, and you'll know the truth...";
                            break;
+                       case "5":
+                           message = "Yes, liar!";
+                           break;
+                       case "6":
+                           message = "Truth is relative!";
+                           break;
+                       case "7":
+                           message = "You'll see who's the liar!";
+                           break;
+                       case "8":
+                           message = "Time will tell...";
+                           break;
+                       case "9":
+                           message = "Ask someone else, and you'll know the truth...";
+                           break;
                        default:
                            break;
                 }
-                message = flirtTarget.toUpperCase();
                 this.replyText(replyToken, message);
                 break;
             }
