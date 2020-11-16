@@ -707,35 +707,35 @@ public class KitchenSinkController {
                            message = flirtTarget + ", aside from being sexy, what do you do for a living?";
                            break;
                        case "2":
-                           message = flirtTarget +
-                               ", if I could rearrange the alphabet, I’d put ‘U’ and ‘I’ together.";
+                           message = flirtTarget
+                               + ", if I could rearrange the alphabet, I’d put ‘U’ and ‘I’ together.";
                            break;
                        case "3":
                            message = "I wish I were cross-eyed so I can see " + flirtTarget + " twice.";
                            break;
                        case "4":
-                           message = "I must be in a museum, because " + flirtTarget +
-                               " truly is a work of art.";
+                           message = "I must be in a museum, because " + flirtTarget
+                               + " truly is a work of art.";
                            break;
                        case "5":
-                           message = flirtTarget +
-                               ", do you believe in love at first sight or should I walk by again?";
+                           message = flirtTarget
+                               + ", do you believe in love at first sight or should I walk by again?";
                            break;
                        case "6":
-                           message = flirtTarget +
-                               ", are you a time traveler? Cause I see you in my future!";
+                           message = flirtTarget
+                               + ", are you a time traveler? Cause I see you in my future!";
                            break;
                        case "7":
-                           message = "Life without " + flirtTarget +
-                               " is like a broken pencil... pointless.";
+                           message = "Life without " + flirtTarget
+                               + " is like a broken pencil... pointless.";
                            break;
                        case "8":
-                           message = "Do someone here know CPR? Because " + flirtTarget +
-                               " is taking my breath away!";
+                           message = "Do someone here know CPR? Because " + flirtTarget
+                               + " is taking my breath away!";
                            break;
                        case "9":
-                           message = flirtTarget +
-                               " must be tired because has been running through my mind all night.";
+                           message = flirtTarget
+                               + " must be tired because has been running through my mind all night.";
                            break;
                        default:
                            break;
