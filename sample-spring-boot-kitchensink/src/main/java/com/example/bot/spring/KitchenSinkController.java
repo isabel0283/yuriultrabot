@@ -701,7 +701,7 @@ public class KitchenSinkController {
                 flirtTarget = flirtTarget.toUpperCase();
                 switch (strRandom) {
                        case "0":
-                           message = "No! Other but " + flirtTarget + " please!";
+                           message = flirtTarget + ", if nothing lasts forever, will you be my nothing?";
                            break;
                        case "1":
                            message = flirtTarget + ", aside from being sexy, what do you do for a living?";
