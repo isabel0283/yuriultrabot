@@ -907,9 +907,6 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
             }
-            case "test_weather":
-                this.reply(replyToken, new WeatherFlexMessageSupplier().get());
-                break;
             case "quickreply":
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
