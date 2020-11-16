@@ -1487,7 +1487,7 @@ public class KitchenSinkController {
             case "testyuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 String testReply = "Test command received";
-                testReply.setColor(Color.RED);
+                testReply.setColor(new Color(100,238,238));
                 this.replyText(replyToken, testReply);
                 break;
             default:
