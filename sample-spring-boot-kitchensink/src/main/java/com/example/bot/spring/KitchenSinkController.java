@@ -853,7 +853,22 @@ public class KitchenSinkController {
                            message = "...";
                            break;
                        case "4":
-                           message = "No, you...";
+                           message = "That's obvious...";
+                           break;
+                       case "5":
+                           message = "Do you care?";
+                           break;
+                       case "6":
+                           message = "Good!";
+                           break;
+                       case "7":
+                           message = "Hey, reply!!";
+                           break;
+                       case "8":
+                           message = "Be honest, please!";
+                           break;
+                       case "9":
+                           message = "Who cares...";
                            break;
                        default:
                            break;
