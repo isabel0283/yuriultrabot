@@ -717,7 +717,7 @@ public class KitchenSinkController {
                        default:
                            break;
                 }
-                message = flirtTarget;
+                message = flirtTarget.toUpperCase();
                 this.replyText(replyToken, message);
                 break;
             }
