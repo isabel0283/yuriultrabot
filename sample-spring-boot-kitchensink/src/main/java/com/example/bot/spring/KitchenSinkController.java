@@ -704,19 +704,19 @@ public class KitchenSinkController {
                            message = "No! Other but " + flirtTarget + " please!";
                            break;
                        case "1":
-                           message = "Truth is relative!";
+                           message = flirtTarget + ", aside from being sexy, what do you do for a living?";
                            break;
                        case "2":
-                           message = "You'll see who's the liar!";
+                           message = flirtTarget + ", if I could rearrange the alphabet, I’d put ‘U’ and ‘I’ together.";
                            break;
                        case "3":
-                           message = "Time will tell...";
+                           message = "I wish I were cross-eyed so I can see " + flirtTarget + " twice.";
                            break;
                        case "4":
-                           message = "Ask someone else, and you'll know the truth...";
+                           message = "I must be in a museum, because " + flirtTarget + " truly is a work of art.";
                            break;
                        case "5":
-                           message = "Yes, liar!";
+                           message = flirtTarget + ", do you believe in love at first sight or should I walk by again?";
                            break;
                        case "6":
                            message = "Truth is relative!";
