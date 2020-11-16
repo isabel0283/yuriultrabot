@@ -701,7 +701,7 @@ public class KitchenSinkController {
                 flirtTarget = flirtTarget.toUpperCase();
                 switch (strRandom) {
                        case "0":
-                           message = "No! Other but " + flirtTarget + " please!;
+                           message = "No! Other but " + flirtTarget + " please!";
                            break;
                        case "1":
                            message = "Truth is relative!";
