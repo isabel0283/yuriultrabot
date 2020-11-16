@@ -15,7 +15,6 @@
  */
 
 package com.example.bot.spring;
-import java.awt.Color;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UncheckedIOException;
@@ -1487,7 +1486,6 @@ public class KitchenSinkController {
             case "testyuri":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 String testReply = "Test command received";
-                testReply.setColor(new Color(100,238,238));
                 this.replyText(replyToken, testReply);
                 break;
             default:
