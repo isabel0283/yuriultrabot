@@ -695,7 +695,7 @@ public class KitchenSinkController {
             }
             case "yuriflirt": {
                 log.info("Returns echo message {}: {}", replyToken, text);
-                myrandInt = rand.nextInt(15);
+                myrandInt = rand.nextInt(20);
                 strRandom = "" + myrandInt;
                 String flirtTarget = strOrig.replaceAll("yuri flirt with ","");
                 flirtTarget = flirtTarget.toUpperCase();
@@ -756,6 +756,21 @@ public class KitchenSinkController {
                        case "14":
                            message = "Somebody call the cops. It’s got to be illegal for "
                                + flirtTarget + " to look that good.";
+                           break;
+                       case "15":
+                           this.reply(replyToken, new StickerMessage("11537", "52002742"));
+                           break;
+                       case "16":
+                           this.reply(replyToken, new StickerMessage("11537", "52002737"));
+                           break;
+                       case "17":
+                           this.reply(replyToken, new StickerMessage("11538", "51626495"));
+                           break;
+                       case "18":
+                           this.reply(replyToken, new StickerMessage("11539", "52114119"));
+                           break;
+                       case "19":
+                           this.reply(replyToken, new StickerMessage("11539", "52114132"));
                            break;
                        default:
                            break;
