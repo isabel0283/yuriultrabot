@@ -695,7 +695,7 @@ public class KitchenSinkController {
             }
             case "yuriflirt": {
                 log.info("Returns echo message {}: {}", replyToken, text);
-                myrandInt = rand.nextInt(10);
+                myrandInt = rand.nextInt(15);
                 strRandom = "" + myrandInt;
                 String flirtTarget = strOrig.replaceAll("yuri flirt with ","");
                 flirtTarget = flirtTarget.toUpperCase();
@@ -730,12 +730,32 @@ public class KitchenSinkController {
                                + " is like a broken pencil... pointless.";
                            break;
                        case "8":
-                           message = "Do someone here know CPR? Because " + flirtTarget
+                           message = "Does someone here know CPR? Because " + flirtTarget
                                + " is taking my breath away!";
                            break;
                        case "9":
                            message = flirtTarget
                                + " must be tired because has been running through my mind all night.";
+                           break;
+                       case "10":
+                           message = "Does someone here have a map? I keep getting lost in "
+                               + flirtTarget + " eyes.";
+                           break;
+                       case "11":
+                           message = "Did the sun come out or did "
+                               + flirtTarget + " just smile at me?";
+                           break;
+                       case "12":
+                           message = "My love for "
+                               + flirtTarget + " is like diarrhea, I just can't hold it in.";
+                           break;
+                       case "13":
+                           message = "Is this the Hogwarts Express? Because it feels like "
+                               + flirtTarget + " and I are headed somewhere magical.";
+                           break;
+                       case "14":
+                           message = "Somebody call the cops. It’s got to be illegal for "
+                               + flirtTarget + " to look that good.";
                            break;
                        default:
                            break;
