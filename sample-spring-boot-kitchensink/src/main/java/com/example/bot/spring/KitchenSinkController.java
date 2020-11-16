@@ -288,8 +288,6 @@ public class KitchenSinkController {
         );
     }
 
-    public String testwreportLocation = "Initial value, XX";
-
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
         String textOriginal = content.getText();
@@ -421,6 +419,12 @@ public class KitchenSinkController {
                 intIndex = 0;
          } else {
                 text = "youtubeYuri";
+         }
+         intIndex = strOrig.indexOf("yuri flirt with");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "yuriflirt";
          }
         intIndex = strOrig.indexOf("yuri please stop");
          if (intIndex == -1) {
@@ -689,6 +693,34 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
             }
+            case "yuriflirt": {
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                String destination = text.replaceAll("yuri flirt with ","");
+                switch (strRandom) {
+                       case "0":
+                           message = "Yes, liar!";
+                           break;
+                       case "1":
+                           message = "Truth is relative!";
+                           break;
+                       case "2":
+                           message = "You'll see who's the liar!";
+                           break;
+                       case "3":
+                           message = "Time will tell...";
+                           break;
+                       case "4":
+                           message = "Ask someone else, and you'll know the truth...";
+                           break;
+                       default:
+                           break;
+                }
+                mesage = destination;
+                this.replyText(replyToken, message);
+                break;
+            }
             case "whynot": {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(10);
@@ -876,7 +908,6 @@ public class KitchenSinkController {
                 break;
             }
             case "test_weather":
-                testwreportLocation = "Test City, TS";
                 this.reply(replyToken, new WeatherFlexMessageSupplier().get());
                 break;
             case "quickreply":
