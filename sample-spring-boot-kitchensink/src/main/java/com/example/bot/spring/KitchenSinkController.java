@@ -535,14 +535,14 @@ public class KitchenSinkController {
                 if ("advice".equals(strOrig)) {
                     break;
                 }
-                String url = "https://api.adviceslip.com/advice";
-                Document result = Jsoup.connect(url)
+                String adviceurl = "https://api.adviceslip.com/advice";
+                Document adviceresult = Jsoup.connect(adviceurl)
                     .userAgent("Mozilla/5.0 (Windows NT 6.1) Chrome/41.0.2228.0 Safari/537.36")
                     .timeout(3000)
                     .ignoreHttpErrors(true)
                     .ignoreContentType(true)
                     .get();
-                String agetJson = result.text();
+                String agetJson = adviceresult.text();
                 JSONObject ajsonObject = new JSONObject(agetJson);
                 String advice = ajsonObject.getString("advice");
                 this.replyText(replyToken, advice);
