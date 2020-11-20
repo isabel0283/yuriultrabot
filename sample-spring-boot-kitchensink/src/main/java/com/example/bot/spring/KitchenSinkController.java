@@ -532,9 +532,6 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "https://youtu.be/" + video);
                 break;
             case "adviceYuri":
-                if ("advice".equals(strOrig)) {
-                    break;
-                }
                 String adviceurl = "https://api.adviceslip.com/advice";
                 Document adviceresult = Jsoup.connect(adviceurl)
                     .userAgent("Mozilla/5.0 (Windows NT 6.1) Chrome/41.0.2228.0 Safari/537.36")
@@ -544,8 +541,8 @@ public class KitchenSinkController {
                     .get();
                 String agetJson = adviceresult.text();
                 JSONObject ajsonObject = new JSONObject(agetJson);
-                String advice = ajsonObject.getString("advice");
-                this.replyText(replyToken, advice);
+                String advice = ajsonObject.getJSONObject("slip").getString("advice");
+                this.replyText(replyToken, "My advice for you is: " + advice);
                 break;
              case "weatherYuri":
                 if ("weather".equals(strOrig)) {
