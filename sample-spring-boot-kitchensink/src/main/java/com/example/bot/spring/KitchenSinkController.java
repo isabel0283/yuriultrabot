@@ -407,6 +407,12 @@ public class KitchenSinkController {
          } else {
                 text = "hahaha";
          }
+         intIndex = strOrig.indexOf("kkk");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "hahaha";
+         }
          intIndex = strOrig.indexOf("bye yuri");
          if (intIndex == -1) {
                 intIndex = 0;
