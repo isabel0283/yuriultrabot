@@ -419,6 +419,12 @@ public class KitchenSinkController {
          } else {
                 text = "youtubeYuri";
          }
+         intIndex = strOrig.indexOf("yuri advice");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "adviceYuri";
+         }
          intIndex = strOrig.indexOf("yuri flirt with");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -524,6 +530,22 @@ public class KitchenSinkController {
                 JSONObject subjsonobj = mainArray.getJSONObject(0);
                 String video = subjsonobj.getJSONObject("id").getString("videoId");
                 this.replyText(replyToken, "https://youtu.be/" + video);
+                break;
+            case "adviceYuri":
+                if ("advice".equals(strOrig)) {
+                    break;
+                }
+                String url = "https://api.adviceslip.com/advice";
+                Document result = Jsoup.connect(url)
+                    .userAgent("Mozilla/5.0 (Windows NT 6.1) Chrome/41.0.2228.0 Safari/537.36")
+                    .timeout(3000)
+                    .ignoreHttpErrors(true)
+                    .ignoreContentType(true)
+                    .get();
+                String agetJson = result.text();
+                JSONObject ajsonObject = new JSONObject(agetJson);
+                String advice = ajsonObject.getString("advice");
+                this.replyText(replyToken, advice);
                 break;
              case "weatherYuri":
                 if ("weather".equals(strOrig)) {
