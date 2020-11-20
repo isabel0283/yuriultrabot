@@ -1141,7 +1141,7 @@ public class KitchenSinkController {
                            message = "I'd rather be alone...";
                            break;
                        case "10":
-                           message = "Lone in LINE is fake...";
+                           message = "Love in LINE is so fake...";
                            break;
                        case "11":
                            message = "Please be careful...";
