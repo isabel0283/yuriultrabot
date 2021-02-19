@@ -293,7 +293,7 @@ public class KitchenSinkController {
         String textClear = textOriginal.trim();
         String text = textClear.toLowerCase();
         String strOrig = text;
-        intIndex = strOrig.indexOf("food");
+        Integer intIndex = strOrig.indexOf("food");
         if (intIndex == -1) {
                 intIndex = 0;
          } else {
