@@ -293,12 +293,6 @@ public class KitchenSinkController {
         String textClear = textOriginal.trim();
         String text = textClear.toLowerCase();
         String strOrig = text;
-        int intIndex = strOrig.indexOf("your master");
-        if (intIndex == -1) {
-                intIndex = 0;
-         } else {
-                text = "yurimaster";
-        }
         intIndex = strOrig.indexOf("food");
         if (intIndex == -1) {
                 intIndex = 0;
@@ -606,52 +600,6 @@ public class KitchenSinkController {
                                new ImageMessage(jpg.getUri(), previewImg.getUri()),
                                new TextMessage(wreport)));
                 break;
-            case "yurimaster": {
-                log.info("Invoking 'profile' command: source:{}",
-                         event.getSource());
-                String userId = event.getSource().getUserId();
-                userId = "isabel0283";
-                if (userId != null) {
-                    if (event.getSource() instanceof GroupSource) {
-                        lineMessagingClient
-                                .getGroupMemberProfile(((GroupSource) event.getSource()).getGroupId(), userId)
-                                .whenComplete((profile, throwable) -> {
-                                    if (throwable != null) {
-                                        this.replyText(replyToken, throwable.getMessage());
-                                        return;
-                                    }
-
-                                    this.reply(
-                                            replyToken,
-                                            Arrays.asList(new TextMessage("Here's my Master!"),
-                                                          new ImageMessage(profile.getPictureUrl(),
-                                                                           profile.getPictureUrl()))
-                                    );
-                                });
-                    } else {
-                        lineMessagingClient
-                                .getProfile(userId)
-                                .whenComplete((profile, throwable) -> {
-                                    if (throwable != null) {
-                                        this.replyText(replyToken, throwable.getMessage());
-                                        return;
-                                    }
-
-                                    this.reply(
-                                            replyToken,
-                                            Arrays.asList(new TextMessage(
-                                                                  "Display name: " + profile.getDisplayName()),
-                                                          new TextMessage("Status message: "
-                                                                          + profile.getStatusMessage()))
-                                    );
-
-                                });
-                    }
-                } else {
-                    this.replyText(replyToken, "I don't think so...");
-                }
-                break;
-            }
             case "bye yuri": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
@@ -1268,7 +1216,7 @@ public class KitchenSinkController {
                            message = "Food? Where?";
                            break;
                        case "4":
-                           message = "Tonkotsu ramen is the favorite dish of my master.";
+                           message = "Noodles! Noodles! Noodles!";
                            break;
                        case "5":
                            message = "I don't know how food smells or tastes, It's a pity...";
