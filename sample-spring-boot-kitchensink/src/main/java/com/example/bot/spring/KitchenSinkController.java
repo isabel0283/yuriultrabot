@@ -365,11 +365,11 @@ public class KitchenSinkController {
          } else {
                 text = "dontcare";
          }
-        intIndex = strOrig.indexOf("thanks yuri");
+        intIndex = strOrig.indexOf("thanks yuko");
         if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "thanksYuri";
+                text = "thanksYuko";
          }
          intIndex = strOrig.indexOf("lol");
          if (intIndex == -1) {
@@ -377,11 +377,11 @@ public class KitchenSinkController {
          } else {
                 text = "hahaha";
          }
-         intIndex = strOrig.indexOf("yuri weather");
+         intIndex = strOrig.indexOf("yuko weather");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "weatherYuri";
+                text = "weatherYuko";
          }
          intIndex = strOrig.indexOf("work");
          if (intIndex == -1) {
@@ -389,11 +389,11 @@ public class KitchenSinkController {
          } else {
                 text = "work";
          }
-         intIndex = strOrig.indexOf("yuri i love you");
+         intIndex = strOrig.indexOf("yuko i love you");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "yuriiloveyou";
+                text = "yukoiloveyou";
          }
          intIndex = strOrig.indexOf("haha");
          if (intIndex == -1) {
@@ -407,47 +407,47 @@ public class KitchenSinkController {
          } else {
                 text = "hahaha";
          }
-         intIndex = strOrig.indexOf("bye yuri");
+         intIndex = strOrig.indexOf("bye yuko");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "bye yuri";
+                text = "bye yuko";
          }
-         intIndex = strOrig.indexOf("yuri youtube");
+         intIndex = strOrig.indexOf("yuko youtube");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "youtubeYuri";
+                text = "youtubeYuko";
          }
-         intIndex = strOrig.indexOf("yuri advice");
+         intIndex = strOrig.indexOf("yuko advice");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "adviceYuri";
+                text = "adviceYuko";
          }
-         intIndex = strOrig.indexOf("yuri flirt with");
+         intIndex = strOrig.indexOf("yuko flirt with");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "yuriflirt";
+                text = "yukoflirt";
          }
-        intIndex = strOrig.indexOf("yuri please stop");
+        intIndex = strOrig.indexOf("yuko please stop");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "stopYuri";
+                text = "stopYuko";
          }
-         intIndex = strOrig.indexOf("yuri stop");
+         intIndex = strOrig.indexOf("yuko stop");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "stopYuri";
+                text = "stopYuko";
          }
-         intIndex = strOrig.indexOf("stop yuri");
+         intIndex = strOrig.indexOf("stop yuko");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "stopYuri";
+                text = "stopYuko";
          }
          intIndex = strOrig.indexOf("liar");
          if (intIndex == -1) {
@@ -497,21 +497,21 @@ public class KitchenSinkController {
         switch (text) {
             case "youtube":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                message = "You could ask me to search for a video, like this: Yuri Youtube kurt cobain";
+                message = "You could ask me to search for a video, like this: Yuko Youtube kurt cobain";
                 this.replyText(replyToken, message);
                 break;
             case "weather":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                message = "Ask me the current weather in your city, like this: Yuri weather Kurashiki";
+                message = "Ask me the current weather in your city, like this: Yuko weather Kurashiki";
                 this.replyText(replyToken, message);
                 break;
-            case "youtubeYuri":
+            case "youtubeYuko":
                 if ("youtube".equals(strOrig)) {
                     break;
                 }
                 String emptyString = " ";
                 String keyword = strOrig.replace("youtube", "");
-                keyword = keyword.replace("yuri", "");
+                keyword = keyword.replace("yuko", "");
                 if (emptyString.equals(keyword)) {
                     this.replyText(replyToken, "Gomen ne! I need more information...");
                     break;
@@ -531,7 +531,7 @@ public class KitchenSinkController {
                 String video = subjsonobj.getJSONObject("id").getString("videoId");
                 this.replyText(replyToken, "https://youtu.be/" + video);
                 break;
-            case "adviceYuri":
+            case "adviceYuko":
                 String adviceurl = "https://api.adviceslip.com/advice";
                 Document adviceresult = Jsoup.connect(adviceurl)
                     .userAgent("Mozilla/5.0 (Windows NT 6.1) Chrome/41.0.2228.0 Safari/537.36")
@@ -544,13 +544,13 @@ public class KitchenSinkController {
                 String advice = ajsonObject.getJSONObject("slip").getString("advice");
                 this.replyText(replyToken, advice);
                 break;
-             case "weatherYuri":
+             case "weatherYuko":
                 if ("weather".equals(strOrig)) {
                     break;
                 }
                 String wemptyString = " ";
                 String keywordCity = strOrig.replace("weather", "");
-                keywordCity = keywordCity.replace("yuri", "");
+                keywordCity = keywordCity.replace("yuko", "");
                 if (wemptyString.equals(keywordCity)) {
                     this.replyText(replyToken, "Please specify a city!");
                     break;
@@ -600,7 +600,7 @@ public class KitchenSinkController {
                                new ImageMessage(jpg.getUri(), previewImg.getUri()),
                                new TextMessage(wreport)));
                 break;
-            case "bye yuri": {
+            case "bye yuko": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
                     this.replyText(replyToken, "I don't think so...");
@@ -665,11 +665,11 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
             }
-            case "yuriflirt": {
+            case "yukoflirt": {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(25);
                 strRandom = "" + myrandInt;
-                String flirtTarget = strOrig.replaceAll("yuri flirt with ","");
+                String flirtTarget = strOrig.replaceAll("yuko flirt with ","");
                 flirtTarget = flirtTarget.toUpperCase();
                 switch (strRandom) {
                        case "0":
@@ -954,7 +954,7 @@ public class KitchenSinkController {
             case "quickreply":
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
-            case "yuri": {
+            case "yuko": {
                 myrandInt = rand.nextInt(20);
                 log.info("Returns echo message {}: {}", replyToken, text);
                 strRandom = "" + myrandInt;
@@ -1138,7 +1138,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Fine!");
                 break;
-            case "thanksYuri":
+            case "thanksYuko":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "You are welcome!");
                 break;
@@ -1240,11 +1240,11 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Don't you have anything else to talk about?");
                 break;
-            case "yuriiloveyou":
+            case "yukoiloveyou":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "I don't care...");
                 break;
-            case "stopYuri":
+            case "stopYuko":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Hahaha! You wish!!!");
                 break;
@@ -1448,7 +1448,7 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
             }
-            case "questionYuri":
+            case "questionYuko":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.reply(replyToken, new StickerMessage("11539", "52114129"));
                 break;
@@ -1456,7 +1456,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "Hahaha! Thats me!");
                 break;
-            case "testyuri":
+            case "testyuko":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 String testReply = "Test command received";
                 this.replyText(replyToken, testReply);
