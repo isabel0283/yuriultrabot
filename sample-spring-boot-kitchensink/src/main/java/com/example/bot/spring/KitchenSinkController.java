@@ -619,19 +619,19 @@ public class KitchenSinkController {
                 strRandom = "" + myrandInt;
                 switch (strRandom) {
                        case "0":
-                           message = "I like this one https://www.youtube.com/watch?v=sDW4a9V301k";
+                           message = "I like this one https://www.youtube.com/watch?v=Zx58FMoPZEI";
                            break;
                        case "1":
-                           message = "The other day I was watching this https://www.youtube.com/watch?v=u-rCfjbHVmg";
+                           message = "The other day I was watching this https://www.youtube.com/watch?v=4H_Hc3bspXc";
                            break;
                        case "2":
-                           message = "This is what I like to watch https://www.youtube.com/watch?v=Kdc8swKVd9E";
+                           message = "This is what I like to watch https://www.youtube.com/watch?v=ponTbDDMYjw";
                            break;
                        case "3":
-                           message = "I spend my nights watching things like this https://www.youtube.com/watch?v=lUNbuLnQpxQ";
+                           message = "I spend my nights watching things like this https://www.youtube.com/watch?v=jM8dCGIm6yc";
                            break;
                        case "4":
-                           message = "I don't think you would like this https://www.youtube.com/watch?v=P7VK09LpgW8";
+                           message = "I don't think you would like this https://www.youtube.com/watch?v=_M4K5wk9DCM";
                            break;
                        default:
                            break;
@@ -1396,7 +1396,7 @@ public class KitchenSinkController {
                            message = "Hey! what's up?";
                            break;
                        case "4":
-                           message = "こんにちは";
+                           message = ":)";
                            break;
                        case "5":
                            message = "I'm glad to see you again!";
@@ -1428,7 +1428,7 @@ public class KitchenSinkController {
                            message = "Take care!";
                            break;
                        case "4":
-                           message = "さよなら";
+                           message = "Seee youuu!";
                            break;
                        case "5":
                            message = "Well... Bye!";
