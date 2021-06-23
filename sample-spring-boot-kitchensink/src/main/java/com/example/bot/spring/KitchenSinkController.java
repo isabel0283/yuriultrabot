@@ -130,7 +130,7 @@ public class KitchenSinkController {
                            messageimg = "I see...";
                            break;
                        case "5":
-                           messageimg = "That's definitely your style!";
+                           messageimg = "Mhmmm...!";
                            break;
                        case "6":
                            messageimg = "A friend of mine showed me that same picture";
@@ -1142,10 +1142,32 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(replyToken, "You are welcome!");
                 break;
-            case "howareyou":
+            case "howareyou": {
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(replyToken, "Me?");
+                myrandInt = rand.nextInt(10);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "I guess fine...";
+                           break;
+                       case "1":
+                           message = "Me?";
+                           break;
+                       case "2":
+                           message = "Be honest please!";
+                           break;
+                       case "3":
+                           message = "As usual...";
+                           break;
+                       case "4":
+                           message = "I'm doing good if you ask!";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
                 break;
+             }
             case "whatareyou": {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(10);
