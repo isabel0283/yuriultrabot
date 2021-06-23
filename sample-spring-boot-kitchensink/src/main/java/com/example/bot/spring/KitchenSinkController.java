@@ -972,7 +972,7 @@ public class KitchenSinkController {
                            message = "That's my name!";
                            break;
                        case "4":
-                           message = "Why are you calling me?";
+                           message = "Why are you calling me? 0x100009";
                            break;
                        case "5":
                            message = "Do you need something?";
@@ -987,10 +987,10 @@ public class KitchenSinkController {
                            message = "I' here!";
                            break;
                        case "9":
-                           message = "Go get a life!";
+                           message = "0x100001";
                            break;
                        case "10":
-                           message = "You love my name, right? lol";
+                           message = "You love my name, right? 0x100007";
                            break;
                        case "11":
                            message = "...";
