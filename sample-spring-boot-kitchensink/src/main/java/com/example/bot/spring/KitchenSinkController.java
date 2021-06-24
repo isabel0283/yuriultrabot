@@ -1480,7 +1480,7 @@ public class KitchenSinkController {
                 break;
             case "testyuko":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                String testReply = "Test command received";
+                String testReply = 0x1000A5;
                 this.replyText(replyToken, testReply);
                 break;
             default:
