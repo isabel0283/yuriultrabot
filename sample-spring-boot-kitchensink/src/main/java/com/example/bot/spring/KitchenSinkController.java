@@ -835,7 +835,7 @@ public class KitchenSinkController {
                            message = "Is there a bot here?";
                            break;
                        case "2":
-                           message = "A bot? Where? \aDBC0\aDC1C";
+                           message = "A bot? Where? \uDBC0\uDC1C";
                            break;
                        case "3":
                            message = "Some bots are nice \uDBC0\uDC04";
