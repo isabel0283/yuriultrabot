@@ -1480,7 +1480,7 @@ public class KitchenSinkController {
                 break;
             case "testyuko":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                String testReply = 0x1000A5;
+                String testReply = "\uDBC0\uDCA5";
                 this.replyText(replyToken, testReply);
                 break;
             default:
