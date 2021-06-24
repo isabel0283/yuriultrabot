@@ -311,6 +311,12 @@ public class KitchenSinkController {
          } else {
                 text = "food";
          }
+        intIndex = strOrig.indexOf("bot");
+        if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "yukobot";
+         }
         intIndex = strOrig.indexOf("bye");
         if (intIndex == -1) {
                 intIndex = 0;
@@ -817,6 +823,32 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
             }
+            case "yukobot": {
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(5);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Where is the bot?";
+                           break;
+                       case "1":
+                           message = "Is there a bot here?";
+                           break;
+                       case "2":
+                           message = "A bot? Where? \aDBC0\aDC1C";
+                           break;
+                       case "3":
+                           message = "Some bots are nice \uDBC0\uDC04";
+                           break;
+                       case "4":
+                           message = "Hmmm... bots...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
             case "iknow": {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(10);
@@ -972,7 +1004,7 @@ public class KitchenSinkController {
                            message = "That's my name!";
                            break;
                        case "4":
-                           message = "Why are you calling me? 0x100009";
+                           message = "Why are you calling me? \uDBC0\uDC09";
                            break;
                        case "5":
                            message = "Do you need something?";
@@ -987,10 +1019,10 @@ public class KitchenSinkController {
                            message = "I' here!";
                            break;
                        case "9":
-                           message = "0x100001";
+                           message = "\uDBC0\uDC01";
                            break;
                        case "10":
-                           message = "You love my name, right? 0x100007";
+                           message = "You love my name, right? \uDBC0\uDC07";
                            break;
                        case "11":
                            message = "...";
@@ -1067,7 +1099,7 @@ public class KitchenSinkController {
                            message = "I'd try something different...";
                            break;
                        case "12":
-                           message = "You do it alone?";
+                           message = "\uDBC0\uDC0E";
                            break;
                        case "13":
                            message = "Yeah, yeah...";
@@ -1105,7 +1137,7 @@ public class KitchenSinkController {
                            message = "Stay away, it's better...";
                            break;
                        case "7":
-                           message = "You really like suffering? Isn't";
+                           message = "\uDBC0\uDC05";
                            break;
                        case "8":
                            message = "*Sighs*";
@@ -1161,6 +1193,12 @@ public class KitchenSinkController {
                            break;
                        case "4":
                            message = "I'm doing good if you ask!";
+                           break;
+                       case "5":
+                           message = "\uDBC0\uDC2B";
+                           break;
+                       case "6":
+                           message = "\uDBC0\uDC04";
                            break;
                        default:
                            break;
