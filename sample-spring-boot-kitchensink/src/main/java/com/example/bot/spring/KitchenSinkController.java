@@ -485,6 +485,18 @@ public class KitchenSinkController {
          } else {
                 text = "whatareyou";
          }
+         intIndex = strOrig.indexOf("bob");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "bob";
+         }
+         intIndex = strOrig.indexOf("robby");
+         if (intIndex == -1) {
+                intIndex = 0;
+         } else {
+                text = "bob";
+         }
          intIndex = strOrig.indexOf("again");
          if (intIndex == -1) {
                 intIndex = 0;
@@ -909,6 +921,32 @@ public class KitchenSinkController {
                            break;
                        case "9":
                            message = "Who are you asking?...";
+                           break;
+                       default:
+                           break;
+                }
+                this.replyText(replyToken, message);
+                break;
+            }
+            case "bob": {
+                log.info("Returns echo message {}: {}", replyToken, text);
+                myrandInt = rand.nextInt(5);
+                strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           message = "Who is Bob?";
+                           break;
+                       case "1":
+                           message = "Bob! come here!";
+                           break;
+                       case "2":
+                           message = "Bob is not here...";
+                           break;
+                       case "3":
+                           message = "He's gone...";
+                           break;
+                       case "4":
+                           message = "Don't call him!";
                            break;
                        default:
                            break;
