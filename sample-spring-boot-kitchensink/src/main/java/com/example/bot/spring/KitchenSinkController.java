@@ -485,7 +485,7 @@ public class KitchenSinkController {
          } else {
                 text = "whatareyou";
          }
-         intIndex = strOrig.indexOf("bob");
+         intIndex = strOrig.indexOf("bob quiz");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
