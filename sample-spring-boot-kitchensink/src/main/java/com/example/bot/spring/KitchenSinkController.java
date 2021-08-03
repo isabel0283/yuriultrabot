@@ -163,7 +163,7 @@ public class KitchenSinkController {
                                                     .stream().map(Source::getUserId)
                                                     .collect(Collectors.joining(",")));
         //String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "Good luck! Bye!");
+        //this.replyText(replyToken, "Good luck! Bye!");
     }
 
     @EventMapping
