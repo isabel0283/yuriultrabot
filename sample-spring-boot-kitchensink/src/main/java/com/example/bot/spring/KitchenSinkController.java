@@ -159,7 +159,10 @@ public class KitchenSinkController {
 
     @EventMapping
     public void handleMemberLeft(MemberLeftEvent event) {
-        String replyToken = event.getReplyToken();
+        log.info("Got memberLeft message: {}", event.getLeft().getMembers()
+                                                    .stream().map(Source::getUserId)
+                                                    .collect(Collectors.joining(",")));
+        //String replyToken = event.getReplyToken();
         this.replyText(replyToken, "Good luck! Bye!");
     }
 
