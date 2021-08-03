@@ -101,7 +101,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleFileMessageEvent(MessageEvent<FileMessageContent> event) {
         this.reply(event.getReplyToken(),
-                   new TextMessage(String.format("I'll look at that later, I'm busy now!",
+                   new TextMessage(String.format("Thanks for sharing!",
                                                  event.getMessage().getFileName(),
                                                  event.getMessage().getFileSize())));
     }
@@ -109,88 +109,14 @@ public class KitchenSinkController {
     @EventMapping
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
-        Random randimg = new Random();
-        Integer myrandIntimg = randimg.nextInt(10);
-                String strRandomimg = "" + myrandIntimg;
-                String messageimg = "";
-                switch (strRandomimg) {
-                       case "0":
-                           messageimg = "Interesting...";
-                           break;
-                       case "1":
-                           messageimg = "That's a good one!";
-                           break;
-                       case "2":
-                           messageimg = "Oh...";
-                           break;
-                       case "3":
-                           messageimg = "I saw that before...";
-                           break;
-                       case "4":
-                           messageimg = "I see...";
-                           break;
-                       case "5":
-                           messageimg = "Mhmmm...!";
-                           break;
-                       case "6":
-                           messageimg = "A friend of mine showed me that same picture";
-                           break;
-                       case "7":
-                           messageimg = "Long time no see that one!";
-                           break;
-                       case "8":
-                           messageimg = "Oh, I see!";
-                           break;
-                       case "9":
-                           messageimg = "What's that?";
-                           break;
-                       default:
-                           break;
-                }
+        messageimg = "Thanks for sharing!";
         this.replyText(replyToken, messageimg);
     }
 
     @EventMapping
     public void handleVideoEvent(MessageEvent<VideoMessageContent> event) {
         String replyToken = event.getReplyToken();
-        Random randvid = new Random();
-        Integer myrandIntvid = randvid.nextInt(10);
-                String strRandomvid = "" + myrandIntvid;
-                String messagevid = "";
-                switch (strRandomvid) {
-                       case "0":
-                           messagevid = "Interesting...";
-                           break;
-                       case "1":
-                           messagevid = "Nice video!";
-                           break;
-                       case "2":
-                           messagevid = "That again?";
-                           break;
-                       case "3":
-                           messagevid = "I saw that video before...";
-                           break;
-                       case "4":
-                           messagevid = "I see this is the kind of stuff you like...";
-                           break;
-                       case "5":
-                           messagevid = "Hmmm...";
-                           break;
-                       case "6":
-                           messagevid = "Oh! I like this one!";
-                           break;
-                       case "7":
-                           messagevid = "I saw that one the other day.";
-                           break;
-                       case "8":
-                           messagevid = "Thanks for sharing!";
-                           break;
-                       case "9":
-                           messagevid = "I'll watch it later...";
-                           break;
-                       default:
-                           break;
-                }
+        messagevid = "Thanks for sharing!";
         this.replyText(replyToken, messagevid);
     }
 
@@ -233,9 +159,8 @@ public class KitchenSinkController {
 
     @EventMapping
     public void handleMemberLeft(MemberLeftEvent event) {
-        log.info("Got memberLeft message: {}", event.getLeft().getMembers()
-                .stream().map(Source::getUserId)
-                .collect(Collectors.joining(",")));
+        String replyToken = event.getReplyToken();
+        this.replyText(replyToken, "Good luck! Bye!");
     }
 
     @EventMapping
