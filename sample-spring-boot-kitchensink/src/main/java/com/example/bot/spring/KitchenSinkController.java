@@ -659,7 +659,7 @@ public class KitchenSinkController {
                 this.replyText(replyToken, message);
                 break;
             }
-            case "yukobot": {
+            case "noyukobot": {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 myrandInt = rand.nextInt(6);
                 strRandom = "" + myrandInt;
