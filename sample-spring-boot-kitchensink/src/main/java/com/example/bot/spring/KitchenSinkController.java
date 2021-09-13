@@ -110,6 +110,30 @@ public class KitchenSinkController {
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
         String messageimg = "Thanks for sharing!";
+        myrandInt = rand.nextInt(6);
+        strRandom = "" + myrandInt;
+                switch (strRandom) {
+                       case "0":
+                           messageimg = "Thanks for sharing!";
+                           break;
+                       case "1":
+                           messageimg = "Thanks!";
+                           break;
+                       case "2":
+                           messageimg = "Nice picture!";
+                           break;
+                       case "3":
+                           messageimg = "Good!";
+                           break;
+                       case "4":
+                           messageimg = "Oh!";
+                           break;
+                       case "5":
+                           messageimg = "Nice!";
+                           break;
+                       default:
+                           break;
+                }
         this.replyText(replyToken, messageimg);
     }
 
