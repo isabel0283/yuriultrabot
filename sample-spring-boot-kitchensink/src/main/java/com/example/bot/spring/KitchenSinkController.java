@@ -110,6 +110,7 @@ public class KitchenSinkController {
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
         String messageimg = "Thanks for sharing!";
+        int myrandInt = 0;
         myrandInt = rand.nextInt(6);
         strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -462,7 +463,6 @@ public class KitchenSinkController {
         TimeUnit.SECONDS.sleep(myrandWait);
         Random rand = new Random();
         String strRandom = "";
-        int myrandInt = 0;
         String message = "";
         switch (text) {
             case "youtube":
