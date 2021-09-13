@@ -75,8 +75,6 @@ import lombok.NonNull;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 
-int myrandInt = 0;
-
 @Slf4j
 @LineMessageHandler
 public class KitchenSinkController {
@@ -112,6 +110,7 @@ public class KitchenSinkController {
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
         String messageimg = "Thanks for sharing!";
+        int myrandInt = 0;
         myrandInt = rand.nextInt(6);
         strRandom = "" + myrandInt;
                 switch (strRandom) {
@@ -460,6 +459,7 @@ public class KitchenSinkController {
         log.info("Got text message from replyToken:{}: text:{}", replyToken, text);
         Random randWait = new Random();
         int myrandWait = 0;
+        int myrandInt = 0;
         myrandWait = randWait.nextInt(2) + 1;
         TimeUnit.SECONDS.sleep(myrandWait);
         Random rand = new Random();
