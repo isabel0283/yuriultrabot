@@ -109,7 +109,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleImageEvent(MessageEvent<ImageMessageContent> event) {
         String replyToken = event.getReplyToken();
-        String messageimg = "Thanks for sharing!";
+        String messageimg = "\udbc0\udc2e";
         this.replyText(replyToken, messageimg);
     }
 
