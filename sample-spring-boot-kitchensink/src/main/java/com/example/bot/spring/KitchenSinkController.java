@@ -487,7 +487,8 @@ public class KitchenSinkController {
                     .get();
                 String agetJson = adviceresult.text();
                 JSONObject ajsonObject = new JSONObject(agetJson);
-                String advice = ajsonObject.getJSONObject("slip").getString("advice");
+                //String advice = ajsonObject.getJSONObject("slip").getString("advice");
+                String advice = ajsonObject.getJSONObject.getString("advice");
                 this.replyText(replyToken, advice);
                 break;
              case "weatherYuko":
@@ -877,8 +878,7 @@ public class KitchenSinkController {
                 break;
             case "food":
                 log.info("Returns echo message {}: {}", replyToken, text);
-                String testReply = "\udbc0\udc54";
-                this.replyText(replyToken, testReply);
+                this.replyText(replyToken, "\udbc0\udc54");
                 break;
             default:
                 break;
