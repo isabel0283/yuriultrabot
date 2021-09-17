@@ -489,7 +489,7 @@ public class KitchenSinkController {
                 JSONObject ajsonObject = new JSONObject(agetJson);
                 String advice = ajsonObject.getJSONObject("slip").getString("advice");
                 //String advice = ajsonObject.getString("advice");
-                this.replyText(replyToken, "advice text");
+                this.replyText(replyToken, advice);
                 break;
              case "weatherYuko":
                 if ("weather".equals(strOrig)) {
