@@ -335,11 +335,11 @@ public class KitchenSinkController {
          } else {
                 text = "hahaha";
          }
-         intIndex = strOrig.indexOf("kkk");
+         intIndex = strOrig.indexOf("food");
          if (intIndex == -1) {
                 intIndex = 0;
          } else {
-                text = "hahaha";
+                text = "food";
          }
          intIndex = strOrig.indexOf("bye yuko");
          if (intIndex == -1) {
@@ -873,6 +873,11 @@ public class KitchenSinkController {
             case "testyuko":
                 log.info("Returns echo message {}: {}", replyToken, text);
                 String testReply = "\uDBC0\uDCA5";
+                this.replyText(replyToken, testReply);
+                break;
+            case "food":
+                log.info("Returns echo message {}: {}", replyToken, text);
+                String testReply = "\udbc0\udc54";
                 this.replyText(replyToken, testReply);
                 break;
             default:
